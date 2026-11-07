@@ -30,7 +30,7 @@ function applyHolderDefaults(i:Item){const id=i.component?.id;if(i.component?.me
  if(id==='drm'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
  if(id==='pgc'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
 }
-export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyConfirmedHolePattern(applyFitSizing(i.component));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);if(i.component)i.component=applyPGCFeet(i.component);}return d;}
+export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component)));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);if(i.component)i.component=applyPGCFeet(i.component);}return d;}
 
 export function standardConnector(id:string):ComponentDef{const small=id==='xt30',l=small?10.2:15.5,w=small?5.2:8.1,h=small?12.4:20.2,openingL=l+.6,openingW=w+.6;return {id,name:small?'XT30 standard connector':'XT60 standard connector',variant:small?'Standard AMASS XT30U-F body + printed flange':'Standard AMASS XT60-F body + printed flange',category:'connector',body:{l,w,h},bodyStatus:'published',holesStatus:'designed',clearanceStatus:'designed',confirmed:true,connectorRevision:1,sources:{body:small?'https://www.micros.com.pl/mediaserver/Z_XT30U-F_AMASS_0001.pdf':'https://www.bto.pl/pdf/08031/XT60-F.pdf',holes:'Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.',clearance:'Designed 0.3 mm clearance per side.'},holes:[{x:-openingL/2-4,y:0,d:3.2},{x:openingL/2+4,y:0,d:3.2}],cutout:{l:openingL,w:openingW,r:.5,flangeL:openingL+16,flangeW:openingW+8,printedFlange:true,flangeThickness:3},note:'Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ.'};}
 
@@ -52,7 +52,7 @@ export function applyConfirmedHolePattern(c:ComponentDef):ComponentDef{
  next.note=next.note.replace(' Hole pattern centring remains provisional.','');
  return next;
 }
-export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c))));}
+export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c)))));}
 
 export function servoHeader():ComponentDef{return {
  id:'servo3',name:'3-pin servo header',variant:'Generic 1 × 3 male header · 2.54 mm pitch + printed flange',category:'connector',
@@ -78,10 +78,22 @@ export function applyFitSizing(c:ComponentDef):ComponentDef{
 
 export function applyHolderMeasurements(i:Item){applyHolderDefaults(i);applyInstallationFit(i);}
 export function applyInstallationFit(i:Item){
- const id=i.component?.id;if(!['sp1','pgc'].includes(id??'')||i.holder.installationFitRevision===2)return;
- if(id==='sp1'){i.holder.enabled=false;if(i.component)i.component.note=i.component.note.replace('Walls are relieved around bosses.','Locating ribs removed after interference; screw holes and boss positions remain unchanged.');}
- if(id==='pgc'){i.holder.enabled=true;for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}}
+ const id=i.component?.id;
+ if(id==='sp1'){
+  i.component=applyPumpBodyOffset(i.component!);if(i.holder.installationFitRevision===3)return;
+  i.holder.enabled=true;for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}
+  i.holder.installationFitRevision=3;return;
+ }
+ if(id!=='pgc'||i.holder.installationFitRevision===2)return;
+ i.holder.enabled=true;for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}
  i.holder.installationFitRevision=2;
+}
+export function applyPumpBodyOffset(c:ComponentDef):ComponentDef{
+ if(c.id!=='sp1'||c.bodyOffsetRevision===1)return c;
+ const next=structuredClone(c);next.bodyOffset??={x:-5.375,y:0};next.bodyOffsetRevision=1;
+ next.sources.body='User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.';
+ next.note='Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin.';
+ return next;
 }
 export function applyPGCFeet(c:ComponentDef):ComponentDef{
  if(c.id!=='pgc'||c.tabs?.length||c.holes.length!==4||![-1,1].every(x=>[-1,1].every(y=>c.holes.some(h=>h.x===x*36.5&&h.y===y*16.5))))return c;

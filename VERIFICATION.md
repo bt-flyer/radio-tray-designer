@@ -103,3 +103,10 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Retained all successful mounting centres. Removed pump locating ribs for screw-only retention. Added PGC's missing pair of ribs plus mounting-foot openings.
 - Added one-time fit and holder migration markers, with regression coverage for old snapshots, positions/rotations, hole preservation and subsequent manual edits.
 - All 68 tests pass, including exact cavity probes, four PGC rails and foot clearances, light-controller dimensions, pump rib removal, watertight STL and updated template connectivity. Revised component fit coupons and complete T-One STL generated successfully.
+
+### SP-1 body-offset sanity check
+
+- Reconciled the 51 mm case and 7/17.75 mm front/rear dimensions, keeping the physically confirmed 26 × 32 mm mounting centres. Front is the nipple end (+X); case/ribs move −5.375 mm relative to the hole-pattern origin.
+- Restored four locating ribs and retained boss reliefs. Body offsets now consistently affect footprint checks, wall generation, SVG, references, keepouts and strap slots, while leaving mounting holes fixed.
+- Added regressions for the measurement arithmetic, 0°/37°/180° exports, front/rear rib probes, clear boss windows and one-time migration without moving placements or overwriting later edits. All 71 tests passed.
+- Updated the built-in T-One cable slot X=78 → 82.2 mm to avoid the restored rib. Existing user slot positions are preserved.

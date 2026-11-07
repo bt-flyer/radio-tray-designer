@@ -158,7 +158,7 @@
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User specification: component-measurements.json (mm). User measured; excludes nipples",
+          "body": "User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
           "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
@@ -188,14 +188,20 @@
         "physicalFitRevision": 1,
         "mountBossDiameter": 8,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Leave nipple end open and reserve hose bending clearance  User confirmed Ø8 mm mounting bosses; hole centres already fit. Locating ribs removed after interference; screw holes and boss positions remain unchanged."
+        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin.",
+        "bodyOffset": {
+          "x": -5.375,
+          "y": 0
+        },
+        "bodyOffsetRevision": 1
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
         "railHeightRevision": 1,
-        "enabled": false,
+        "installationFitRevision": 3,
+        "enabled": true,
         "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
@@ -213,7 +219,7 @@
             "keepout": 0
           },
           "east": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 15
@@ -230,8 +236,7 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0,
-        "installationFitRevision": 2
+        "holeAllowance": 0
       }
     },
     {
@@ -262,9 +267,9 @@
         },
         "holes": [],
         "measurementRevision": 1,
+        "fitSizingRevision": 2,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm).  Three low locating walls; one 32.75 mm end fully open Connector inclusion in measured body size is unconfirmed. Fit allowance update: User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged. Mounting-hole centres and placement preserved.",
-        "fitSizingRevision": 2
+        "note": "User specification: component-measurements.json (mm).  Three low locating walls; one 32.75 mm end fully open Connector inclusion in measured body size is unconfirmed. Fit allowance update: User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged. Mounting-hole centres and placement preserved."
       },
       "l": 35,
       "w": 8,
@@ -443,9 +448,6 @@
             "d": 2
           }
         ],
-        "measurementRevision": 1,
-        "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 × 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable.",
         "tabs": [
           {
             "x": -36.5,
@@ -471,13 +473,17 @@
             "l": 8,
             "w": 8
           }
-        ]
+        ],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 × 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
         "railHeightRevision": 1,
+        "installationFitRevision": 2,
         "enabled": true,
         "height": 2.5,
         "wall": 2,
@@ -513,8 +519,7 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0,
-        "installationFitRevision": 2
+        "holeAllowance": 0
       }
     },
     {
@@ -571,11 +576,11 @@
         ],
         "measurementRevision": 1,
         "physicalFitRevision": 1,
+        "fitSizingRevision": 2,
         "lightMountRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges.",
-        "fitSizingRevision": 2
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges."
       },
       "l": 35,
       "w": 8,
@@ -875,7 +880,7 @@
       "id": "44f2e4db-3f95-46d2-9741-53bf678773e8",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 78,
+      "x": 82.2,
       "y": 87.5,
       "rotation": -90,
       "component": null,
@@ -996,9 +1001,9 @@
           }
         ],
         "measurementRevision": 1,
+        "fitSizingRevision": 2,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm).   Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing. Fit allowance update: User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged. Mounting-hole centres and placement preserved.",
-        "fitSizingRevision": 2
+        "note": "User specification: component-measurements.json (mm).   Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing. Fit allowance update: User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged. Mounting-hole centres and placement preserved."
       },
       "l": 35,
       "w": 8,

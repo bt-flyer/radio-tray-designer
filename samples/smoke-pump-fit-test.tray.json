@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "id": "e748cc2f-0cfc-461e-a839-c6f04478883f",
+  "name": "sp1 revised fit check",
+  "updatedAt": "2026-11-07T19:24:26.190Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 80,
+    "wide": 55,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ],
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    }
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "e8b0dc5e-f2be-44e9-9220-73b854e18a91",
+      "kind": "component",
+      "label": "FrSky SP-1 smoke pump",
+      "x": 40,
+      "y": 27.5,
+      "rotation": 0,
+      "component": {
+        "id": "sp1",
+        "name": "FrSky SP-1 smoke pump",
+        "variant": "SP-1",
+        "category": "electronics",
+        "body": {
+          "l": 51,
+          "w": 26,
+          "h": 36.2
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
+          "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -13,
+            "y": -16,
+            "d": 3
+          },
+          {
+            "x": -13,
+            "y": 16,
+            "d": 3
+          },
+          {
+            "x": 13,
+            "y": -16,
+            "d": 3
+          },
+          {
+            "x": 13,
+            "y": 16,
+            "d": 3
+          }
+        ],
+        "cutout": null,
+        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin.",
+        "measurementRevision": 1,
+        "physicalFitRevision": 1,
+        "mountBossDiameter": 8,
+        "bodyOffset": {
+          "x": -5.375,
+          "y": 0
+        },
+        "bodyOffsetRevision": 1
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 15
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "installationFitRevision": 3,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}

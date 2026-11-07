@@ -174,3 +174,11 @@ The RB35S uses a 100 mm length envelope (100.6 mm inner holder length at 0.3 mm 
 The smoke pump is retained by screws with no locating ribs, because the ribs interfered while the holes and boss clearances lined up. PGC has four-side 2.5 mm locating ribs, with conservative 8 mm foot windows around its confirmed mounting centres. Fit windows remain adjustable. These changes apply once to the corresponding older stock definitions and holders when reopened; subsequent manual sizing and holder edits are preserved. The published T-One template includes the corrections.
 
 Revised print checks are in `samples/rb35s-fit-test.stl`, `samples/telemetry-fit-test.stl`, `samples/pgc-fit-test.stl` and `samples/light-controller-fit-test.stl`. `samples/t-one-tray.stl` is the complete updated T-One tray. Regenerate them using `node --import tsx scripts/generate-fit-checks.ts`. Check the separate fit pieces before reprinting the full tray.
+
+### SP-1 asymmetric body and restored ribs
+
+The pump retains its proven 26 × 32 mm mounting-hole pattern. Its 51 × 26 mm body centre is **5.375 mm rearward** of the mounting-pattern midpoint: local X = −5.375 mm, with the hose-nipple end pointing +X. User edge measurements imply 26.25 mm longitudinal spacing; keeping the already fitted 26 mm holes gives 7.125 mm front and 17.875 mm rear edge distances, 0.125 mm above each reported measurement. No screw holes move.
+
+Four 2.5 mm locating ribs and the Ø8 mm boss reliefs are restored around that offset body. A component's editable **Body centre X/Y offset** moves its case, ribs and connector zones while keeping holes and bosses at the placement origin. SVG, reference models and STL use the same offset. Old pump cradles update once; later manual body-offset and wall edits are retained.
+
+The built-in T-One template moves its adjacent vertical cable opening from X=78 to X=82.2 mm to clear the restored rear rib. Existing saved layouts retain their slot positions and show an overlap warning if adjustment is needed. `samples/smoke-pump-fit-test.stl` provides an individual pump fit check; the complete `samples/t-one-tray.stl` is regenerated with the restored outline.

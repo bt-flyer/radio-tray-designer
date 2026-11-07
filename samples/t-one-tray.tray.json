@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "aa0598ea-d661-4390-97cb-0d98f3370d0a",
+  "id": "a1a92dd5-1171-43d6-89be-1cd8a97116ea",
   "name": "T-One radio tray",
-  "updatedAt": "2026-11-07T18:53:12.089Z",
+  "updatedAt": "2026-11-07T19:24:26.209Z",
   "tray": {
     "shape": "trapezoid",
     "length": 310,
@@ -44,7 +44,7 @@
   "grid": 1,
   "items": [
     {
-      "id": "7a2c3896-3d62-4664-b667-64e2c0d79122",
+      "id": "fcb68c99-01d5-45f5-ad4f-b05f5f379d87",
       "kind": "component",
       "label": "UAT mount",
       "x": 261.71495,
@@ -137,7 +137,7 @@
       }
     },
     {
-      "id": "d3886117-d6cc-4b95-9931-9addc3f0b41a",
+      "id": "2846e928-2c0b-40f0-9500-886dd2d8069e",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
       "x": 41.45,
@@ -153,12 +153,17 @@
           "w": 26,
           "h": 36.2
         },
+        "bodyOffset": {
+          "x": -5.375,
+          "y": 0
+        },
+        "bodyOffsetRevision": 1,
         "bodyStatus": "measured",
         "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User specification: component-measurements.json (mm). User measured; excludes nipples",
+          "body": "User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
           "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
@@ -188,15 +193,15 @@
         "physicalFitRevision": 1,
         "mountBossDiameter": 8,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Leave nipple end open and reserve hose bending clearance  User confirmed Ø8 mm mounting bosses; hole centres already fit. Locating ribs removed after interference; screw holes and boss positions remain unchanged."
+        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
         "railHeightRevision": 1,
-        "installationFitRevision": 2,
-        "enabled": false,
+        "installationFitRevision": 3,
+        "enabled": true,
         "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
@@ -214,7 +219,7 @@
             "keepout": 0
           },
           "east": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 15
@@ -235,7 +240,7 @@
       }
     },
     {
-      "id": "7edebc19-3110-40f8-9e7b-d516a7233466",
+      "id": "cf7bd443-afac-40b5-b085-01b26e69eea6",
       "kind": "component",
       "label": "Custom telemetry converter",
       "x": 44.325,
@@ -311,7 +316,7 @@
       }
     },
     {
-      "id": "20c365b9-5532-40dc-b5dd-0110d607fae0",
+      "id": "e03f4215-ed76-4c4b-80fd-9983c0862cc7",
       "kind": "component",
       "label": "KingTech G4 DRM",
       "x": 44.325,
@@ -396,7 +401,7 @@
       }
     },
     {
-      "id": "ec8a23f7-4144-4cc3-840e-c9f7cc0e2670",
+      "id": "9bcce2c8-0b60-4a48-9d71-78433baa35c1",
       "kind": "component",
       "label": "FrSky PGC",
       "x": 258,
@@ -518,7 +523,7 @@
       }
     },
     {
-      "id": "10c0805e-1503-4256-a80e-c4bf71005e45",
+      "id": "a9335af6-b12f-400f-9689-e6ce93946e4d",
       "kind": "component",
       "label": "T-One lighting controller",
       "x": 258,
@@ -622,7 +627,7 @@
       }
     },
     {
-      "id": "764104ae-fe37-460f-92f4-8447ba2705be",
+      "id": "aeaff53a-f9c2-4611-a827-65b8c27ecf6f",
       "kind": "component",
       "label": "FrSky GPS ADV",
       "x": 178.98505,
@@ -697,7 +702,7 @@
       }
     },
     {
-      "id": "80437387-e5d4-464c-b8f6-29f85334e067",
+      "id": "3fe124fc-905b-436f-9d9a-df4ea0a78f4a",
       "kind": "component",
       "label": "FrSky ASS-70",
       "x": 178.98505,
@@ -772,7 +777,7 @@
       }
     },
     {
-      "id": "bf5ee839-ebab-4518-a9a8-09fbe4382b1a",
+      "id": "476e3869-71c6-4dc2-9e4d-e2540387531f",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 120.78505000000001,
@@ -822,7 +827,7 @@
       }
     },
     {
-      "id": "bf7b839e-570c-421d-aa84-639e86072c1d",
+      "id": "fdd946c3-a77d-4016-8ecb-0b67ed458311",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 120.78505000000001,
@@ -872,10 +877,10 @@
       }
     },
     {
-      "id": "268f4503-a53f-4e6a-a065-5c79ef268f7c",
+      "id": "3df95daa-f793-4893-9e49-d527f1a98be8",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 78,
+      "x": 82.2,
       "y": 87.5,
       "rotation": -90,
       "component": null,
@@ -922,7 +927,7 @@
       }
     },
     {
-      "id": "553b10aa-501e-4ecf-9e7c-e3cdb40b79b7",
+      "id": "a4765f20-f4ce-4fd7-8168-26e39f4e9c24",
       "kind": "component",
       "label": "FrSky RB-35S",
       "x": 145.78505,
@@ -1044,7 +1049,7 @@
       }
     },
     {
-      "id": "51e0f1a4-2aab-4354-8cc0-34a34e84df56",
+      "id": "8bce3f8f-8dd8-494c-87a8-d9df94afeeb7",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 213,

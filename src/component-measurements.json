@@ -60,7 +60,21 @@
         "projectionLength": null
       },
       "access": "Leave nipple end open and reserve hose bending clearance",
-      "holder": "Screw-only retention; locating ribs removed because they foul the pump. Boss cutouts and screw centres confirmed aligned."
+      "holder": "Four-side 2.5 mm locating ribs with boss reliefs; body offset 5.375 mm rearward from confirmed hole-pattern midpoint",
+      "bodyOffset": {
+        "x": -5.375,
+        "y": 0,
+        "front": "Nipple end, +X",
+        "frontEdgeToHoleCentre": 7,
+        "rearEdgeToHoleCentre": 17.75,
+        "impliedLongitudinalSpacing": 26.25,
+        "retainedFittedSpacing": 26,
+        "resultingEdgeDistances": [
+          7.125,
+          17.875
+        ],
+        "status": "User measured; 0.25 mm discrepancy shared equally to retain existing holes"
+      }
     },
     {
       "id": "telemetry",
