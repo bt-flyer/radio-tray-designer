@@ -116,3 +116,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Replaced the built-in snapshot with the supplied `T-One radio tray copy.tray.json`; retained all placements, rotations, dimensions, offsets, holder settings, servo header and GSU label.
 - Template creation now only creates fresh IDs and document metadata. Regression comparison checks every other field against the approved snapshot.
 - Generated meshes from the upload and new template are identical: one connected solid, 10,754 triangles. All 71 tests and Pages build pass. Updated complete T-One STL matches the uploaded geometry.
+
+### Light-controller opening width doubled
+
+- Added independent tab `openingWidth` so increasing rib relief does not enlarge reference mounting feet or their footprint checks.
+- Standard light-controller reliefs upgrade 16 → 32 mm once; body, holes and placements remain unchanged. Default T-One snapshot and affected STLs regenerated.
+- All 73 tests pass, including widened CSG gap probes, preserved remaining ribs, connected watertight export and protection of later manual edits. Pages compilation passed.

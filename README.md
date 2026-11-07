@@ -186,3 +186,7 @@ The built-in T-One template moves its adjacent vertical cable opening from X=78 
 ### Approved uploaded default
 
 The built-in T-One default now uses the owner's uploaded `T-One radio tray copy.tray.json` exactly: 10 components, four cable openings and the GSU text label. Opening the template changes only document/object IDs and document metadata; it does not reapply fit or layout transformations to the approved snapshot. Existing personal designs remain separate. The matching complete tray STL is regenerated from that snapshot.
+
+### Wider light-controller rib reliefs
+
+The light-controller mounting-tab openings now use 32 mm width, doubled from the previous 16 mm, plus the existing per-side clearance. The physical tab reference sizes, body, hole centres and placement are unchanged. **Foot opening width** is independently editable in Measurements. Existing standard openings upgrade once on reopening; later manual opening widths are preserved. The built-in T-One default, complete tray STL and light-controller fit-test STL include this change.

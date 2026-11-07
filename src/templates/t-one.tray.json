@@ -565,13 +565,15 @@
             "x": 27.625,
             "y": -10.75,
             "l": 10.75,
-            "w": 16
+            "w": 16,
+            "openingWidth": 32
           },
           {
             "x": -27.625,
             "y": 18.75,
             "l": 10.75,
-            "w": 16
+            "w": 16,
+            "openingWidth": 32
           }
         ],
         "measurementRevision": 1,
@@ -580,7 +582,8 @@
         "lightMountRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges."
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged.",
+        "lightOpeningRevision": 1
       },
       "l": 35,
       "w": 8,

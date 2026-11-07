@@ -139,8 +139,8 @@
         "status": "Existing hole coordinates confirmed by physical fit; do not recenter from updated body dimensions"
       },
       "tabClearance": {
-        "width": 16,
-        "status": "Conservative clearance window inferred from photo; editable, not a measured tab width"
+        "width": 32,
+        "status": "User requested double the previous 16 mm rib opening; physical tab size and screw positions unchanged"
       }
     },
     {

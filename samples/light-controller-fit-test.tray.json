@@ -4,6 +4,11 @@
   "name": "tone revised fit check",
   "updatedAt": "2026-11-07T18:53:12.071Z",
   "tray": {
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    },
     "shape": "rectangle",
     "length": 80,
     "wide": 80,
@@ -27,12 +32,7 @@
         0,
         175
       ]
-    ],
-    "rim": {
-      "enabled": false,
-      "height": 1.5,
-      "wall": 1.5
-    }
+    ]
   },
   "printer": {
     "name": "Bambu H2S",
@@ -86,32 +86,37 @@
             "d": 1.5
           }
         ],
-        "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges.",
-        "measurementRevision": 1,
-        "physicalFitRevision": 1,
-        "lightMountRevision": 1,
-        "mountingPatternPending": false,
         "tabs": [
           {
             "x": 27.625,
             "y": -10.75,
             "l": 10.75,
-            "w": 16
+            "w": 16,
+            "openingWidth": 32
           },
           {
             "x": -27.625,
             "y": 18.75,
             "l": 10.75,
-            "w": 16
+            "w": 16,
+            "openingWidth": 32
           }
         ],
-        "fitSizingRevision": 2
+        "measurementRevision": 1,
+        "physicalFitRevision": 1,
+        "fitSizingRevision": 2,
+        "lightMountRevision": 1,
+        "mountingPatternPending": false,
+        "cutout": null,
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged.",
+        "lightOpeningRevision": 1
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
         "enabled": true,
         "height": 2.5,
         "wall": 2,
@@ -147,9 +152,7 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0,
-        "ribRevision": 1,
-        "railHeightRevision": 1
+        "holeAllowance": 0
       }
     }
   ]
