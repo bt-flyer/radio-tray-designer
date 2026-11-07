@@ -196,3 +196,7 @@ The light-controller mounting-tab openings now use 32 mm width, doubled from the
 The UAT mount now has four 2.5 mm-high locating ribs around its **60 × 29.91702 mm mounting plate**, measured from the supplied STL's bottom face. At default 0.3 mm per-side clearance, the opening is 60.6 × 30.51702 mm; ribs are 2 mm thick. The plate centre is (0, −0.04149 mm) relative to the unchanged 50 × 20 mm screw pattern. The wider, overhanging mount remains a reference object and is never merged into tray STL.
 
 Adjust or disable the ribs under the selected UAT's **Locating outline** controls. Existing UAT instances receive the outline once when reopened; later manual holder edits persist. The published T-One default and complete tray STL include it. Use `samples/uat-outline-fit-test.stl` to check the fit against your existing mount before printing a full tray.
+
+### UAT overhang override
+
+The separately installed UAT mount's reference footprint may overhang the tray. This produces a warning, rather than the blocking “footprint extends beyond the tray” error. Review and acknowledge the clearance warnings in the STL dialog to export. Printed locating ribs and mounting holes are checked independently and must stay supported by the tray; disable the locating outline if only the original bolt-on mount should overhang.

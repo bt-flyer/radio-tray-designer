@@ -82,7 +82,11 @@ export function validateDesign(d:Design):Issue[]{const issues:Issue[]=[];const p
  for(const region of cutRegions){if(region.some(v=>!inside(v,round))||region.some((v,j)=>round.some((p,k)=>intersects(v,region[(j+1)%region.length],p,round[(k+1)%round.length]))))add('error',`${i.label}: mounting hole, cutout or strap slot extends beyond the tray.`,i.id);else if(Math.min(...region.map(v=>Math.min(...round.map((p,j)=>distanceSegment(v,p,round[(j+1)%round.length])))))<2)add('warning',`${i.label}: an opening leaves less than 2 mm to the tray edge.`,i.id);}
  const fp=footprint(i);let outside=fp.some(v=>!inside(v,round));for(let j=0;j<fp.length;j++){if(round.some((v,k)=>intersects(fp[j],fp[(j+1)%fp.length],v,round[(k+1)%round.length])))outside=true;}
  if(!outside&&i.kind==='component'&&trayRim(d).enabled&&Math.min(...fp.map(v=>Math.min(...round.map((p,j)=>distanceSegment(v,p,round[(j+1)%round.length])))))<trayRim(d).wall)add('warning',`${i.label}: footprint overlaps the outer tray rim.`,i.id);
- if(outside)add('error',`${i.label}: footprint extends beyond the tray.`,i.id);
+ if(c?.category==='uat'){
+  const offTray=(region:Point[])=>region.some(v=>!inside(v,round))||region.some((v,j)=>round.some((p,k)=>intersects(v,region[(j+1)%region.length],p,round[(k+1)%round.length])));
+  if(offTray(footprint(i,false)))add('warning',`${i.label}: reference mount overhangs the tray; review clearance to the aircraft before exporting.`,i.id);
+  if(i.holder.enabled){const [l,w]=holderBodySize(i),extra=i.holder.clearance+i.holder.wall,outline=rectangle(l+2*extra,w+2*extra,holderOffset(i)).map(p=>transform(p,i));if(offTray(outline))add('error',`${i.label}: printed locating ribs extend beyond the tray. Move the mount or disable its locating outline.`,i.id);}
+ }else if(outside)add('error',`${i.label}: footprint extends beyond the tray.`,i.id);
  if(i.kind==='slot'||i.kind==='hole'){const dist=Math.min(...fp.map(v=>Math.min(...round.map((p,j)=>distanceSegment(v,p,round[(j+1)%round.length])))));if(dist<2)add('warning',`${i.label}: less than 2 mm of material to the tray edge.`,i.id);}
  if(c&&i.holder.enabled)for(const s of sides){const side=i.holder.sides[s],len=holderBodySize(i)[s==='north'||s==='south'?0:1];if(side.opening>0&&side.opening+2*Math.abs(side.offset)>len+2*i.holder.clearance)add('error',`${i.label}: ${s} opening exceeds its wall.`,i.id);}
  }

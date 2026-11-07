@@ -129,3 +129,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Added four integrated 2.5 mm ribs with 0.3 mm per-side clearance; preview and export use mounting-plate dimensions while retaining the full mount's overhang as a reference/check footprint.
 - All 76 tests pass, including comparison against source STL, rotated outlines, unchanged screw centres, connected watertight exports, reference exclusion and one-time saved-design updates.
 - Updated the approved default with only the UAT outline and added the UAT-only fit-test STL. All other uploaded placements and settings remain unchanged.
+
+### UAT reference-overhang export exception
+
+- Changed only reference UAT overhang from a blocking footprint error to an acknowledgeable warning.
+- Kept independent errors for out-of-tray printed locating ribs and actual mounting holes. No geometry changes.
+- All 78 tests pass, including left/right rotated overhang with connected printable geometry, disabled-outline export and retained hole/rib boundary errors. Pages build passed.
