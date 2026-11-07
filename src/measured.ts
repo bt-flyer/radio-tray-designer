@@ -53,3 +53,11 @@ export function applyConfirmedHolePattern(c:ComponentDef):ComponentDef{
  return next;
 }
 export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyConfirmedHolePattern(applyComponentUpdates(c));}
+
+export function servoHeader():ComponentDef{return {
+ id:'servo3',name:'3-pin servo header',variant:'Generic 1 × 3 male header · 2.54 mm pitch + printed flange',category:'connector',
+ body:{l:7.62,w:2.54,h:2.54},bodyStatus:'designed',holesStatus:'designed',clearanceStatus:'designed',confirmed:true,
+ sources:{body:'Generic 2.54 mm-pitch single-row strip; 3 × 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf',holes:'Designed flange: two holes at X ±8.11 mm, Y 0; Ø1.5 mm component pilots.',clearance:'Designed 0.3 mm per side around generic header insulator; adjust for your actual housing.'},
+ holes:[{x:-8.11,y:0,d:1.5},{x:8.11,y:0,d:1.5}],cutout:{l:8.22,w:3.14,r:.2,flangeL:24.22,flangeW:11.14,printedFlange:true,flangeThickness:3},
+ note:'Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 × 2.54 × 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified.'
+};}

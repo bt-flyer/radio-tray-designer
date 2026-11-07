@@ -83,3 +83,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Font contours are shared between SVG and printable CSG. Letter counters are preserved with even-odd filling; all letters fuse into the tray. Reference visibility does not hide printable labels.
 - All 56 tests pass, including rotated O counters, B/8/dotted glyph connectivity, watertight STL auditing, browser save/reopen geometry equality and invalid-text checks. Pages build passed.
 - Browser QA: added SMOKE PUMP, changed letter height to 8 mm and verified the resulting connected raised lettering in 3D without console errors.
+
+### Three-pin servo header
+
+- Added a designed generic 1×3, 2.54 mm-pitch header adapter to the connector library, with editable integrated flange, through-cutout and two component pilot holes.
+- Reference model shows three square pins; pins remain excluded from exported solids.
+- All 58 tests passed, including rotated watertight connected flange geometry, a clear centre opening, correct pin spacing, schema roundtrip and export exclusion. Pages build passed.

@@ -55,6 +55,9 @@ export function componentModel(c:ComponentDef):THREE.Group {
   label('NFC',l*.23,0,h+.15,l*.35,w*.3);box(3,6,3,0xe9e8de,l/2+1,0,h/2);break;
  case 'telemetry':
   label('TELEMETRY',0,0,h+.12,l*.8,w*.18,'#354e56');box(3,9,4,0xd8d7cb,l/2+1,0,h*.55);box(3,9,4,0xd8d7cb,-l/2-1,0,h*.55);break;
+ case 'servo3':
+  for(const x of [-2.54,0,2.54]){const pin=box(.64,.64,6,colors.gold,x,0,h+3,.04);pin.name='Servo header pin';}
+  break;
  case 'xt30':case 'xt60':{
   // Replace the generic housing with a yellow keyed shell and two socket mouths.
   const first=g.children[0] as THREE.Mesh;first.material=new THREE.MeshStandardMaterial({color:colors.yellow,roughness:.55});
