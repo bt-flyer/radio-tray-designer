@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "913d56f0-d9f8-4431-8521-03e53e240453",
+  "name": "telemetry revised fit check",
+  "updatedAt": "2026-11-07T18:53:12.050Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 60,
+    "wide": 48,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ],
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    }
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "3fb760ce-7248-4ed8-a7d9-6cc756c7119a",
+      "kind": "component",
+      "label": "Custom telemetry converter",
+      "x": 30,
+      "y": 24,
+      "rotation": 0,
+      "component": {
+        "id": "telemetry",
+        "name": "Custom telemetry converter",
+        "variant": "Custom",
+        "category": "electronics",
+        "body": {
+          "l": 45.4,
+          "w": 32.75,
+          "h": 14.75
+        },
+        "bodyStatus": "designed",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged.",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).  Low locating ribs all the way around; physical case fit confirmed by user Connector inclusion in measured body size is unconfirmed. Fit allowance update: User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged. Mounting-hole centres and placement preserved.",
+        "measurementRevision": 1,
+        "fitSizingRevision": 2
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "ribRevision": 1,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}

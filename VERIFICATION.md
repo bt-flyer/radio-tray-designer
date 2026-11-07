@@ -96,3 +96,10 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Grommets have continuous clear bores, bottom retaining lips, rim-aware grip depths and wider top lips; geometry is packed flat within usable printer volume.
 - All 62 tests pass, including watertight geometry, two-part output, open bores, automatic grip updates, unchanged main-tray geometry, persistence and invalid-fit/bed checks. Pages compilation passed.
 - Browser QA generated all four T-One cable inserts in the separate export preview. Generated sample STL contains four distinct grommets at 6.7 mm overall height; an individual first-opening fit-test STL is provided.
+
+### Further user physical fit feedback
+
+- RB35S fit envelope 100 mm, telemetry total inner length 46 mm including clearance, light-controller measured body 52.5 × 52.5 × 16.5 mm.
+- Retained all successful mounting centres. Removed pump locating ribs for screw-only retention. Added PGC's missing pair of ribs plus mounting-foot openings.
+- Added one-time fit and holder migration markers, with regression coverage for old snapshots, positions/rotations, hole preservation and subsequent manual edits.
+- All 68 tests pass, including exact cavity probes, four PGC rails and foot clearances, light-controller dimensions, pump rib removal, watertight STL and updated template connectivity. Revised component fit coupons and complete T-One STL generated successfully.

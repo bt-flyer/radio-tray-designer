@@ -154,12 +154,12 @@
           "h": 36.2
         },
         "bodyStatus": "measured",
-        "holesStatus": "estimated",
+        "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
           "body": "User specification: component-measurements.json (mm). User measured; excludes nipples",
-          "holes": "User specification: component-measurements.json (mm). User measured; centring on case provisional.",
+          "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
         "holes": [
@@ -188,14 +188,14 @@
         "physicalFitRevision": 1,
         "mountBossDiameter": 8,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Leave nipple end open and reserve hose bending clearance  Hole pattern centring remains provisional. User confirmed Ø8 mm mounting bosses; hole centres already fit. Walls are relieved around bosses."
+        "note": "User specification: component-measurements.json (mm). Leave nipple end open and reserve hose bending clearance  User confirmed Ø8 mm mounting bosses; hole centres already fit. Locating ribs removed after interference; screw holes and boss positions remain unchanged."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
         "railHeightRevision": 1,
-        "enabled": true,
+        "enabled": false,
         "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
@@ -230,7 +230,8 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0
+        "holeAllowance": 0,
+        "installationFitRevision": 2
       }
     },
     {
@@ -246,23 +247,24 @@
         "variant": "Custom",
         "category": "electronics",
         "body": {
-          "l": 45.25,
+          "l": 45.4,
           "w": 32.75,
           "h": 14.75
         },
-        "bodyStatus": "measured",
+        "bodyStatus": "designed",
         "holesStatus": "unknown",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User specification: component-measurements.json (mm). User measured",
+          "body": "User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged.",
           "holes": "",
           "clearance": ""
         },
         "holes": [],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm).  Three low locating walls; one 32.75 mm end fully open Connector inclusion in measured body size is unconfirmed."
+        "note": "User specification: component-measurements.json (mm).  Three low locating walls; one 32.75 mm end fully open Connector inclusion in measured body size is unconfirmed. Fit allowance update: User requested a total 46 mm inner opening including 0.3 mm clearance per side: fit envelope length 45.4 mm. Width and height unchanged. Mounting-hole centres and placement preserved.",
+        "fitSizingRevision": 2
       },
       "l": 35,
       "w": 8,
@@ -411,12 +413,12 @@
           "h": 18
         },
         "bodyStatus": "measured",
-        "holesStatus": "estimated",
+        "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
           "body": "User specification: component-measurements.json (mm). Published dimensions; user confirmed length excludes tabs",
-          "holes": "User specification: component-measurements.json (mm). User measured; centring on case provisional.",
+          "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
         "holes": [
@@ -443,7 +445,33 @@
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Hole pattern centring remains provisional."
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 × 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable.",
+        "tabs": [
+          {
+            "x": -36.5,
+            "y": -16.5,
+            "l": 8,
+            "w": 8
+          },
+          {
+            "x": -36.5,
+            "y": 16.5,
+            "l": 8,
+            "w": 8
+          },
+          {
+            "x": 36.5,
+            "y": -16.5,
+            "l": 8,
+            "w": 8
+          },
+          {
+            "x": 36.5,
+            "y": 16.5,
+            "l": 8,
+            "w": 8
+          }
+        ]
       },
       "l": 35,
       "w": 8,
@@ -468,13 +496,13 @@
             "keepout": 0
           },
           "east": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 0
           },
           "west": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 0
@@ -485,7 +513,8 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0
+        "holeAllowance": 0,
+        "installationFitRevision": 2
       }
     },
     {
@@ -501,17 +530,17 @@
         "variant": "T-One product 27",
         "category": "electronics",
         "body": {
-          "l": 44.5,
-          "w": 44.5,
-          "h": 8.5
+          "l": 52.5,
+          "w": 52.5,
+          "h": 16.5
         },
         "bodyStatus": "measured",
         "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User remeasured case: 44.5 × 44.5 × 8.5 mm.",
-          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected.",
+          "body": "User remeasured after physical fit: 52.5 × 52.5 × 16.5 mm. Existing mounting holes line up and remain unchanged.",
+          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
           "clearance": ""
         },
         "holes": [
@@ -545,7 +574,8 @@
         "lightMountRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "44.5 × 44.5 × 8.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size."
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges.",
+        "fitSizingRevision": 2
       },
       "l": 35,
       "w": 8,
@@ -904,17 +934,17 @@
         "variant": "RB-35S",
         "category": "electronics",
         "body": {
-          "l": 99,
+          "l": 100,
           "w": 73.4,
           "h": 18.7
         },
-        "bodyStatus": "measured",
-        "holesStatus": "estimated",
+        "bodyStatus": "designed",
+        "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User specification: component-measurements.json (mm). Case length 99 mm confirmed by physical fit test; width and height retained from published dimensions.",
-          "holes": "User specification: component-measurements.json (mm). Provisional image estimates; user accepted for planning, not physically verified; centring on case provisional.",
+          "body": "User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged.",
+          "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
         "holes": [
@@ -967,7 +997,8 @@
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm).   Hole pattern centring remains provisional. Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing."
+        "note": "User specification: component-measurements.json (mm).   Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing. Fit allowance update: User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged. Mounting-hole centres and placement preserved.",
+        "fitSizingRevision": 2
       },
       "l": 35,
       "w": 8,

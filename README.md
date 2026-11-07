@@ -166,3 +166,11 @@ In a cable opening's **TPU wire grommet** properties, adjust sleeve wall, fit cl
 Defaults: 1.2 mm sleeve, 0.2 mm clearance per side, 2.3 mm top overhang, 0.8 mm retaining overhang, 1 mm lip thickness and 0.2 mm grip allowance. Empty/too-small bores, insufficient top-lip reach and parts or batches exceeding the printer volume block TPU export. Grommet settings save in editable JSON and browser/local saves. Aircraft screw holes are not lined.
 
 Ready-to-print starting samples: `samples/t-one-tpu-grommets.stl` contains the four inserts for the built-in T-One layout; `samples/tpu-grommet-fit-test.stl` contains just its first 50 × 6 mm opening's insert. Both use the defaults above and a 3 mm tray with a 1.5 mm cable rim.
+
+### Latest physical fit corrections
+
+The RB35S uses a 100 mm length envelope (100.6 mm inner holder length at 0.3 mm per-side clearance). Telemetry uses a **46 mm total inner opening including clearance**: its designed fit envelope is 45.4 mm, plus 0.3 mm on each side; the original measured 45.25 mm body remains recorded in the measurement specification. The light controller body is remeasured as 52.5 × 52.5 × 16.5 mm, giving a 53.1 × 53.1 mm inner holder at default clearance. All confirmed screw centres and object placements are preserved.
+
+The smoke pump is retained by screws with no locating ribs, because the ribs interfered while the holes and boss clearances lined up. PGC has four-side 2.5 mm locating ribs, with conservative 8 mm foot windows around its confirmed mounting centres. Fit windows remain adjustable. These changes apply once to the corresponding older stock definitions and holders when reopened; subsequent manual sizing and holder edits are preserved. The published T-One template includes the corrections.
+
+Revised print checks are in `samples/rb35s-fit-test.stl`, `samples/telemetry-fit-test.stl`, `samples/pgc-fit-test.stl` and `samples/light-controller-fit-test.stl`. `samples/t-one-tray.stl` is the complete updated T-One tray. Regenerate them using `node --import tsx scripts/generate-fit-checks.ts`. Check the separate fit pieces before reprinting the full tray.

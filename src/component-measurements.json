@@ -28,6 +28,10 @@
         "spacingAcrossWidth": 48,
         "status": "Mounting-hole centres confirmed by user physical fit test; original hardware diameter retained",
         "patternCentring": "Confirmed by physical fit"
+      },
+      "fitEnvelope": {
+        "length": 100,
+        "status": "User requested additional fit allowance after tight physical print; mounting centres unchanged"
       }
     },
     {
@@ -55,7 +59,8 @@
         "centreAboveMountingSurface": 18,
         "projectionLength": null
       },
-      "access": "Leave nipple end open and reserve hose bending clearance"
+      "access": "Leave nipple end open and reserve hose bending clearance",
+      "holder": "Screw-only retention; locating ribs removed because they foul the pump. Boss cutouts and screw centres confirmed aligned."
     },
     {
       "id": "telemetry",
@@ -69,10 +74,15 @@
       "retention": "Double-sided tape",
       "holder": "Low locating ribs all the way around; physical case fit confirmed by user",
       "internalFootprint": {
-        "length": 45.85,
+        "length": 46,
         "width": 33.35
       },
-      "connectorInclusionInBodyMeasurement": "Not confirmed"
+      "connectorInclusionInBodyMeasurement": "Not confirmed",
+      "fitEnvelope": {
+        "length": 45.4,
+        "innerLengthWithDefaultClearance": 46,
+        "status": "User requested final opening 46 mm INCLUDING 0.3 mm per-side clearance; nominal measured body remains 45.25 mm"
+      }
     },
     {
       "id": "gsu",
@@ -97,10 +107,10 @@
       "name": "T-One lighting controller",
       "productUrl": "http://m.t-onemodel.com/pd.jsp?pid=27",
       "body": {
-        "length": 44.5,
-        "width": 44.5,
-        "height": 8.5,
-        "status": "User remeasured after physical fit failure"
+        "length": 52.5,
+        "width": 52.5,
+        "height": 16.5,
+        "status": "User remeasured after print fit failure; existing mounting holes confirmed aligned and unchanged"
       },
       "retention": "Screws",
       "holder": "Low locating ribs around the case, with tab openings once measured",
@@ -112,7 +122,7 @@
         "verticalCentreSeparation": 37.5,
         "upperRightDownFromTop": 7.5,
         "lowerLeftDownFromTop": 45,
-        "status": "User remeasured offsets; 60 mm horizontal spacing centred on case. Printed pilot diameter 1.5 mm."
+        "status": "Existing hole coordinates confirmed by physical fit; do not recenter from updated body dimensions"
       },
       "tabClearance": {
         "width": 16,
@@ -137,7 +147,8 @@
         "patternCentring": "Confirmed by physical fit"
       },
       "retention": "Screws",
-      "access": "Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused"
+      "access": "Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused",
+      "holder": "Locating ribs on all four sides; 8 mm conservative foot clearance windows around confirmed screw centres"
     },
     {
       "id": "gps",

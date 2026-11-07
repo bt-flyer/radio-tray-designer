@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "id": "44613eee-6d3d-42d2-9440-4ee728779caa",
+  "name": "rb35s revised fit check",
+  "updatedAt": "2026-11-07T18:53:12.002Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 130,
+    "wide": 90,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ],
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    }
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "257989d0-c3bd-4b73-81c1-ee789ff8bb0c",
+      "kind": "component",
+      "label": "FrSky RB-35S",
+      "x": 65,
+      "y": 45,
+      "rotation": 0,
+      "component": {
+        "id": "rb35s",
+        "name": "FrSky RB-35S",
+        "variant": "RB-35S",
+        "category": "electronics",
+        "body": {
+          "l": 100,
+          "w": 73.4,
+          "h": 18.7
+        },
+        "bodyStatus": "designed",
+        "holesStatus": "measured",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged.",
+          "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": -53,
+            "y": 24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": 24,
+            "d": 4
+          }
+        ],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).   Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing. Fit allowance update: User requested 100 mm fit envelope after the 99 mm version remained tight; width and height unchanged. Mounting-hole centres and placement preserved.",
+        "measurementRevision": 1,
+        "tabs": [
+          {
+            "x": -53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": -53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          }
+        ],
+        "fitSizingRevision": 2
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}

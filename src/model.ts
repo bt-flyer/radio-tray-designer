@@ -12,7 +12,7 @@ export const componentSchema=z.object({
  body:z.object({l:size.nullable(),w:size.nullable(),h:size.nullable()}).strict(),bodyStatus:status,holesStatus:status,clearanceStatus:status,
  confirmed:z.boolean(),sources:z.object({body:z.string().max(1000),holes:z.string().max(1000),clearance:z.string().max(1000)}).strict(),
  holes:z.array(holeSchema).max(64),
- tabs:z.array(z.object({x:coord,y:coord,l:size,w:size}).strict()).max(16).optional(),measurementRevision:z.literal(1).optional(),physicalFitRevision:z.literal(1).optional(),lightMountRevision:z.literal(1).optional(),mountBossDiameter:size.nullable().optional(),mountingPatternPending:z.boolean().optional(),connectorRevision:z.literal(1).optional(),
+ tabs:z.array(z.object({x:coord,y:coord,l:size,w:size}).strict()).max(16).optional(),measurementRevision:z.literal(1).optional(),physicalFitRevision:z.literal(1).optional(),fitSizingRevision:z.literal(2).optional(),lightMountRevision:z.literal(1).optional(),mountBossDiameter:size.nullable().optional(),mountingPatternPending:z.boolean().optional(),connectorRevision:z.literal(1).optional(),
  cutout:z.object({l:size.nullable(),w:size.nullable(),r:n.min(0).max(100),flangeL:size.nullable(),flangeW:size.nullable(),printedFlange:z.boolean().optional(),flangeThickness:size.max(20).optional()}).strict().nullable(),
  note:z.string().max(2000)
 }).strict();
@@ -23,7 +23,7 @@ export const itemSchema=z.object({
  grommet:z.object({enabled:z.boolean(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(5),lipHeight:n.min(.4).max(5),axialClearance:n.min(0).max(2)}).strict().optional(),
  text:z.object({value:z.string().max(80),size:n.min(2).max(30),height:n.min(.2).max(5)}).strict().optional(),
  rim:z.object({enabled:z.boolean(),height:size.max(50),wall:size.max(50)}).strict().optional(),component:componentSchema.nullable(),l:size,w:size,diameter:size,
- holder:z.object({ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),
+ holder:z.object({ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),installationFitRevision:z.literal(2).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),
  sides:z.object({north:sideSchema,south:sideSchema,east:sideSchema,west:sideSchema}).strict(),
  strap:z.object({enabled:z.boolean(),width:size,axis:z.enum(['x','y'])}).strict(),holeAllowance:n.min(0).max(5)}).strict()
 }).strict();
