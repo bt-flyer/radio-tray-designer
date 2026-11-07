@@ -182,3 +182,7 @@ The pump retains its proven 26 × 32 mm mounting-hole pattern. Its 51 × 26 mm b
 Four 2.5 mm locating ribs and the Ø8 mm boss reliefs are restored around that offset body. A component's editable **Body centre X/Y offset** moves its case, ribs and connector zones while keeping holes and bosses at the placement origin. SVG, reference models and STL use the same offset. Old pump cradles update once; later manual body-offset and wall edits are retained.
 
 The built-in T-One template moves its adjacent vertical cable opening from X=78 to X=82.2 mm to clear the restored rear rib. Existing saved layouts retain their slot positions and show an overlap warning if adjustment is needed. `samples/smoke-pump-fit-test.stl` provides an individual pump fit check; the complete `samples/t-one-tray.stl` is regenerated with the restored outline.
+
+### Approved uploaded default
+
+The built-in T-One default now uses the owner's uploaded `T-One radio tray copy.tray.json` exactly: 10 components, four cable openings and the GSU text label. Opening the template changes only document/object IDs and document metadata; it does not reapply fit or layout transformations to the approved snapshot. Existing personal designs remain separate. The matching complete tray STL is regenerated from that snapshot.

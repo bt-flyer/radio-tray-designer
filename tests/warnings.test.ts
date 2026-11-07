@@ -16,5 +16,5 @@ test('custom edits to confirmed patterns remain provisional; missing geometry an
  const c=structuredClone(catalog.find(c=>c.id==='rb35s')!);c.holesStatus='estimated';c.holes[0].x+=2;assert.equal(applyConfirmedHolePattern(c).holesStatus,'estimated');
  const d=newDesign();d.items=[makeItem('component',[155,87.5],c)];assert.ok(validateDesign(d).some(i=>i.message.includes('provisional')));
  d.items[0].component!.body.h=null;assert.ok(validateDesign(d).some(i=>i.level==='error'&&i.message.includes('body')));
- assert.ok(validateDesign(tOneTemplate()).some(i=>i.message.includes('outer tray rim')));
+ const edge=tOneTemplate();edge.items.find(i=>i.component?.id==='uat')!.x=261.71495;assert.ok(validateDesign(edge).some(i=>i.message.includes('outer tray rim')));
 });

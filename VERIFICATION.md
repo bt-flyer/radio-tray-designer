@@ -110,3 +110,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Restored four locating ribs and retained boss reliefs. Body offsets now consistently affect footprint checks, wall generation, SVG, references, keepouts and strap slots, while leaving mounting holes fixed.
 - Added regressions for the measurement arithmetic, 0°/37°/180° exports, front/rear rib probes, clear boss windows and one-time migration without moving placements or overwriting later edits. All 71 tests passed.
 - Updated the built-in T-One cable slot X=78 → 82.2 mm to avoid the restored rib. Existing user slot positions are preserved.
+
+### Uploaded T-One copy adopted as default
+
+- Replaced the built-in snapshot with the supplied `T-One radio tray copy.tray.json`; retained all placements, rotations, dimensions, offsets, holder settings, servo header and GSU label.
+- Template creation now only creates fresh IDs and document metadata. Regression comparison checks every other field against the approved snapshot.
+- Generated meshes from the upload and new template are identical: one connected solid, 10,754 triangles. All 71 tests and Pages build pass. Updated complete T-One STL matches the uploaded geometry.
