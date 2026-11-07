@@ -122,3 +122,10 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Added independent tab `openingWidth` so increasing rib relief does not enlarge reference mounting feet or their footprint checks.
 - Standard light-controller reliefs upgrade 16 → 32 mm once; body, holes and placements remain unchanged. Default T-One snapshot and affected STLs regenerated.
 - All 73 tests pass, including widened CSG gap probes, preserved remaining ribs, connected watertight export and protection of later manual edits. Pages compilation passed.
+
+### UAT mounting-plate outline
+
+- Extracted the STL bottom-face boundary: 60 × 29.91702 mm, centred at (0, −0.04149), plate thickness 3 mm. Mesh vertices below 2.5 mm remain within this footprint.
+- Added four integrated 2.5 mm ribs with 0.3 mm per-side clearance; preview and export use mounting-plate dimensions while retaining the full mount's overhang as a reference/check footprint.
+- All 76 tests pass, including comparison against source STL, rotated outlines, unchanged screw centres, connected watertight exports, reference exclusion and one-time saved-design updates.
+- Updated the approved default with only the UAT outline and added the UAT-only fit-test STL. All other uploaded placements and settings remain unchanged.

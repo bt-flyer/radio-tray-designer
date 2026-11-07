@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "2dcfa033-3767-4c09-a223-f1cebebfe1a5",
+  "name": "UAT mounting-plate outline fit test",
+  "updatedAt": "2026-11-07T22:26:35.247Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 100,
+    "wide": 65,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ],
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    }
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "3564eb41-b8a1-4d81-bf0f-a6e5fa729530",
+      "kind": "component",
+      "label": "UAT mount",
+      "x": 50,
+      "y": 32.5,
+      "rotation": 0,
+      "component": {
+        "id": "uat",
+        "name": "UAT mount",
+        "variant": "Your supplied uat.stl",
+        "category": "uat",
+        "body": {
+          "l": 80.62346,
+          "w": 29.91702,
+          "h": 35.34187
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "measured",
+        "confirmed": true,
+        "sources": {
+          "body": "Supplied uat.stl; units assumed millimetres",
+          "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
+          "clearance": "Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
+        },
+        "holes": [
+          {
+            "x": -25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": 10,
+            "d": 3
+          },
+          {
+            "x": -25,
+            "y": 10,
+            "d": 3
+          }
+        ],
+        "cutout": null,
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded. Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only.",
+        "mountingPlate": {
+          "l": 60,
+          "w": 29.91702,
+          "x": 0,
+          "y": -0.04149,
+          "h": 3
+        }
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "uatOutlineRevision": 1
+      }
+    }
+  ]
+}

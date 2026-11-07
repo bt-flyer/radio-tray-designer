@@ -190,3 +190,9 @@ The built-in T-One default now uses the owner's uploaded `T-One radio tray copy.
 ### Wider light-controller rib reliefs
 
 The light-controller mounting-tab openings now use 32 mm width, doubled from the previous 16 mm, plus the existing per-side clearance. The physical tab reference sizes, body, hole centres and placement are unchanged. **Foot opening width** is independently editable in Measurements. Existing standard openings upgrade once on reopening; later manual opening widths are preserved. The built-in T-One default, complete tray STL and light-controller fit-test STL include this change.
+
+### UAT locating outline
+
+The UAT mount now has four 2.5 mm-high locating ribs around its **60 × 29.91702 mm mounting plate**, measured from the supplied STL's bottom face. At default 0.3 mm per-side clearance, the opening is 60.6 × 30.51702 mm; ribs are 2 mm thick. The plate centre is (0, −0.04149 mm) relative to the unchanged 50 × 20 mm screw pattern. The wider, overhanging mount remains a reference object and is never merged into tray STL.
+
+Adjust or disable the ribs under the selected UAT's **Locating outline** controls. Existing UAT instances receive the outline once when reopened; later manual holder edits persist. The published T-One default and complete tray STL include it. Use `samples/uat-outline-fit-test.stl` to check the fit against your existing mount before printing a full tray.

@@ -30,7 +30,7 @@ function applyHolderDefaults(i:Item){const id=i.component?.id;if(i.component?.me
  if(id==='drm'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
  if(id==='pgc'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
 }
-export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component)));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);if(i.component)i.component=widenLightOpenings(applyPGCFeet(i.component));}return d;}
+export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component)));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);applyUATOutline(i);if(i.component)i.component=widenLightOpenings(applyPGCFeet(i.component));}return d;}
 
 export function standardConnector(id:string):ComponentDef{const small=id==='xt30',l=small?10.2:15.5,w=small?5.2:8.1,h=small?12.4:20.2,openingL=l+.6,openingW=w+.6;return {id,name:small?'XT30 standard connector':'XT60 standard connector',variant:small?'Standard AMASS XT30U-F body + printed flange':'Standard AMASS XT60-F body + printed flange',category:'connector',body:{l,w,h},bodyStatus:'published',holesStatus:'designed',clearanceStatus:'designed',confirmed:true,connectorRevision:1,sources:{body:small?'https://www.micros.com.pl/mediaserver/Z_XT30U-F_AMASS_0001.pdf':'https://www.bto.pl/pdf/08031/XT60-F.pdf',holes:'Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.',clearance:'Designed 0.3 mm clearance per side.'},holes:[{x:-openingL/2-4,y:0,d:3.2},{x:openingL/2+4,y:0,d:3.2}],cutout:{l:openingL,w:openingW,r:.5,flangeL:openingL+16,flangeW:openingW+8,printedFlange:true,flangeThickness:3},note:'Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ.'};}
 
@@ -52,7 +52,7 @@ export function applyConfirmedHolePattern(c:ComponentDef):ComponentDef{
  next.note=next.note.replace(' Hole pattern centring remains provisional.','');
  return next;
 }
-export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return widenLightOpenings(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c))))));}
+export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return widenLightOpenings(applyUATPlate(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c)))))));}
 
 export function servoHeader():ComponentDef{return {
  id:'servo3',name:'3-pin servo header',variant:'Generic 1 × 3 male header · 2.54 mm pitch + printed flange',category:'connector',
@@ -76,7 +76,7 @@ export function applyFitSizing(c:ComponentDef):ComponentDef{
  return next;
 }
 
-export function applyHolderMeasurements(i:Item){applyHolderDefaults(i);applyInstallationFit(i);}
+export function applyHolderMeasurements(i:Item){applyHolderDefaults(i);applyInstallationFit(i);applyUATOutline(i);}
 export function applyInstallationFit(i:Item){
  const id=i.component?.id;
  if(id==='sp1'){
@@ -107,4 +107,17 @@ export function widenLightOpenings(c:ComponentDef):ComponentDef{
  for(const t of next.tabs??[])if(t.openingWidth===undefined&&t.w===16)t.openingWidth=32;
  next.note+=' Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged.';
  return next;
+}
+
+export function applyUATPlate(c:ComponentDef):ComponentDef{
+ if(c.category!=='uat'||c.mountingPlate)return c;
+ const next=structuredClone(c);next.mountingPlate={l:60,w:29.91702,x:0,y:-.04149,h:3};
+ next.sources.clearance='Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default.';
+ next.note+=' Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only.';return next;
+}
+export function applyUATOutline(i:Item){
+ if(i.component?.category!=='uat')return;i.component=applyUATPlate(i.component);
+ if(i.holder.uatOutlineRevision===1)return;i.holder.enabled=true;i.holder.height=2.5;
+ for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}
+ i.holder.uatOutlineRevision=1;
 }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "8cd94f36-8306-4609-b8bf-c02d9f598cb9",
+  "id": "8a56fcb5-a259-4834-a129-766a6ba2da65",
   "name": "T-One radio tray",
-  "updatedAt": "2026-11-07T22:13:53.603Z",
+  "updatedAt": "2026-11-07T22:26:35.262Z",
   "tray": {
     "shape": "trapezoid",
     "length": 310,
@@ -44,7 +44,7 @@
   "grid": 1,
   "items": [
     {
-      "id": "9f1751ea-b994-4fb1-9350-d2271166aa39",
+      "id": "bea149ea-f60b-4d84-b4ff-a94ac8e734b4",
       "kind": "component",
       "label": "UAT mount",
       "x": 258,
@@ -60,6 +60,13 @@
           "w": 29.91702,
           "h": 35.34187
         },
+        "mountingPlate": {
+          "l": 60,
+          "w": 29.91702,
+          "x": 0,
+          "y": -0.04149,
+          "h": 3
+        },
         "bodyStatus": "measured",
         "holesStatus": "measured",
         "clearanceStatus": "measured",
@@ -67,7 +74,7 @@
         "sources": {
           "body": "Supplied uat.stl; units assumed millimetres",
           "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
-          "clearance": "Complete original mesh retained as reference"
+          "clearance": "Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
         },
         "holes": [
           {
@@ -92,14 +99,15 @@
           }
         ],
         "cutout": null,
-        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded."
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded. Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
-        "enabled": false,
-        "height": 4,
+        "uatOutlineRevision": 1,
+        "enabled": true,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {
@@ -137,7 +145,7 @@
       }
     },
     {
-      "id": "e5e46928-0dd0-41d0-8e8d-ce215f5c36a2",
+      "id": "2c9b6ef2-f491-4da1-839d-86c7f5f41a00",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
       "x": 36.150000000000006,
@@ -240,7 +248,7 @@
       }
     },
     {
-      "id": "d62081c1-2f30-4d60-aecb-e8720a5eaf77",
+      "id": "81f3f4ed-3293-4643-97ee-7a229dbd1d45",
       "kind": "component",
       "label": "Custom telemetry converter",
       "x": 39.650000000000006,
@@ -316,7 +324,7 @@
       }
     },
     {
-      "id": "5921a7b0-afd3-4fd4-abbe-94656b22fb0d",
+      "id": "f5d5b0be-d877-4f0f-8424-3706517a2207",
       "kind": "component",
       "label": "KingTech G4 DRM",
       "x": 36.150000000000006,
@@ -401,7 +409,7 @@
       }
     },
     {
-      "id": "c0ecaa7c-9e85-4a42-a13c-846023e61742",
+      "id": "97bcad64-7e24-45ce-8243-8ddaf855afec",
       "kind": "component",
       "label": "FrSky PGC",
       "x": 264.78505,
@@ -523,7 +531,7 @@
       }
     },
     {
-      "id": "66833ff6-c376-4e1e-ba78-1b4544fa4143",
+      "id": "a531970c-410d-485c-aa46-97d58c14c0cf",
       "kind": "component",
       "label": "T-One lighting controller",
       "x": 264.78505,
@@ -630,7 +638,7 @@
       }
     },
     {
-      "id": "46de2ef4-2102-4f42-9143-1b3596402565",
+      "id": "771dad80-3b72-485e-9f35-3c0b40525f71",
       "kind": "component",
       "label": "FrSky GPS ADV",
       "x": 178.98505,
@@ -705,7 +713,7 @@
       }
     },
     {
-      "id": "98186621-5135-44c2-aeeb-0cb39a106526",
+      "id": "528da6be-7df0-4726-b1d9-be3645485a71",
       "kind": "component",
       "label": "FrSky ASS-70",
       "x": 178.98505,
@@ -780,7 +788,7 @@
       }
     },
     {
-      "id": "5e9b2787-5b51-4223-9199-99c4601385a7",
+      "id": "8fca90d3-33ce-40bd-bcee-d2a9f097bb07",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 120.78505000000001,
@@ -830,7 +838,7 @@
       }
     },
     {
-      "id": "6364f3bd-2851-4490-ad54-a7348bdd84c4",
+      "id": "688586d1-8a57-49bb-abcd-dee02231c3a6",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 120.78505000000001,
@@ -880,7 +888,7 @@
       }
     },
     {
-      "id": "61e961f6-d9ee-45c3-85e3-d3fee9d1df1b",
+      "id": "dbd7430b-93d8-4c2a-82f1-af1a660e1337",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 78,
@@ -930,7 +938,7 @@
       }
     },
     {
-      "id": "f65e3ed1-3f35-4366-867c-4a5b56cbc261",
+      "id": "1a357cd8-079b-4892-8572-7ceabd2147f9",
       "kind": "component",
       "label": "FrSky RB-35S",
       "x": 145.78505,
@@ -1052,7 +1060,7 @@
       }
     },
     {
-      "id": "eea34eba-f52b-45b2-8478-82ad4afb16c3",
+      "id": "440bdd1e-8055-4475-8a1f-b2df5b79a6a6",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 213,
@@ -1102,7 +1110,7 @@
       }
     },
     {
-      "id": "63999ed2-906a-4e39-bdf2-72c8a8e759d7",
+      "id": "7fa13858-846b-426e-af23-77fb401e009d",
       "kind": "component",
       "label": "3-pin servo header",
       "x": 120.78505000000001,
@@ -1193,7 +1201,7 @@
       }
     },
     {
-      "id": "eef1de61-010f-442c-8ff9-b0a9be0d836e",
+      "id": "75a9edf8-e0bd-47fa-9c4a-0fdaded704cb",
       "kind": "label",
       "label": "Text label",
       "x": 138,

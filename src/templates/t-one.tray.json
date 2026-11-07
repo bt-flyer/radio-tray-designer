@@ -67,7 +67,7 @@
         "sources": {
           "body": "Supplied uat.stl; units assumed millimetres",
           "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
-          "clearance": "Complete original mesh retained as reference"
+          "clearance": "Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
         },
         "holes": [
           {
@@ -92,14 +92,21 @@
           }
         ],
         "cutout": null,
-        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded."
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded. Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only.",
+        "mountingPlate": {
+          "l": 60,
+          "w": 29.91702,
+          "x": 0,
+          "y": -0.04149,
+          "h": 3
+        }
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
-        "enabled": false,
-        "height": 4,
+        "enabled": true,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {
@@ -133,7 +140,8 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0
+        "holeAllowance": 0,
+        "uatOutlineRevision": 1
       }
     },
     {
@@ -580,10 +588,10 @@
         "physicalFitRevision": 1,
         "fitSizingRevision": 2,
         "lightMountRevision": 1,
+        "lightOpeningRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged.",
-        "lightOpeningRevision": 1
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged."
       },
       "l": 35,
       "w": 8,
