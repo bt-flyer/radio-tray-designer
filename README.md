@@ -1,0 +1,100 @@
+# Trayworks — Local RC Jet Radio Tray Designer
+
+A local, editable tray-design workshop with a 2D layout editor, a solid 3D preview, filesystem autosaving and binary STL export. No account or cloud hosting is used.
+
+## Start
+
+Double-click **Start Trayworks.command**. It opens the app at **http://127.0.0.1:4173**. Keep its Terminal window open while designing; Control-C stops the server. If macOS opens the launcher as text, open Terminal in this folder and run `npm start`.
+
+Dependencies and a production build are included in this workspace. After copying only the source to another computer, install Node.js 22 LTS or newer, then run `npm ci`, `npm run build`, and `npm start`. Installation needs internet; normal use is offline. The launcher installs missing dependencies and builds when necessary.
+
+The supplied initial tray is a **310 mm long, centred trapezoid with 175 mm and 165 mm ends**, a **5 mm corner radius** and a **3 mm base**. The printer profile is **Bambu H2S, 340 × 320 × 340 mm**, with a 5 mm reserved margin on each bed edge, and PETG. Dimensions, radius, printer settings and clearances are editable. Rounding a tapered corner slightly reduces the maximum bounding width relative to its sharp vertex; nominal end widths describe the unrounded outline.
+
+## Design workflow
+
+1. Create a tray or open a saved design. Rectangles, trapezoids and custom polygons are supported. Use the pen tool to move polygon vertices; the right-hand point list adds, removes and precisely positions them.
+2. Drag components from the library onto the tray, or use each card's **+**. A normal drag moves the selection; Shift selects multiple objects. Hold Alt to bypass snapping. The round handle rotates in 15° steps, or freely with Alt. Coordinates and rotation can also be entered in the inspector.
+3. Configure cradle height, wall thickness and fit clearance. Defaults are 4 mm walls, 2 mm thickness and 0.3 mm clearance **per side**. These are starting fit values, not calibrated PETG tolerances.
+4. Open **Walls & connector access** to omit walls or set opening widths, offsets and keep-out distances. North is local −Y; positive rotation turns clockwise in the top-down editor. Local coordinates rotate with the component. Keep-out areas are visible on selected components and participate in overlap checks.
+5. Add strap slots, measured screw patterns, cable pass-through slots or aircraft mounting holes. Cable pass-throughs cut completely through the base. Existing aircraft supports must provide clearance below it.
+6. Use the 3D view to inspect the actual generated solid. Reference electronics and your supplied UAT mesh can be hidden. They are **never included in the STL**.
+7. Resolve red checks and review amber warnings. Export STL generates a binary mesh in millimetres. STL contains no unit metadata; import as millimetres in your slicer.
+
+**Keyboard:** ⌘S/Ctrl-S save, ⌘Z/Ctrl-Z undo, Shift-⌘Z redo, ⌘D/Ctrl-D duplicate, Delete remove, arrow keys nudge by the snap increment, Shift-arrows nudge 10 mm. Undo history is session-only. Numeric fields commit on blur or Enter.
+
+## Component library
+
+The library contains RB-35S, SP-1, G4 GSU, G4 DRM, your custom telemetry converter, PGC, T-One lighting controller product 27, Remote NFC Panel, GPS ADV, original ASS-70, XT30/XT60 panel connectors, and the bolt-on UAT mount.
+
+Published envelopes are seeded for RB-35S (114.4 × 73.4 × 18.7), PGC (68.6 × 50 × 18), GPS ADV (45 × 20 × 10.4), original ASS-70 (33.29 × 22.26 × 12.55), and Remote NFC Panel (33 × 19 × 6.2), all mm. Source links are stored in each definition. A nominal published envelope is not a verified housing shape or connector-access drawing.
+
+**Still needed:** body dimensions for SP-1, G4 GSU, G4 DRM, telemetry converter and T-One controller; exact XT30/XT60 panel-mount variants, openings, flanges and hole patterns; and any additional screw patterns/connector clearances you want to use. The supplied T-One link is retained but could not be retrieved during implementation. No dimensions were invented. Missing dimensions display a striped layout placeholder and block the affected export.
+
+Click the library card text or select an object and choose **Measurements & mounting pattern**. Enter body L/W/H, hole centre coordinates and diameters, source notes and verification status separately. The diagram explains the coordinate origin. Confirm the exact hardware variant. Panel connectors require a rounded-rectangle cutout, flange envelope and verified screw pattern; other keyed cutout shapes are not supported in v1. You can keep unpublished part dimensions unset and fill them in later.
+
+**Apply measurements** updates only the selected instance, or the current session's library entry when editing the library. **Save library preset** persists it for reuse. Existing designs embed component snapshots and never silently inherit later preset changes.
+
+## Your UAT mount
+
+`public/references/uat.stl` is an unchanged copy of the supplied mesh. Its units are assumed to be millimetres. The mounting face has four **Ø3.0 mm holes at 50 × 20 mm centres**, through a 3 mm plate. The mesh is rigidly rotated so this face lies on the tray. Its hole-pattern centre is the placement origin; its asymmetric footprint is preserved. The original saved mesh bounds are approximately 80.623 × 35.342 × 29.917 mm; oriented on the tray, the envelope is 80.623 × 29.917 mm and 35.342 mm high.
+
+The UAT mount bolts onto the printed tray. Only its four holes are cut into the tray STL. **Diameter allowance** changes the tray's hole diameters without changing the measured source pattern.
+
+## Local files and recovery
+
+- `data/designs/<id>.json`: explicit Save / Save As.
+- `data/designs/<id>.autosave.json`: latest autosave, after one second of inactivity.
+- Adjacent `.bak` files: previous valid saved versions. Writes use a temporary file and atomic rename. A corrupt primary file falls back to its backup.
+- `data/components/<id>.json`: saved reusable component presets.
+
+The Open dialog selects the latest autosave when newer than the explicit save. **Saved version** opens the explicit save instead. New/imported designs receive unique IDs. Design JSON preserves all editable parameters; STL does not. Imports are schema-validated before changing the current document. Save errors remain visible and you can export a JSON backup directly from the browser.
+
+Back up the whole `data` folder or export individual design JSON files. The service binds only to `127.0.0.1` and rejects cross-origin write requests. Set `TRAYWORKS_DATA_DIR` to choose another data folder, or `PORT` to choose another port. Version 1 files declare `schemaVersion: 1`; unsupported schema versions are rejected.
+
+## Fit samples
+
+- `samples/holder-fit-test.stl`: 80 × 50 × 3 mm rounded plate with a 20.6 × 15.6 mm cradle cavity and 4 mm high walls. Three holes at X=60, Y=15/25/35 are Ø3.0/3.2/3.4 mm, respectively.
+- `samples/fit-test-block.stl`: a separate 20 × 15 × 5 mm block for that cavity.
+- `samples/example-tray.stl`: representative 310 mm tapered tray with dimensioned systems, cable slot, aircraft mounting holes and UAT hole pattern. Its layout is illustrative, not a finalized installation.
+- Matching `.tray.json` files can be imported for editing. Sample STLs are also downloadable through the Help dialog.
+
+Print the small fit samples using your intended PETG settings before committing to a tray. Check connector accessibility and printed hole fit on your hardware. This tool does not perform structural, thermal, vibration or wiring analysis; its layout warnings are geometric checks. No stand-off feet, snap clips or split joints are generated in v1.
+
+## Development and verification
+
+- `npm run dev`: local Vite development server through the Node file service.
+- `npm run build`: TypeScript validation and offline production assets.
+- `npm test`: geometry, dimensions, topology, input validation, local saves and recovery checks.
+- `npm run samples`: regenerate the sample STL and JSON files.
+
+Geometry uses Manifold WASM in a background worker. Preview and export share the same mesh. Export checks the Float32 STL surface for closed, consistently oriented triangle edges, positive volume and one connected solid. Reference geometry is kept separate. Builds and automated geometry/storage tests passed; browser checks covered import, editing, autosave/open, 3D rendering, blocked incomplete exports and STL download. An installed desktop slicer was not available here, so slicer and physical print-fit verification remain to be done.
+
+## Imported component measurements (latest update)
+
+The supplied `component-measurements.json` has now been integrated into the component library and existing designs. User-measured dimensions replace the earlier nominal envelopes for SP-1, GSU, telemetry converter, T-One, GPS ADV and ASS-70. PGC now has the supplied 73 × 33 mm screw pattern. T-One uses the two diagonally opposite holes at (−22, −31) and (+22, +31) mm, with the inferred axis assignment and centring explicitly provisional. Hole centring for SP-1 and PGC also remains provisional.
+
+RB-35S now uses a 98 × 73.4 mm case, Ø4 mm holes on 106 × 48 mm centres, and four mounting-foot openings. Case length, hole geometry and foot shape are estimates. Foot projection is inferred as 8.2 mm from the 114.4 mm overall length. Foot widths start at **10 mm**, an adjustable assumption rather than a supplied measurement. Adjust each foot in **Measurements → Mounting feet / wall openings**. Wall clearance is added automatically. The complete feet are shown as reference geometry; their occupied area is included in placement checks. Their displayed 2 mm thickness is illustrative and not exported.
+
+Tape-mounted GPS/telemetry parts now use three low locating walls, ASS-70 has both ends open, PGC has both connector sides open, SP-1 has one end open, and T-One has no surrounding walls. Open single ends are assumed to be local +X and can be reversed through the wall controls. GSU uses an open-ended cradle and strap; its retaining lips and finger notch remain to be designed, as noted in the component record.
+
+Still pending: G4 DRM dimensions, physical Remote NFC Panel measurements (published dimensions remain available), and exact XT30/XT60 panel-mount variants. This section supersedes the original pending-measurements list above. Provisional values trigger review warnings during STL export.
+
+### Centred grid and alignment
+
+The layout grid and ruler zero are now centred on the tray outline. On the 310 × 175/165 mm tray this is the original-coordinate point (155, 87.5) mm. Visible centre lines show both axes. Dragging snaps component centres and mounting-hole centres to the tray axes and to other objects' centres/holes, with orange alignment guides. Hold Alt or turn Snap off to bypass snapping. The inspector and cursor still report original tray coordinates so existing designs retain their positions; ruler labels are relative to the centre. Moving multiple selected objects preserves their relative spacing.
+
+## Alignment, slot resizing and standard connectors
+
+Aligned selected objects now show orange guides to other items' centres, envelope edges and screw-hole centres. They also snap to those positions during dragging. Select a cable slot and drag any of its eight handles to resize it directly. A size label updates live; the opposite edge/corner stays fixed, even after rotation. Snap uses the selected grid increment; Alt bypasses it. Undo restores the whole drag as one operation.
+
+The standard XT30 and XT60 presets now use AMASS XT30U-F (10.2 × 5.2 mm body cross-section, 12.4 mm overall depth) and XT60-F (15.5 × 8.1 mm cross-section, 20.2 mm depth) manufacturer drawings. Sources are retained in the preset. Default clearance is 0.3 mm per side, making openings 10.8 × 5.8 mm and 16.1 × 8.7 mm. Printed flanges are 3 mm high above the tray, with footprints 26.8 × 13.8 mm and 32.1 × 16.7 mm. Each has two Ø3.2 mm screw holes. All dimensions are editable in Measurements. Disable the printed-flange checkbox to use only a tray cutout.
+
+These are adapters around standard female connector bodies, not factory panel-mount variants. The connector needs adhesive or a separate retainer to stay in the clearance opening. Male, capped and other variants can differ. `samples/connector-fit-test.stl` provides both adapters on an 80 × 40 mm test plate; matching JSON is included. Standard presets supersede the earlier empty XT panel-connector entries. Previously dimensioned custom connector definitions are preserved.
+
+## Preview and STL orientation correction
+
+The 2D layout uses screen coordinates (+Y down). Preview and exported STL now convert that to right-handed printer coordinates (X, −Y, Z), reversing triangle winding at the same time to preserve outward faces. This corrects the previous mirrored top-down appearance. Saved layout coordinates are unchanged. The **Top view** button in the 3D preview offers a direct comparison with the 2D editor. Existing STL files retain their old orientation: re-export them from the updated app. Sample STLs have been regenerated. Imported UAT reference geometry retains its original physical handedness and is aligned by its symmetric mounting pattern.
+
+## DRM dimensions added
+
+The G4 DRM preset now uses the supplied drawing: case 58 × 38.4 × 17.1 mm, two holes 64 mm apart along the length, and Ø3 mm holes confirmed by the user. Both short-end cradle walls are omitted to clear the mounting ears. The source drawing is retained at `public/references/kingtech-g4-drm-dimensions.png`. Existing unknown DRM definitions receive this update when opened. Connector access can still be adjusted using the wall/keep-out controls. DRM is no longer awaiting body or hole dimensions.

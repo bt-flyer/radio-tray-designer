@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "0ae1b42e-077d-4026-910e-1c7efd38ad18",
+  "name": "XT30 and XT60 flange fit test",
+  "updatedAt": "2026-11-07T02:25:15.830Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 80,
+    "wide": 40,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "e2a08a8d-1ae6-4132-bbcf-35fe356b690d",
+      "kind": "component",
+      "label": "XT30 standard connector",
+      "x": 23,
+      "y": 20,
+      "rotation": 0,
+      "component": {
+        "id": "xt30",
+        "name": "XT30 standard connector",
+        "variant": "Standard AMASS XT30U-F body + printed flange",
+        "category": "connector",
+        "body": {
+          "l": 10.2,
+          "w": 5.2,
+          "h": 12.4
+        },
+        "bodyStatus": "published",
+        "holesStatus": "designed",
+        "clearanceStatus": "designed",
+        "confirmed": true,
+        "connectorRevision": 1,
+        "sources": {
+          "body": "https://www.micros.com.pl/mediaserver/Z_XT30U-F_AMASS_0001.pdf",
+          "holes": "Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.",
+          "clearance": "Designed 0.3 mm clearance per side."
+        },
+        "holes": [
+          {
+            "x": -9.399999999999999,
+            "y": 0,
+            "d": 3.2
+          },
+          {
+            "x": 9.399999999999999,
+            "y": 0,
+            "d": 3.2
+          }
+        ],
+        "cutout": {
+          "l": 10.799999999999999,
+          "w": 5.8,
+          "r": 0.5,
+          "flangeL": 26.799999999999997,
+          "flangeW": 13.8,
+          "printedFlange": true,
+          "flangeThickness": 3
+        },
+        "note": "Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "446406cc-7a1f-430b-b522-e4cdf5e4cd39",
+      "kind": "component",
+      "label": "XT60 standard connector",
+      "x": 57,
+      "y": 20,
+      "rotation": 0,
+      "component": {
+        "id": "xt60",
+        "name": "XT60 standard connector",
+        "variant": "Standard AMASS XT60-F body + printed flange",
+        "category": "connector",
+        "body": {
+          "l": 15.5,
+          "w": 8.1,
+          "h": 20.2
+        },
+        "bodyStatus": "published",
+        "holesStatus": "designed",
+        "clearanceStatus": "designed",
+        "confirmed": true,
+        "connectorRevision": 1,
+        "sources": {
+          "body": "https://www.bto.pl/pdf/08031/XT60-F.pdf",
+          "holes": "Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.",
+          "clearance": "Designed 0.3 mm clearance per side."
+        },
+        "holes": [
+          {
+            "x": -12.05,
+            "y": 0,
+            "d": 3.2
+          },
+          {
+            "x": 12.05,
+            "y": 0,
+            "d": 3.2
+          }
+        ],
+        "cutout": {
+          "l": 16.1,
+          "w": 8.7,
+          "r": 0.5,
+          "flangeL": 32.1,
+          "flangeW": 16.7,
+          "printedFlange": true,
+          "flangeThickness": 3
+        },
+        "note": "Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}

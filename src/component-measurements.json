@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "units": "mm",
+  "coordinateConvention": "Length is local X; width is local Y. Hole-pattern centring on each case remains provisional unless explicitly measured.",
+  "defaultFit": {
+    "clearancePerSide": 0.3,
+    "status": "Provisional; verify with a printed fit test"
+  },
+  "components": [
+    {
+      "id": "rb35s",
+      "name": "FrSky RB-35S",
+      "overallEnvelope": {
+        "length": 114.4,
+        "width": 73.4,
+        "height": 18.7,
+        "status": "Published; length appears to include tabs"
+      },
+      "caseExcludingTabs": {
+        "length": 98,
+        "width": 73.4,
+        "status": "Image estimate"
+      },
+      "mounting": {
+        "holeCount": 4,
+        "diameter": 4,
+        "spacingAlongLength": 106,
+        "spacingAcrossWidth": 48,
+        "status": "Provisional image estimates; user accepted for planning, not physically verified"
+      }
+    },
+    {
+      "id": "sp1",
+      "name": "FrSky SP-1 smoke pump",
+      "body": {
+        "length": 51,
+        "width": 26,
+        "height": 36.2,
+        "status": "User measured; excludes nipples"
+      },
+      "mounting": {
+        "holeCount": 4,
+        "diameter": 3,
+        "spacingAlongLength": 26,
+        "spacingAcrossWidth": 32,
+        "retention": "Screws",
+        "status": "User measured",
+        "patternCentring": "Provisional"
+      },
+      "mountingSurface": "Tabs and housing bottom share the same plane; height starts at mounting surface; no recess required",
+      "nipples": {
+        "diameter": 4.5,
+        "centreAboveMountingSurface": 18,
+        "projectionLength": null
+      },
+      "access": "Leave nipple end open and reserve hose bending clearance"
+    },
+    {
+      "id": "telemetry",
+      "name": "Custom telemetry converter",
+      "body": {
+        "length": 45.25,
+        "width": 32.75,
+        "height": 14.75,
+        "status": "User measured"
+      },
+      "retention": "Double-sided tape",
+      "holder": "Three low locating walls; one 32.75 mm end fully open",
+      "internalFootprint": {
+        "length": 45.85,
+        "width": 33.35
+      },
+      "connectorInclusionInBodyMeasurement": "Not confirmed"
+    },
+    {
+      "id": "gsu",
+      "name": "KingTech G4 GSU",
+      "body": {
+        "length": 85,
+        "width": 52,
+        "height": 10,
+        "status": "User measured"
+      },
+      "connectorEdge": "52 mm end",
+      "holder": "Slide-in along length; two side rails with retaining lips, opposite-end stop, finger notch and Velcro retaining strap at open connector end",
+      "internalFootprint": {
+        "length": 85.6,
+        "width": 52.6
+      },
+      "access": "Screen exposed; cable service loop for removal while connected",
+      "fitStatus": "Provisional; rail lip dimensions and strap geometry still to be designed"
+    },
+    {
+      "id": "tone",
+      "name": "T-One lighting controller",
+      "productUrl": "http://m.t-onemodel.com/pd.jsp?pid=27",
+      "body": {
+        "length": 52.35,
+        "width": 52.35,
+        "height": 16,
+        "status": "User measured; excludes mounting tabs"
+      },
+      "mounting": {
+        "holeCount": 2,
+        "diameter": 4,
+        "horizontalCentreSeparation": 44,
+        "verticalCentreSeparation": 62,
+        "arrangement": "Diagonally opposite, matching photo",
+        "status": "User measured separations; axis assignment inferred from photo",
+        "patternCentring": "Provisional"
+      },
+      "retention": "Screws",
+      "holder": "Flat mounting area; no surrounding walls",
+      "access": "Wiring access on all four sides"
+    },
+    {
+      "id": "pgc",
+      "name": "FrSky PGC",
+      "body": {
+        "length": 68.6,
+        "width": 50,
+        "height": 18,
+        "status": "Published dimensions; user confirmed length excludes tabs"
+      },
+      "mounting": {
+        "holeCount": 4,
+        "diameter": 2,
+        "spacingAlongLength": 73,
+        "spacingAcrossWidth": 33,
+        "status": "User measured",
+        "patternCentring": "Provisional"
+      },
+      "retention": "Screws",
+      "access": "Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused"
+    },
+    {
+      "id": "gps",
+      "name": "FrSky GPS ADV",
+      "body": {
+        "length": 35,
+        "width": 26,
+        "height": 8.5,
+        "status": "User measured; replaces published envelope for this unit"
+      },
+      "retention": "Double-sided tape",
+      "holder": "Three low locating walls; 26 mm connector end open",
+      "internalFootprint": {
+        "length": 35.6,
+        "width": 26.6
+      },
+      "access": "Antenna top face exposed"
+    },
+    {
+      "id": "airspeed",
+      "name": "FrSky ASS-70 original",
+      "body": {
+        "length": 35,
+        "width": 23,
+        "height": 12,
+        "status": "User measured"
+      },
+      "retention": "Double-sided tape",
+      "holder": "Locating rails along both 35 mm sides; both 23 mm ends open",
+      "internalFootprint": {
+        "length": 35.6,
+        "width": 23.6
+      }
+    },
+    {
+      "id": "drm",
+      "name": "KingTech G4 DRM",
+      "body": {
+        "length": 58,
+        "width": 38.4,
+        "height": 17.1,
+        "status": "User-supplied dimensioned drawing"
+      },
+      "mounting": {
+        "holeCount": 2,
+        "diameter": 3,
+        "horizontalCentreSeparation": 64,
+        "verticalCentreSeparation": 0,
+        "status": "Centres from drawing; \u00d83 mm confirmed by user"
+      },
+      "holder": "Locating rails along long sides; both mounting-ear ends open",
+      "access": "Check connector clearances against your DRM."
+    }
+  ],
+  "pending": [
+    "Remote NFC Panel measurements",
+    "Exact XT30 panel-mount variant and drawing",
+    "Exact XT60 panel-mount variant and drawing"
+  ],
+  "integrationStatus": "Saved specification only. Application source, reusable app presets and existing designs have not been modified by this side conversation."
+}

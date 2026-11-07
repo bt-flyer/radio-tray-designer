@@ -1,0 +1,818 @@
+{
+  "schemaVersion": 1,
+  "id": "b201e6d9-091e-4593-9ab3-bf621070ada4",
+  "name": "Example rounded jet tray",
+  "updatedAt": "2026-11-07T02:32:54.267Z",
+  "tray": {
+    "shape": "trapezoid",
+    "length": 310,
+    "wide": 175,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 5,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "c27efdb9-c928-4a35-80c7-85ad7de5ce2b",
+      "kind": "component",
+      "label": "FrSky RB-35S",
+      "x": 78,
+      "y": 75,
+      "rotation": 0,
+      "component": {
+        "id": "rb35s",
+        "name": "FrSky RB-35S",
+        "variant": "RB-35S",
+        "category": "electronics",
+        "body": {
+          "l": 98,
+          "w": 73.4,
+          "h": 18.7
+        },
+        "bodyStatus": "estimated",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). Case length estimated from image; height from published envelope.",
+          "holes": "User specification: component-measurements.json (mm). Provisional image estimates; user accepted for planning, not physically verified; centring on case provisional.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": -53,
+            "y": 24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": 24,
+            "d": 4
+          }
+        ],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).   Hole pattern centring remains provisional. Four tab openings assumed 10 mm wide, editable below. Tab projection 8.2 mm inferred from overall 114.4 mm length. Check actual foot shape before printing.",
+        "measurementRevision": 1,
+        "tabs": [
+          {
+            "x": -53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": -53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          }
+        ]
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "eeb6c240-2b9d-4c82-94cd-1b4aed6a3d85",
+      "kind": "component",
+      "label": "FrSky PGC",
+      "x": 200,
+      "y": 50,
+      "rotation": 0,
+      "component": {
+        "id": "pgc",
+        "name": "FrSky PGC",
+        "variant": "Pilot Gear Controller",
+        "category": "electronics",
+        "body": {
+          "l": 68.6,
+          "w": 50,
+          "h": 18
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). Published dimensions; user confirmed length excludes tabs",
+          "holes": "User specification: component-measurements.json (mm). User measured; centring on case provisional.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -36.5,
+            "y": -16.5,
+            "d": 2
+          },
+          {
+            "x": -36.5,
+            "y": 16.5,
+            "d": 2
+          },
+          {
+            "x": 36.5,
+            "y": -16.5,
+            "d": 2
+          },
+          {
+            "x": 36.5,
+            "y": 16.5,
+            "d": 2
+          }
+        ],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Hole pattern centring remains provisional.",
+        "measurementRevision": 1
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "6d7c1e6d-6f6e-4f09-87f9-45a1171e2550",
+      "kind": "component",
+      "label": "FrSky GPS ADV",
+      "x": 270,
+      "y": 50,
+      "rotation": 0,
+      "component": {
+        "id": "gps",
+        "name": "FrSky GPS ADV",
+        "variant": "GPS ADV",
+        "category": "electronics",
+        "body": {
+          "l": 35,
+          "w": 26,
+          "h": 8.5
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured; replaces published envelope for this unit",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Antenna top face exposed Three low locating walls; 26 mm connector end open",
+        "measurementRevision": 1
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "13406277-7539-4c94-b114-4e26d78c05ce",
+      "kind": "component",
+      "label": "FrSky ASS-70",
+      "x": 275,
+      "y": 95,
+      "rotation": 0,
+      "component": {
+        "id": "airspeed",
+        "name": "FrSky ASS-70",
+        "variant": "ASS-70 original (not ADV)",
+        "category": "electronics",
+        "body": {
+          "l": 35,
+          "w": 23,
+          "h": 12
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).  Locating rails along both 35 mm sides; both 23 mm ends open",
+        "measurementRevision": 1
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "34a6b8c7-cfd6-4bfb-bdf1-650f6ccd42db",
+      "kind": "component",
+      "label": "FrSky Remote NFC Panel",
+      "x": 110,
+      "y": 140,
+      "rotation": 0,
+      "component": {
+        "id": "nfc",
+        "name": "FrSky Remote NFC Panel",
+        "variant": "Remote NFC Panel",
+        "category": "electronics",
+        "body": {
+          "l": 33,
+          "w": 19,
+          "h": 6.2
+        },
+        "bodyStatus": "published",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "https://www.greathobbies.com/manuals/f/frs/frs03071404_manual.pdf",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "Nominal published envelope. Check connector access and holder fit on your hardware."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "bd6694e7-3e8c-4b94-864f-9f6e34a77f51",
+      "kind": "component",
+      "label": "UAT mount",
+      "x": 225,
+      "y": 140,
+      "rotation": 0,
+      "component": {
+        "id": "uat",
+        "name": "UAT mount",
+        "variant": "Your supplied uat.stl",
+        "category": "uat",
+        "body": {
+          "l": 80.62346,
+          "w": 29.91702,
+          "h": 35.34187
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "measured",
+        "confirmed": true,
+        "sources": {
+          "body": "Supplied uat.stl; units assumed millimetres",
+          "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
+          "clearance": "Complete original mesh retained as reference"
+        },
+        "holes": [
+          {
+            "x": -25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": 10,
+            "d": 3
+          },
+          {
+            "x": -25,
+            "y": 10,
+            "d": 3
+          }
+        ],
+        "cutout": null,
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "136719c4-d6d0-4912-9311-dee9011de8ee",
+      "kind": "hole",
+      "label": "Mounting hole",
+      "x": 12,
+      "y": 12,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "808988dc-2be5-4afd-99f9-2128fde192d9",
+      "kind": "hole",
+      "label": "Mounting hole",
+      "x": 12,
+      "y": 163,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "374b6287-b754-4c87-aa87-143836d86eac",
+      "kind": "hole",
+      "label": "Mounting hole",
+      "x": 298,
+      "y": 17,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "fb8c674d-5fda-4ccd-95c9-79cc134f8aec",
+      "kind": "hole",
+      "label": "Mounting hole",
+      "x": 298,
+      "y": 158,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "4d721314-a023-4c43-aa2f-2afe5b742fd2",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 150,
+      "y": 95,
+      "rotation": 90,
+      "component": null,
+      "l": 55,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+data/designs/*
+data/components/*
+!data/**/.gitkeep
+*.tmp
+.DS_Store

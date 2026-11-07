@@ -1,0 +1,20 @@
+import express from 'express';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {Store} from './storage';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const store=new Store(process.env.TRAYWORKS_DATA_DIR??path.join(root,'data'));
+const app=express();const port=Number(process.env.PORT??4173);
+app.use((req,res,next)=>{const host=req.headers.host?.split(':')[0];if(host!=='127.0.0.1'&&host!=='localhost')return res.status(403).json({error:'Local access only'});const origin=req.headers.origin;if(origin&&origin!==`http://127.0.0.1:${port}`&&origin!==`http://localhost:${port}`)return res.status(403).json({error:'Cross-origin access denied'});res.setHeader('X-Content-Type-Options','nosniff');next();});
+app.use(express.json({limit:'4mb'}));
+app.get('/api/health',(_req,res)=>res.json({ok:true,app:'trayworks',version:'1.0.0',dataDirectory:store.root}));
+app.get('/api/designs',async(_req,res,next)=>{try{res.json(await store.listDesigns());}catch(e){next(e);}});
+app.get('/api/designs/:id',async(req,res,next)=>{try{res.json(await store.readDesign(req.params.id,req.query.autosave==='true'));}catch(e){next(e);}});
+app.put('/api/designs/:id',async(req,res,next)=>{try{if(req.body.id!==req.params.id)throw new Error('Document ID mismatch');res.json(await store.saveDesign(req.body,req.query.autosave==='true'));}catch(e){next(e);}});
+app.get('/api/components',async(_req,res,next)=>{try{res.json(await store.components());}catch(e){next(e);}});
+app.post('/api/components',async(req,res,next)=>{try{res.json(await store.saveComponent(req.body));}catch(e){next(e);}});
+app.use('/samples',express.static(path.join(root,'samples'),{index:false,dotfiles:'deny'}));
+app.use('/api',(_req,res)=>res.status(404).json({error:'Unknown API route'}));
+if(process.argv.includes('--dev')){const {createServer}=await import('vite');const vite=await createServer({root,server:{middlewareMode:true},appType:'spa'});app.use(vite.middlewares);}else{app.use(express.static(path.join(root,'dist')));app.get('/{*path}',(_req,res)=>res.sendFile(path.join(root,'dist','index.html')));}
+app.use((e:Error,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{console.error(e.message);res.status((e as NodeJS.ErrnoException).code==='ENOENT'?404:400).json({error:e.message});});
+app.listen(port,'127.0.0.1',()=>console.log(`Trayworks ready at http://127.0.0.1:${port}\nLocal designs: ${store.root}`)).on('error',e=>{console.error(e.message);process.exit(1);});

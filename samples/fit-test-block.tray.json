@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "8bc9a473-00cb-463e-9487-20d33064f814",
+  "name": "20 × 15 mm test block",
+  "updatedAt": "2026-11-07T02:32:54.267Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 20,
+    "wide": 15,
+    "narrow": 165,
+    "thickness": 5,
+    "radius": 0,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "grid": 1,
+  "items": []
+}
