@@ -1,0 +1,19 @@
+import {componentSchema,designSchema,type ComponentDef,type Design} from './model';
+import {applyComponentMeasurements,integrateMeasurements} from './measured';
+export interface SavedRow{id:string;name:string;updatedAt:string;autosave:boolean;recovered:boolean}
+interface RecordValue{key:string;value:unknown;backup?:unknown}
+const validId=(id:string)=>{if(!/^[a-zA-Z0-9_-]{1,80}$/.test(id))throw new Error('Invalid document ID');return id;};
+export class BrowserStore {
+ private db:Promise<IDBDatabase>|null=null;
+ constructor(private factory:IDBFactory=indexedDB,private name='trayworks-v1'){}
+ private open(){return this.db??=new Promise<IDBDatabase>((resolve,reject)=>{const r=this.factory.open(this.name,1);r.onupgradeneeded=()=>r.result.createObjectStore('records',{keyPath:'key'});r.onsuccess=()=>{r.result.onversionchange=()=>{r.result.close();this.db=null;};resolve(r.result);};r.onerror=()=>{this.db=null;reject(r.error??new Error('Browser storage is unavailable'));};r.onblocked=()=>{this.db=null;reject(new Error('Close other Trayworks tabs to update browser storage'));};});}
+ private async all(){const db=await this.open();return new Promise<RecordValue[]>((resolve,reject)=>{const tx=db.transaction('records','readonly'),r=tx.objectStore('records').getAll();tx.oncomplete=()=>resolve(r.result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
+ private async get(key:string){const db=await this.open();return new Promise<RecordValue|undefined>((resolve,reject)=>{const tx=db.transaction('records','readonly'),r=tx.objectStore('records').get(key);tx.oncomplete=()=>resolve(r.result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
+ private async put(key:string,value:unknown){const db=await this.open();return new Promise<void>((resolve,reject)=>{const tx=db.transaction('records','readwrite'),store=tx.objectStore('records'),read=store.get(key);read.onsuccess=()=>store.put({key,value,backup:read.result?.value} satisfies RecordValue);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error??new Error('Could not save in this browser'));tx.onabort=()=>reject(tx.error??new Error('Save was cancelled'));});}
+ async saveDesign(value:unknown,autosave=false){const d=designSchema.parse(value);await this.put(`design:${validId(d.id)}:${autosave?'auto':'saved'}`,d);return d;}
+ async readDesign(id:string,autosave=false):Promise<{design:Design;recovered:boolean}>{const r=await this.get(`design:${validId(id)}:${autosave?'auto':'saved'}`);if(!r)throw new Error('Design not found in this browser');try{return {design:integrateMeasurements(designSchema.parse(r.value)),recovered:false};}catch{return {design:integrateMeasurements(designSchema.parse(r.backup)),recovered:true};}}
+ async listDesigns():Promise<SavedRow[]>{const records=await this.all();const ids=new Set(records.filter(r=>r.key.startsWith('design:')).map(r=>r.key.split(':')[1]));const rows:SavedRow[]=[];for(const id of ids){let saved:Awaited<ReturnType<BrowserStore['readDesign']>>|undefined,auto:typeof saved;try{saved=await this.readDesign(id);}catch{}try{auto=await this.readDesign(id,true);}catch{}const latest=auto&&(!saved||auto.design.updatedAt>saved.design.updatedAt)?auto:saved;if(latest)rows.push({id,name:latest.design.name,updatedAt:latest.design.updatedAt,autosave:latest===auto,recovered:latest.recovered});}return rows.sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));}
+ async saveComponent(value:unknown){const c=componentSchema.parse(value);await this.put(`component:${validId(c.id)}`,c);return c;}
+ async components():Promise<ComponentDef[]>{const records=await this.all(),out:ComponentDef[]=[];for(const r of records.filter(r=>r.key.startsWith('component:'))){try{out.push(applyComponentMeasurements(componentSchema.parse(r.value)));}catch{try{out.push(applyComponentMeasurements(componentSchema.parse(r.backup)));}catch{}}}return out;}
+ async close(){if(this.db)(await this.db).close();this.db=null;}
+}

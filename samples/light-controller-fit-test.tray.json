@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "a9f28f93-b601-4896-8116-7dd0925521a0",
+  "name": "T-One corrected holder fit test",
+  "updatedAt": "2026-11-07T12:32:58.233Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 80,
+    "wide": 70,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "b7731cfc-a37c-4801-9694-bd32541e6218",
+      "kind": "component",
+      "label": "T-One lighting controller",
+      "x": 40,
+      "y": 35,
+      "rotation": 0,
+      "component": {
+        "id": "tone",
+        "name": "T-One lighting controller",
+        "variant": "T-One product 27",
+        "category": "electronics",
+        "body": {
+          "l": 44.5,
+          "w": 44.5,
+          "h": 8.5
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User remeasured case: 44.5 × 44.5 × 8.5 mm.",
+          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": 30,
+            "y": -14.75,
+            "d": 1.5
+          },
+          {
+            "x": -30,
+            "y": 22.75,
+            "d": 1.5
+          }
+        ],
+        "tabs": [
+          {
+            "x": 27.625,
+            "y": -10.75,
+            "l": 10.75,
+            "w": 16
+          },
+          {
+            "x": -27.625,
+            "y": 18.75,
+            "l": 10.75,
+            "w": 16
+          }
+        ],
+        "measurementRevision": 1,
+        "physicalFitRevision": 1,
+        "lightMountRevision": 1,
+        "mountingPatternPending": false,
+        "cutout": null,
+        "note": "44.5 × 44.5 × 8.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}

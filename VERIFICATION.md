@@ -32,3 +32,35 @@ Production build and **29 tests** pass. Preview and STL now share a screen-to-pr
 ## DRM update
 
 The supplied drawing was integrated as a 58 × 38.4 × 17.1 mm body and 64 mm two-hole spacing. User confirmed Ø3 mm holes. Both ear ends are open. All **30 tests** and the production build pass, including DRM geometry and support for explicitly unset hole diameters without inventing values.
+
+## RB-35S print-fit correction — November 7, 2026
+
+Case length corrected from the estimated 98 mm to the user's measured 99 mm. The cavity is 99.6 mm at default clearance. Build and all **32 tests** pass. New geometry checks probe both inside and outside the enlarged cavity, verify the original hole locations, and check that upgrading an existing rotated instance preserves custom holder settings, placement and hole/tab data. Physical fit of the corrected print remains to be checked.
+
+## Physical feedback update
+
+Build and **36 tests** pass. Checks cover 8 mm pump-boss wall clearances with support material retained underneath, continuous sensor ribs preserving the accepted cavity dimensions, 2.5 mm rail migration, and 1.5 mm component pilots while standalone aircraft attachment holes retain their specified diameters. T-One body reset to 44.5 × 44.5 × 8.5 mm; its replacement two-hole geometry is pending measured offsets and export remains blocked for that incomplete pattern. PGC dimensions and hole positions are retained. DRM has not been physically fit-tested.
+
+## Completed light-controller pattern
+
+Build and **38 tests** pass. New tests verify the 60 mm horizontal separation, exact 7.5/45 mm top-edge offsets, upper-right/lower-left diagonal, 1.5 mm pilots, 2.5 mm rails and open rail regions at both mounting tabs. Existing pending instances migrate without changing placement or rotation. Horizontal centring is assumed; tab-clearance widths are conservative estimates from the supplied photo and remain adjustable. Physical fit of this revision remains to be checked.
+
+## Cable-opening rims
+
+Production build and **40 tests** pass. Added default 1.5 mm raised rims with 1.5 mm walls around cable slots. Tests verify a clear through-opening, unchanged opening dimensions, correct wall height/thickness, closed connected geometry after rotation/resizing, legacy-slot defaults, and disabling the rim. Samples were regenerated with the new rims.
+
+## Named-file saving
+
+Production build and **42 tests** pass. Browser verification saved a separately named design and downloaded `example-layout-version-2.tray.json`; the copy had a distinct identity, retained identical component geometry, and preserved the original design/name. Independently named STL download produced `example-print-version-2.stl` without duplicating its extension. The temporary QA copy was archived outside the app's design library.
+
+## Perimeter rim
+
+Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band, raised edge height, unchanged outside bounds, flat central tray surface, connected/watertight geometry on rounded trapezoids and concave custom polygons, and disabling the feature. Supplied tray samples were regenerated. The solid fit-test block keeps its rim disabled.
+
+## GitHub Pages browser build
+
+- Added IndexedDB persistence with separate saved/autosave records, transactional updates, previous-revision recovery and schema validation.
+- 49 automated tests passed, including reopening browser stores, rejecting invalid writes, storage isolation and backup recovery.
+- Both the local build and Pages build passed TypeScript and Vite compilation.
+- Browser QA of the Pages build at its repository subpath: created a tray, added RB-35S, saved, reloaded, reopened and downloaded a printable STL; the worker and WASM loaded without a Node API. Preview screenshot: `pages-preview.jpg`.
+- Public packaging explicitly includes only built frontend assets, bundled references and two sample fit-test STLs. Local user designs and custom component files under `data/` remain ignored.

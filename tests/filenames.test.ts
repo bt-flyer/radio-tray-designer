@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {downloadName} from '../src/filenames';
+test('custom download names retain the requested stem and use exactly one extension',()=>{assert.equal(downloadName('T-1 revision 2','.stl'),'T-1 revision 2.stl');assert.equal(downloadName('T-1.STL','.stl'),'T-1.stl');assert.equal(downloadName('T-1.tray.json','.tray.json'),'T-1.tray.json');assert.equal(downloadName('T-1.stl','.tray.json'),'T-1.tray.json');});
+test('download names remove path separators and provide a valid empty-name fallback',()=>{assert.equal(downloadName('Part/A:final','.stl'),'Part_A_final.stl');assert.equal(downloadName('...','.tray.json'),'radio-tray.tray.json');assert.equal(downloadName('éclairage','.stl'),'éclairage.stl');});

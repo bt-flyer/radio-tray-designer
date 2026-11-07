@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "336343ca-0a6f-47df-96c6-0b034a88f80a",
+  "id": "9b96514b-a7f8-489e-950d-bfbd3256bef3",
   "name": "PETG holder and hole fit test",
-  "updatedAt": "2026-11-07T02:32:54.267Z",
+  "updatedAt": "2026-11-07T15:52:59.682Z",
   "tray": {
     "shape": "rectangle",
     "length": 80,
@@ -37,10 +37,14 @@
     "material": "PETG",
     "margin": 5
   },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
   "grid": 1,
   "items": [
     {
-      "id": "f8dbe7d7-8462-4cea-a142-ebabc772a320",
+      "id": "f91c7422-45b0-440d-b9a4-659d56e6b781",
       "kind": "component",
       "label": "20 × 15 mm fit block",
       "x": 26,
@@ -67,14 +71,15 @@
         },
         "holes": [],
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm).   Hole pattern centring remains provisional. Four tab openings assumed 10 mm wide, editable below. Tab projection 8.2 mm inferred from overall 114.4 mm length. Check actual foot shape before printing."
+        "note": "User specification: component-measurements.json (mm).   Hole pattern centring remains provisional. Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
+        "railHeightRevision": 1,
         "enabled": true,
-        "height": 4,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {
@@ -112,7 +117,7 @@
       }
     },
     {
-      "id": "d41f72fc-cd90-44fc-b065-486baae23f75",
+      "id": "57771e4b-34bb-4fc8-bfa4-c97dee6e67f4",
       "kind": "hole",
       "label": "Mounting hole",
       "x": 60,
@@ -124,7 +129,7 @@
       "diameter": 3,
       "holder": {
         "enabled": false,
-        "height": 4,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {
@@ -162,7 +167,7 @@
       }
     },
     {
-      "id": "c6721161-b3c8-4b58-b02a-0c7e9bf12bdc",
+      "id": "26b6e4ed-ff4b-4342-8534-92ef0b3babb9",
       "kind": "hole",
       "label": "Mounting hole",
       "x": 60,
@@ -174,7 +179,7 @@
       "diameter": 3.2,
       "holder": {
         "enabled": false,
-        "height": 4,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {
@@ -212,7 +217,7 @@
       }
     },
     {
-      "id": "9c7e991f-bb81-4057-a7ac-1a342dd5e760",
+      "id": "bddd96f1-c352-47c7-b6aa-09daa4bd61af",
       "kind": "hole",
       "label": "Mounting hole",
       "x": 60,
@@ -224,7 +229,7 @@
       "diameter": 3.4,
       "holder": {
         "enabled": false,
-        "height": 4,
+        "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
         "sides": {

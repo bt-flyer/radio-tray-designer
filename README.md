@@ -98,3 +98,47 @@ The 2D layout uses screen coordinates (+Y down). Preview and exported STL now co
 ## DRM dimensions added
 
 The G4 DRM preset now uses the supplied drawing: case 58 × 38.4 × 17.1 mm, two holes 64 mm apart along the length, and Ø3 mm holes confirmed by the user. Both short-end cradle walls are omitted to clear the mounting ears. The source drawing is retained at `public/references/kingtech-g4-drm-dimensions.png`. Existing unknown DRM definitions receive this update when opened. Connector access can still be adjusted using the wall/keep-out controls. DRM is no longer awaiting body or hole dimensions.
+
+## RB-35S physical fit correction
+
+A printed fit check confirmed a 99 mm case length (replacing the earlier 98 mm image estimate). The default 0.3 mm clearance per side now produces a 99.6 mm nominal CAD cavity along that axis. Width, height, hole coordinates, mounting-ear positions and object placement are retained. Existing 98 mm RB-35S instances are corrected when reopened. Re-export the tray STL after refreshing/reopening the design. The 106 × 48 mm hole pattern already lined up on the printed part and has not been moved.
+
+## Physical fit feedback — surrounding ribs, bosses and pilots
+
+All locating rails now start at **2.5 mm height**. Existing electronics receive this height on reopening; dimensions and hole centres remain intact. Telemetry converter, GPS and ASS-70 now have continuous ribs on all four sides, as requested after physical fit checks. PGC cavity and mounting-hole positions are retained.
+
+SP-1 now has **8 mm mounting-boss clearance openings** centred on its existing mounting holes. The tray beneath the bosses remains intact; only the cradle walls are relieved. Boss diameter is editable under Measurements → Mounting-boss clearance.
+
+Printed component holes now default to **Ø1.5 mm pilots**. The original measured component-hole diameters remain in the definitions. Tray-to-aircraft holes keep their entered diameters. Change this in Tray settings → Printed screw holes. There are separate modes for measured sizes, component pilots only, and pilots for all screw holes.
+
+T-One case dimensions have been reset to **44.5 × 44.5 × 8.5 mm** with 2.5 mm surrounding rails. The previous hole pattern failed physical fit and has been removed. Its two-hole pattern and tab openings await measured centre separations/offsets; the supplied photo confirms upper-right/lower-left orientation but is not a dimensioned drawing. Export is blocked for that component until its mounting pattern is completed. The photo is retained in `public/references/tone-remeasured-photo.png`. DRM fit remains untested.
+
+## Light-controller hole pattern remeasured
+
+The corrected two-hole layout is now complete. With the photo orientation and a 44.5 mm square case, upper-right is **(+30, −14.75) mm** and lower-left is **(−30, +22.75) mm**, relative to case centre. This uses the supplied 60 mm horizontal separation, centred horizontally, and top-edge offsets 7.5 mm and 45 mm. The asymmetry is intentional: vertical separation is 37.5 mm, with pattern midpoint 4 mm below case centre. Printed pilots remain Ø1.5 mm. Both tab crossings have conservative 16 mm wide clearance windows inferred from the photo, editable in the mounting-foot controls; these are clearance assumptions, not measured tab outlines. Rails remain 2.5 mm high. This supersedes the earlier pending-hole notes.
+
+## Cable-opening rims
+
+Cable pass-through slots now have a **1.5 mm high × 1.5 mm thick** raised rim by default, including slots in existing designs. The rim grows outward, so the original opening length/width remain clear. Its height/thickness and enabled state can be changed in the cable-slot inspector. Resize handles continue to control the opening, with the rim following automatically. Placement/edge checks and alignment use the outside rim footprint. Component locating rails remain 2.5 mm high.
+
+## Named copies and download filenames
+
+**Save as…** is now beside Save in the header; **Shift-⌘S / Shift-Ctrl-S** opens it. Choose a new design name to create a separately saved copy while preserving the original. The optional editable-file download has its own filename field and uses `.tray.json`. Export design JSON and Export STL also allow explicit filenames; changing an export filename does not rename the design. Extensions are added automatically without duplication. Downloads use the browser's normal save destination. All settings and geometry remain editable after importing the JSON.
+
+## Outer tray rim
+
+Trays now have an enabled **1.5 mm high × 1.5 mm thick perimeter rim**, including existing designs. The rim follows the rounded polygon and grows inward, preserving overall aircraft-fit dimensions. Toggle it or edit its height/thickness under Tray settings → Outer tray rim. Component footprints overlapping the rim produce a warning. The printer export and 3D preview share the same rim geometry. Cable rims retain their separate 1.5 mm defaults; component locating rails remain 2.5 mm.
+
+### Component appearance in the 3D preview
+
+The reference preview now includes procedural component models: cases, mounting ears, connector banks, pump fittings, screens, LEDs, sensor details and yellow XT housings. Body sizes and mounting centres use the component definition saved in the design. Appearance and connector projections are approximate; they do not define fit, create clearance checks, or change the printable STL. Custom telemetry appearance is generic pending a photograph. No remote textures or models are needed at runtime.
+
+Visual references consulted: FrSky RB-35S product imagery, SP-1/PGC product illustrations at https://www.horusrc.com/en/frsky-smoke-pump-sp-1.html, KingTech GSU imagery at https://alshobbies.co.uk/KINGTECH-GSU-TOUCH-SCREEN-KT-GSU, GPS ADV imagery at https://www.turbines-rc.com/en/sensors/3413-frsky-gps-sensor-adv-high-precision.html, Remote NFC imagery at https://globaljet.club/collections/frsky/nfc-power-switch, and the supplied DRM drawing and T-One photograph. Sensor variants may differ visually; measured envelopes take precedence. The original UAT STL remains the reference for that mount.
+
+## Public browser version (GitHub Pages)
+
+The public tool is https://bt-flyer.github.io/radio-tray-designer/ . It runs the editor, Three.js preview and Manifold STL generation entirely on the visitor's computer. No account or local Node service is needed.
+
+Save, Save As, autosave and custom presets use IndexedDB in that browser profile. Saved revisions and autosaves remain separate, and each record keeps its previous revision for recovery. Designs are not uploaded to GitHub. Clearing website data, private browsing or changing device can make browser saves unavailable: export editable `.tray.json` backups regularly. Import a JSON file to transfer a local Mac design to the website. STL is a print artifact, not an editable backup.
+
+`npm run build:pages` builds into `dist-pages/`; `npm run preview:pages` previews at http://127.0.0.1:4174/radio-tray-designer/ . The separate `npm run build` and `npm start` commands retain the localhost service and filesystem storage. A push to `main` runs tests, builds the Pages version and deploys through `.github/workflows/pages.yml`. The deployment contains the built app, bundled references and two explicitly selected fit-test STLs. It excludes local `data/`, personal tray files and server code.

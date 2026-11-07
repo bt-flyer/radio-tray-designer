@@ -5,3 +5,4 @@ data/components/*
 !data/**/.gitkeep
 *.tmp
 .DS_Store
+dist-pages/

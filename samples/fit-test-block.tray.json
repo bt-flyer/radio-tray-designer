@@ -1,9 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "8bc9a473-00cb-463e-9487-20d33064f814",
+  "id": "0c99e8ce-2a78-4619-af0b-42e75a0c371d",
   "name": "20 × 15 mm test block",
-  "updatedAt": "2026-11-07T02:32:54.267Z",
+  "updatedAt": "2026-11-07T15:52:59.683Z",
   "tray": {
+    "rim": {
+      "enabled": false,
+      "height": 1.5,
+      "wall": 1.5
+    },
     "shape": "rectangle",
     "length": 20,
     "wide": 15,
@@ -36,6 +41,10 @@
     "z": 340,
     "material": "PETG",
     "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
   },
   "grid": 1,
   "items": []

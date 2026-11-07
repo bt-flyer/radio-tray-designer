@@ -17,9 +17,9 @@
         "status": "Published; length appears to include tabs"
       },
       "caseExcludingTabs": {
-        "length": 98,
+        "length": 99,
         "width": 73.4,
-        "status": "Image estimate"
+        "status": "User measured after physical fit test; length corrected from 98 to 99 mm. Hole pattern fits and must remain unchanged."
       },
       "mounting": {
         "holeCount": 4,
@@ -45,7 +45,8 @@
         "spacingAcrossWidth": 32,
         "retention": "Screws",
         "status": "User measured",
-        "patternCentring": "Provisional"
+        "patternCentring": "Provisional",
+        "bossOutsideDiameter": 8
       },
       "mountingSurface": "Tabs and housing bottom share the same plane; height starts at mounting surface; no recess required",
       "nipples": {
@@ -65,7 +66,7 @@
         "status": "User measured"
       },
       "retention": "Double-sided tape",
-      "holder": "Three low locating walls; one 32.75 mm end fully open",
+      "holder": "Low locating ribs all the way around; physical case fit confirmed by user",
       "internalFootprint": {
         "length": 45.85,
         "width": 33.35
@@ -95,23 +96,27 @@
       "name": "T-One lighting controller",
       "productUrl": "http://m.t-onemodel.com/pd.jsp?pid=27",
       "body": {
-        "length": 52.35,
-        "width": 52.35,
-        "height": 16,
-        "status": "User measured; excludes mounting tabs"
-      },
-      "mounting": {
-        "holeCount": 2,
-        "diameter": 4,
-        "horizontalCentreSeparation": 44,
-        "verticalCentreSeparation": 62,
-        "arrangement": "Diagonally opposite, matching photo",
-        "status": "User measured separations; axis assignment inferred from photo",
-        "patternCentring": "Provisional"
+        "length": 44.5,
+        "width": 44.5,
+        "height": 8.5,
+        "status": "User remeasured after physical fit failure"
       },
       "retention": "Screws",
-      "holder": "Flat mounting area; no surrounding walls",
-      "access": "Wiring access on all four sides"
+      "holder": "Low locating ribs around the case, with tab openings once measured",
+      "access": "Wiring access on all four sides",
+      "mounting": {
+        "holeCount": 2,
+        "diameter": null,
+        "horizontalCentreSeparation": 60,
+        "verticalCentreSeparation": 37.5,
+        "upperRightDownFromTop": 7.5,
+        "lowerLeftDownFromTop": 45,
+        "status": "User remeasured offsets; 60 mm horizontal spacing centred on case. Printed pilot diameter 1.5 mm."
+      },
+      "tabClearance": {
+        "width": 16,
+        "status": "Conservative clearance window inferred from photo; editable, not a measured tab width"
+      }
     },
     {
       "id": "pgc",
@@ -143,7 +148,7 @@
         "status": "User measured; replaces published envelope for this unit"
       },
       "retention": "Double-sided tape",
-      "holder": "Three low locating walls; 26 mm connector end open",
+      "holder": "Low locating ribs all the way around; physical case fit confirmed by user",
       "internalFootprint": {
         "length": 35.6,
         "width": 26.6
@@ -160,7 +165,7 @@
         "status": "User measured"
       },
       "retention": "Double-sided tape",
-      "holder": "Locating rails along both 35 mm sides; both 23 mm ends open",
+      "holder": "Low locating ribs all the way around; physical case fit confirmed by user",
       "internalFootprint": {
         "length": 35.6,
         "width": 23.6
