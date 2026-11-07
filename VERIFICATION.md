@@ -70,3 +70,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Added the latest T-1 saved layout as an explicitly shared template, with current measurement migrations applied once at publication.
 - New and Open dialogs create independent editable copies; the source local design is untouched.
 - 51 tests passed, including template independence, preserved placements and a connected, positive-volume mesh that passes STL surface auditing. Pages compilation passed.
+
+### Measurement warning cleanup
+
+- Removed repeated unknown-connector-access notices from actionable design checks, without inventing clearance measurements.
+- Promoted only the exact RB35S, PGC and SP-1 mounting patterns confirmed by physical fit; no coordinates or dimensions change. Old saved designs and the built-in T-One layout receive the same status correction.
+- Regression coverage retains provisional warnings for changed patterns, missing-dimension errors and actual perimeter interference. All 53 tests passed; Pages build passed.

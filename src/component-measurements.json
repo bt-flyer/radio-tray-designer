@@ -26,7 +26,8 @@
         "diameter": 4,
         "spacingAlongLength": 106,
         "spacingAcrossWidth": 48,
-        "status": "Provisional image estimates; user accepted for planning, not physically verified"
+        "status": "Mounting-hole centres confirmed by user physical fit test; original hardware diameter retained",
+        "patternCentring": "Confirmed by physical fit"
       }
     },
     {
@@ -44,8 +45,8 @@
         "spacingAlongLength": 26,
         "spacingAcrossWidth": 32,
         "retention": "Screws",
-        "status": "User measured",
-        "patternCentring": "Provisional",
+        "status": "Mounting-hole centres confirmed by user physical fit test; original hardware diameter retained",
+        "patternCentring": "Confirmed by physical fit",
         "bossOutsideDiameter": 8
       },
       "mountingSurface": "Tabs and housing bottom share the same plane; height starts at mounting surface; no recess required",
@@ -132,8 +133,8 @@
         "diameter": 2,
         "spacingAlongLength": 73,
         "spacingAcrossWidth": 33,
-        "status": "User measured",
-        "patternCentring": "Provisional"
+        "status": "Mounting-hole centres confirmed by user physical fit test; original hardware diameter retained",
+        "patternCentring": "Confirmed by physical fit"
       },
       "retention": "Screws",
       "access": "Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused"
@@ -185,7 +186,7 @@
         "diameter": 3,
         "horizontalCentreSeparation": 64,
         "verticalCentreSeparation": 0,
-        "status": "Centres from drawing; \u00d83 mm confirmed by user"
+        "status": "Centres from drawing; Ø3 mm confirmed by user"
       },
       "holder": "Locating rails along long sides; both mounting-ear ends open",
       "access": "Check connector clearances against your DRM."
