@@ -20,6 +20,7 @@ export type ComponentDef=z.infer<typeof componentSchema>;
 const sideSchema=z.object({enabled:z.boolean(),opening:n.min(0).max(1000),offset:coord,keepout:n.min(0).max(200)}).strict();
 export const itemSchema=z.object({
  id:z.string().min(1).max(100),kind:z.enum(['component','slot','hole','label']),label:z.string().min(1).max(120),x:coord,y:coord,rotation:n.min(-36000).max(36000),
+ grommet:z.object({enabled:z.boolean(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(5),lipHeight:n.min(.4).max(5),axialClearance:n.min(0).max(2)}).strict().optional(),
  text:z.object({value:z.string().max(80),size:n.min(2).max(30),height:n.min(.2).max(5)}).strict().optional(),
  rim:z.object({enabled:z.boolean(),height:size.max(50),wall:size.max(50)}).strict().optional(),component:componentSchema.nullable(),l:size,w:size,diameter:size,
  holder:z.object({ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),

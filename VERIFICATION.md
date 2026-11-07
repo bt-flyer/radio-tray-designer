@@ -89,3 +89,10 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Added a designed generic 1×3, 2.54 mm-pitch header adapter to the connector library, with editable integrated flange, through-cutout and two component pilot holes.
 - Reference model shows three square pins; pins remain excluded from exported solids.
 - All 58 tests passed, including rotated watertight connected flange geometry, a clear centre opening, correct pin spacing, schema roundtrip and export exclusion. Pages build passed.
+
+### Separate TPU grommet export
+
+- Added per-slot persisted fit settings, a selection/export dialog, separate background-worker generation and an independent print-layout preview. Main tray solids are unchanged.
+- Grommets have continuous clear bores, bottom retaining lips, rim-aware grip depths and wider top lips; geometry is packed flat within usable printer volume.
+- All 62 tests pass, including watertight geometry, two-part output, open bores, automatic grip updates, unchanged main-tray geometry, persistence and invalid-fit/bed checks. Pages compilation passed.
+- Browser QA generated all four T-One cable inserts in the separate export preview. Generated sample STL contains four distinct grommets at 6.7 mm overall height; an individual first-opening fit-test STL is provided.

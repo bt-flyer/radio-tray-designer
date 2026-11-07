@@ -156,3 +156,13 @@ The bundled Helvetiker font works offline; its permission notice is in `public/l
 ### Servo header panel flange
 
 **Mounts & connectors → 3-pin servo header** adds an upward-facing generic 1×3 male header on 2.54 mm pitch. The designed insulator envelope is 7.62 × 2.54 × 2.54 mm; a through-opening of 8.22 × 3.14 mm leaves 0.3 mm per side. Its integrated flange is 24.22 × 11.14 × 3 mm, with two Ø1.5 mm pilots on 16.22 mm centres. All cutout, flange and mounting-hole dimensions are editable in Measurements. The black header and three metal pins are preview references excluded from STL; install and retain the real header separately. This is a generic bare header adapter, rather than a keyed Futaba/JR or manufacturer-specific panel housing. Pin assignments are unspecified. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf .
+
+## Separate TPU cable grommets
+
+Click **TPU grommets** below the workspace (also available in the tray export dialog), select cable openings and download a separately named STL. The preview shows only the TPU parts, laid flat with 5 mm spacing; they are never merged into the tray export. Enable one opening for a fit test or select all for a set. Each selected slot contributes one grommet, including duplicate sizes.
+
+In a cable opening's **TPU wire grommet** properties, adjust sleeve wall, fit clearance per side, top and retaining lip overhang, lip thickness and grip allowance. Grip depth follows tray thickness plus the opening's raised rim, if enabled. The small bottom retaining lip prints on the bed; the larger top lip reaches beyond the cable rim. The cable bore is reduced by the sleeve walls and clearance; its resulting dimensions are shown before export. These are untested starting dimensions for a flexible insert: print one in your TPU and adjust the fit before making the set. Slots can be resized later and the grommets regenerate to match.
+
+Defaults: 1.2 mm sleeve, 0.2 mm clearance per side, 2.3 mm top overhang, 0.8 mm retaining overhang, 1 mm lip thickness and 0.2 mm grip allowance. Empty/too-small bores, insufficient top-lip reach and parts or batches exceeding the printer volume block TPU export. Grommet settings save in editable JSON and browser/local saves. Aircraft screw holes are not lined.
+
+Ready-to-print starting samples: `samples/t-one-tpu-grommets.stl` contains the four inserts for the built-in T-One layout; `samples/tpu-grommet-fit-test.stl` contains just its first 50 × 6 mm opening's insert. Both use the defaults above and a 3 mm tray with a 1.5 mm cable rim.

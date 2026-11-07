@@ -1,0 +1,25 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import Module from 'manifold-3d';
+import {newDesign,makeItem,designSchema} from '../src/model';
+import {grommetDefaults} from '../src/grommetSettings';
+import {grommetDimensions,grommetErrors,grommetLayout,generateGrommets} from '../src/grommets';
+import {generateGeometry,binarySTL,type MeshResult} from '../src/geometry';
+import {BrowserStore} from '../src/browserStorage';
+import {IDBFactory} from 'fake-indexeddb';
+const api=await Module();api.setup();
+function fixture(){const d=newDesign(),i=makeItem('slot',[155,87.5]);i.l=50;i.w=10;i.rotation=57;i.grommet={...grommetDefaults(),enabled:true};d.items=[i];return d;}
+function covers(m:MeshResult,x:number,y:number,z:number){y=-y;for(let i=0;i<m.indices.length;i+=3){const p=[0,1,2].map(k=>Array.from(m.positions.slice(m.indices[i+k]*3,m.indices[i+k]*3+3)));if(!p.every(v=>Math.abs(v[2]-z)<1e-4))continue;const signs=p.map((a,k)=>{const b=p[(k+1)%3];return (b[0]-a[0])*(y-a[1])-(b[1]-a[1])*(x-a[0]);});if(signs.every(v=>v>=-1e-6)||signs.every(v=>v<=1e-6))return true;}return false;}
+test('TPU insert has a clear bore, two retaining lips and grip matched to tray plus rim',()=>{
+ const d=fixture(),q=grommetDimensions(d,d.items[0]),p=grommetLayout(d)[0],m=generateGrommets(api,d);assert.equal(q.grip,4.7);assert.equal(q.boreW,7.199999999999999);assert.equal(m.pieces,1);assert.ok(Math.abs(m.bounds.max[2]-6.7)<1e-4);assert.equal(m.bounds.min[2],0);assert.ok(Math.abs(m.bounds.max[0]-m.bounds.min[0]-q.outerL)<.001);for(const z of [0,1,5.7,6.7])assert.equal(covers(m,p.x,p.y,z),false,'bore remains open at every ledge');assert.equal(covers(m,p.x,p.y+q.outerW/2-.2,6.7),true,'top lip is present');binarySTL(m);
+ d.items[0].rim!.enabled=false;assert.equal(grommetDimensions(d,d.items[0]).grip,3.2);assert.ok(Math.abs(generateGrommets(api,d).bounds.max[2]-5.2)<.001);
+});
+test('grommets export as independent flat parts without modifying tray or slot geometry',()=>{
+ const d=fixture(),original=generateGeometry(api,d);d.items.push({...structuredClone(d.items[0]),id:crypto.randomUUID(),x:70,y:50,l:35});const m=generateGrommets(api,d);assert.equal(m.pieces,2);assert.ok(m.bounds.max[2]<7);const flat=grommetLayout(d);assert.equal(flat[0].rotation,0);assert.ok(flat[1].x-flat[0].x>30);binarySTL(m);d.items.pop();d.items[0].grommet!.enabled=false;assert.deepEqual(generateGeometry(api,d),original);
+});
+test('grommet settings survive saving and dimensions regenerate after resizing a slot',async()=>{
+ const d=fixture(),store=new BrowserStore(new IDBFactory());d.items[0].grommet!.clearance=.15;await store.saveDesign(d);const read=(await store.readDesign(d.id)).design;assert.deepEqual(designSchema.parse(JSON.parse(JSON.stringify(read))),d);assert.deepEqual(generateGrommets(api,read),generateGrommets(api,d));const before=grommetDimensions(read,read.items[0]);read.items[0].l+=10;assert.ok(Math.abs(grommetDimensions(read,read.items[0]).outerL-before.outerL-10)<1e-8);await store.close();
+});
+test('invalid bores, rim collisions, absent selection and oversized batches block TPU export',()=>{
+ const d=fixture(),i=d.items[0];i.w=2;assert.ok(grommetErrors(d).some(e=>e.includes('1 mm')));assert.throws(()=>generateGrommets(api,d));i.w=10;i.grommet!.flange=1;assert.ok(grommetErrors(d).some(e=>e.includes('rim')));i.grommet!.enabled=false;assert.throws(()=>grommetLayout(d),/Enable/);i.grommet={...grommetDefaults(),enabled:true};d.printer.x=15;d.printer.y=40;assert.throws(()=>grommetLayout(d),/printer bed/);d.printer.x=70;d.printer.y=25;d.items.push({...structuredClone(i),id:crypto.randomUUID()});assert.throws(()=>grommetLayout(d),/set exceeds/);
+});
