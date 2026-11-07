@@ -64,3 +64,9 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Both the local build and Pages build passed TypeScript and Vite compilation.
 - Browser QA of the Pages build at its repository subpath: created a tray, added RB-35S, saved, reloaded, reopened and downloaded a printable STL; the worker and WASM loaded without a Node API. Preview screenshot: `pages-preview.jpg`.
 - Public packaging explicitly includes only built frontend assets, bundled references and two sample fit-test STLs. Local user designs and custom component files under `data/` remain ignored.
+
+### Published T-One default layout
+
+- Added the latest T-1 saved layout as an explicitly shared template, with current measurement migrations applied once at publication.
+- New and Open dialogs create independent editable copies; the source local design is untouched.
+- 51 tests passed, including template independence, preserved placements and a connected, positive-volume mesh that passes STL surface auditing. Pages compilation passed.

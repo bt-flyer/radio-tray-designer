@@ -1,0 +1,1066 @@
+{
+  "schemaVersion": 1,
+  "id": "template-t-one",
+  "name": "T-One radio tray",
+  "updatedAt": "2026-11-07T00:00:00.000Z",
+  "tray": {
+    "shape": "trapezoid",
+    "length": 310,
+    "wide": 175,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 5,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "50d53282-3346-4077-9b8c-08f8accda766",
+      "kind": "component",
+      "label": "UAT mount",
+      "x": 261.71495,
+      "y": 87.5,
+      "rotation": 180,
+      "component": {
+        "id": "uat",
+        "name": "UAT mount",
+        "variant": "Your supplied uat.stl",
+        "category": "uat",
+        "body": {
+          "l": 80.62346,
+          "w": 29.91702,
+          "h": 35.34187
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "measured",
+        "confirmed": true,
+        "sources": {
+          "body": "Supplied uat.stl; units assumed millimetres",
+          "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
+          "clearance": "Complete original mesh retained as reference"
+        },
+        "holes": [
+          {
+            "x": -25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": -10,
+            "d": 3
+          },
+          {
+            "x": 25,
+            "y": 10,
+            "d": 3
+          },
+          {
+            "x": -25,
+            "y": 10,
+            "d": 3
+          }
+        ],
+        "cutout": null,
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "ac16a19f-0b73-495c-9c03-2943662261a7",
+      "kind": "component",
+      "label": "FrSky SP-1 smoke pump",
+      "x": 41.45,
+      "y": 143.5,
+      "rotation": 180,
+      "component": {
+        "id": "sp1",
+        "name": "FrSky SP-1 smoke pump",
+        "variant": "SP-1",
+        "category": "electronics",
+        "body": {
+          "l": 51,
+          "w": 26,
+          "h": 36.2
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured; excludes nipples",
+          "holes": "User specification: component-measurements.json (mm). User measured; centring on case provisional.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -13,
+            "y": -16,
+            "d": 3
+          },
+          {
+            "x": -13,
+            "y": 16,
+            "d": 3
+          },
+          {
+            "x": 13,
+            "y": -16,
+            "d": 3
+          },
+          {
+            "x": 13,
+            "y": 16,
+            "d": 3
+          }
+        ],
+        "measurementRevision": 1,
+        "physicalFitRevision": 1,
+        "mountBossDiameter": 8,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Leave nipple end open and reserve hose bending clearance  Hole pattern centring remains provisional. User confirmed Ø8 mm mounting bosses; hole centres already fit. Walls are relieved around bosses."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 15
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "b34eb9f3-aa31-4974-ae9b-8b0c0e04fc7e",
+      "kind": "component",
+      "label": "Custom telemetry converter",
+      "x": 44.325,
+      "y": 31.175,
+      "rotation": 0,
+      "component": {
+        "id": "telemetry",
+        "name": "Custom telemetry converter",
+        "variant": "Custom",
+        "category": "electronics",
+        "body": {
+          "l": 45.25,
+          "w": 32.75,
+          "h": 14.75
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).  Three low locating walls; one 32.75 mm end fully open Connector inclusion in measured body size is unconfirmed."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "0f069d62-ef9f-4d85-836d-ccec4a311625",
+      "kind": "component",
+      "label": "KingTech G4 DRM",
+      "x": 44.325,
+      "y": 87.5,
+      "rotation": 90,
+      "component": {
+        "id": "drm",
+        "name": "KingTech G4 DRM",
+        "variant": "G4 external Data Relay Module",
+        "category": "electronics",
+        "body": {
+          "l": 58,
+          "w": 38.4,
+          "h": 17.1
+        },
+        "bodyStatus": "published",
+        "holesStatus": "published",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "/references/kingtech-g4-drm-dimensions.png",
+          "holes": "Supplied drawing: centres at X ±32 mm, Y 0; Ø3 mm confirmed by user.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -32,
+            "y": 0,
+            "d": 3
+          },
+          {
+            "x": 32,
+            "y": 0,
+            "d": 3
+          }
+        ],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Check connector clearances against your DRM. Locating rails along long sides; both mounting-ear ends open Hole pattern centring remains provisional. Both mounting-ear ends are open; Ø3 mm mounting holes confirmed by user."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "82957b88-b708-4337-959b-619a8f9d95b6",
+      "kind": "component",
+      "label": "FrSky PGC",
+      "x": 258,
+      "y": 35.199999999999996,
+      "rotation": 180,
+      "component": {
+        "id": "pgc",
+        "name": "FrSky PGC",
+        "variant": "Pilot Gear Controller",
+        "category": "electronics",
+        "body": {
+          "l": 68.6,
+          "w": 50,
+          "h": 18
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). Published dimensions; user confirmed length excludes tabs",
+          "holes": "User specification: component-measurements.json (mm). User measured; centring on case provisional.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -36.5,
+            "y": -16.5,
+            "d": 2
+          },
+          {
+            "x": -36.5,
+            "y": 16.5,
+            "d": 2
+          },
+          {
+            "x": 36.5,
+            "y": -16.5,
+            "d": 2
+          },
+          {
+            "x": 36.5,
+            "y": 16.5,
+            "d": 2
+          }
+        ],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Hole pattern centring remains provisional."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "994b1ba5-f2da-49b0-bda7-8df1bafaaf00",
+      "kind": "component",
+      "label": "T-One lighting controller",
+      "x": 258,
+      "y": 138.27499999999998,
+      "rotation": 180,
+      "component": {
+        "id": "tone",
+        "name": "T-One lighting controller",
+        "variant": "T-One product 27",
+        "category": "electronics",
+        "body": {
+          "l": 44.5,
+          "w": 44.5,
+          "h": 8.5
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User remeasured case: 44.5 × 44.5 × 8.5 mm.",
+          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": 30,
+            "y": -14.75,
+            "d": 1.5
+          },
+          {
+            "x": -30,
+            "y": 22.75,
+            "d": 1.5
+          }
+        ],
+        "tabs": [
+          {
+            "x": 27.625,
+            "y": -10.75,
+            "l": 10.75,
+            "w": 16
+          },
+          {
+            "x": -27.625,
+            "y": 18.75,
+            "l": 10.75,
+            "w": 16
+          }
+        ],
+        "measurementRevision": 1,
+        "physicalFitRevision": 1,
+        "lightMountRevision": 1,
+        "mountingPatternPending": false,
+        "cutout": null,
+        "note": "44.5 × 44.5 × 8.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "ec62d9d8-9269-46e9-8109-1942655edf83",
+      "kind": "component",
+      "label": "FrSky GPS ADV",
+      "x": 178.98505,
+      "y": 27.099999999999977,
+      "rotation": 0,
+      "component": {
+        "id": "gps",
+        "name": "FrSky GPS ADV",
+        "variant": "GPS ADV",
+        "category": "electronics",
+        "body": {
+          "l": 35,
+          "w": 26,
+          "h": 8.5
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured; replaces published envelope for this unit",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm). Antenna top face exposed Three low locating walls; 26 mm connector end open"
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "c59900c2-ac8d-40d1-ad85-3d35021594d4",
+      "kind": "component",
+      "label": "FrSky ASS-70",
+      "x": 178.98505,
+      "y": 149.02499999999998,
+      "rotation": 0,
+      "component": {
+        "id": "airspeed",
+        "name": "FrSky ASS-70",
+        "variant": "ASS-70 original (not ADV)",
+        "category": "electronics",
+        "body": {
+          "l": 35,
+          "w": 23,
+          "h": 12
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). User measured",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).  Locating rails along both 35 mm sides; both 23 mm ends open"
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "ribRevision": 1,
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "fdbf7763-f5a1-4dfa-bde6-190fcd24fb9f",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 120.78505000000001,
+      "y": 135.825,
+      "rotation": 0,
+      "component": null,
+      "l": 50,
+      "w": 6,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "000216e3-0a5e-4660-88d1-8b55de77b9be",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 120.78505000000001,
+      "y": 39.39999999999998,
+      "rotation": 0,
+      "component": null,
+      "l": 50,
+      "w": 6,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "44f2e4db-3f95-46d2-9741-53bf678773e8",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 78,
+      "y": 87.5,
+      "rotation": -90,
+      "component": null,
+      "l": 150,
+      "w": 7,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "30225ca3-e98c-42c0-9e83-f2708f690615",
+      "kind": "component",
+      "label": "FrSky RB-35S",
+      "x": 145.78505,
+      "y": 88.5,
+      "rotation": 0,
+      "component": {
+        "id": "rb35s",
+        "name": "FrSky RB-35S",
+        "variant": "RB-35S",
+        "category": "electronics",
+        "body": {
+          "l": 99,
+          "w": 73.4,
+          "h": 18.7
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User specification: component-measurements.json (mm). Case length 99 mm confirmed by physical fit test; width and height retained from published dimensions.",
+          "holes": "User specification: component-measurements.json (mm). Provisional image estimates; user accepted for planning, not physically verified; centring on case provisional.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": -53,
+            "y": 24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": -24,
+            "d": 4
+          },
+          {
+            "x": 53,
+            "y": 24,
+            "d": 4
+          }
+        ],
+        "tabs": [
+          {
+            "x": -53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": -53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": -24,
+            "l": 8.2,
+            "w": 10
+          },
+          {
+            "x": 53.1,
+            "y": 24,
+            "l": 8.2,
+            "w": 10
+          }
+        ],
+        "measurementRevision": 1,
+        "cutout": null,
+        "note": "User specification: component-measurements.json (mm).   Hole pattern centring remains provisional. Four tab openings assumed 10 mm wide, editable below. Tab projection 7.7 mm inferred from overall 114.4 mm length. Check actual foot shape before printing."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "48ce3c14-9f49-4054-97cd-977ef478d918",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 213,
+      "y": 87.5,
+      "rotation": 90,
+      "component": null,
+      "l": 150,
+      "w": 7,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}
