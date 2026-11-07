@@ -1,3 +1,4 @@
+import {labelPath} from './labels';
 import {useEffect,useRef,useState} from 'react';
 import {ZoomIn,ZoomOut,Scan,MousePointer2,Hand,PenTool,RotateCw} from 'lucide-react';
 import {type Design,type Item,type Point,clone,roundedOutline,rawOutline,bodySize,localFootprint,bounds,clearanceZones,wallGaps,trayCenter,alignMove,matchingGuides,resizeSlot,printedHoleDiameter,slotRim,trayRim} from './model';
@@ -33,7 +34,7 @@ export function Canvas({design,selected,setSelected,preview,commit,onDropPart,sh
  {design.items.map(i=>{const [l,w]=bodySize(i),active=selected.includes(i.id),c=i.component,unknown=c&&(!c.body.l||!c.body.w),fp=localFootprint(i),fb=bounds(fp),holder=i.holder,rim=slotRim(i);return <g key={i.id}>
  {active&&clearanceZones(i).map((z,k)=><polygon key={k} points={pts(z)} fill="#eeb449" fillOpacity=".12" stroke="#dda033" strokeWidth={.5*s} strokeDasharray="2 1"/>)}
  <g transform={`translate(${i.x} ${i.y}) rotate(${i.rotation})`} onPointerDown={e=>{if(mode==='pan')down(e,'pan');else if(mode==='select')down(e,'move',i.id);}} className="canvas-object" data-kind={i.kind} data-label={i.label}>
- {i.kind==='component'?<>
+ {i.kind==='label'?<><rect x={-l/2-1} y={-w/2-1} width={l+2} height={w+2} fill="transparent"/><path d={labelPath(i.text)} fill="#426e70" fillRule="evenodd" pointerEvents="none"/></>:i.kind==='component'?<>
  {holder.enabled&&<rect x={fb.minX} y={fb.minY} width={fb.maxX-fb.minX} height={fb.maxY-fb.minY} rx="1" fill="#cedbdc" stroke="#8aabab" strokeWidth={.5*s}/>}
  {showBodies&&<rect x={c?.category==='uat'?-46.90851:-l/2} y={c?.category==='uat'?-15:-w/2} width={l} height={w} rx="1.5" fill={unknown?'#fff7e9':c?.category==='uat'?'#e7e9f0':'#edf5f4'} stroke={unknown?'#d49a49':'#7d9b9d'} strokeDasharray={unknown?'2 1':undefined} strokeWidth={.6*s}/>}
  {unknown&&<rect x={-l/2} y={-w/2} width={l} height={w} fill="url(#unknown)" opacity=".45"/>}

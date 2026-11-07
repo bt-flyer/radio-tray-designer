@@ -146,3 +146,9 @@ Save, Save As, autosave and custom presets use IndexedDB in that browser profile
 The New and Open dialogs include **T-One radio tray**, a published snapshot of the owner's T-1 aircraft installation (310 × 175 / 165 mm, nine components and four cable pass-throughs). Opening it creates a new design with independent object IDs and preserves the layout's component definitions. This one explicitly shared layout is bundled with the app; other local saved designs remain excluded. Review the retained fit and clearance warnings before printing.
 
 Design checks omit generic notices for unspecified connector access; measurement status remains visible in the component form. RB35S, PGC and SP-1 hole centres matching the user's successful physical fit checks are marked confirmed, including when reopening older designs. Changed patterns retain provisional status. Actual access obstructions, overlaps, missing geometry and printer constraints still appear in design checks.
+
+## Printable labels
+
+Under **Tray features**, click or drag **Text label** onto the tray. Edit **Label text**, **Text size** (actual letter height in millimetres) and **Raised height** in the inspector. Labels default to 5 mm letters raised 0.6 mm; move, rotate, align, duplicate and undo them like other objects. Text is centred on its placement point. It is fused to the tray, appears in 3D and is included in STL; it stays visible when reference electronics are hidden. Save/export JSON preserves the text and style. Keep lettering clear of holders and openings, and check thin strokes in your slicer.
+
+The bundled Helvetiker font works offline; its permission notice is in `public/licenses/helvetiker.txt`. Text is single-line, up to 80 characters. Missing font characters and empty labels block export. The SVG editor and Manifold generator use the same sampled glyph contours, including enclosed spaces in letters.

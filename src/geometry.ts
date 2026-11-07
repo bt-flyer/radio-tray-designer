@@ -1,3 +1,4 @@
+import {labelOutline} from './labels';
 import type { Manifold, ManifoldToplevel } from 'manifold-3d';
 import { type Design,type Item,type Point,roundedOutline,rawOutline,selfIntersect,signedArea,bodySize,wallSpans,printedHoleDiameter,slotRim,trayRim } from './model';
 export type MeshResult={positions:Float32Array;indices:Uint32Array;volume:number;triangles:number;pieces:number;bounds:{min:number[];max:number[]}};
@@ -10,11 +11,12 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
  const box=(l:number,w:number,h:number,x:number,y:number,z:number)=>own(own(M.cube([l,w,h])).translate([x-l/2,y-w/2,z]));
  const place=(m:Manifold,i:Item)=>own(own(m.rotate([0,0,i.rotation])).translate([i.x,i.y,0]));
  const t=d.tray.thickness, solids:Manifold[]=[extrude(roundedOutline(d),t)],cuts:Manifold[]=[];
- const maxH=t+Math.max(5,trayRim(d).enabled?trayRim(d).height:0,...d.items.map(i=>Math.max(i.holder.height,i.component?.cutout?.flangeThickness??0,i.kind==='slot'?slotRim(i).height:0)))+2;
+ const maxH=t+Math.max(5,trayRim(d).enabled?trayRim(d).height:0,...d.items.map(i=>Math.max(i.text?.height??0,i.holder.height,i.component?.cutout?.flangeThickness??0,i.kind==='slot'?slotRim(i).height:0)))+2;
  const slot=(l:number,w:number,r:number,x=0,y=0)=>own(extrude(roundedRect(l,w,r),maxH).translate([x,y,-1]));
  try{
  const edge=trayRim(d);if(edge.enabled){const section=own(new CrossSection(roundedOutline(d))),inner=own(section.offset(-edge.wall,'Round',2,64)),ring=own(section.subtract(inner));solids.push(own(own(ring.extrude(edge.height+.05)).translate([0,0,t-.05])));}
  for(const i of d.items){
+  if(i.kind==='label'){const text=i.text,outline=labelOutline(text);if(!text?.value.trim()||!outline.contours.length)throw new Error('Enter label text before exporting.');const section=own(new CrossSection(outline.contours,'EvenOdd'));solids.push(place(own(own(section.extrude(text.height+.05)).translate([0,0,t-.05])),i));continue;}
   if(i.kind==='hole'){cuts.push(place(own(own(M.cylinder(maxH,printedHoleDiameter(d,i.diameter,false)!/2,printedHoleDiameter(d,i.diameter,false)!/2,64)).translate([0,0,-1])),i));continue;}
   if(i.kind==='slot'){const rim=slotRim(i);if(rim.enabled)solids.push(place(own(extrude(roundedRect(i.l+2*rim.wall,i.w+2*rim.wall,Math.min(i.l,i.w)/2+rim.wall),rim.height+.05).translate([0,0,t-.05])),i));cuts.push(place(slot(i.l,i.w,Math.min(i.l,i.w)/2),i));continue;}
   const c=i.component;if(!c)continue;

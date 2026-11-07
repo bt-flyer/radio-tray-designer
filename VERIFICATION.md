@@ -76,3 +76,10 @@ Production build and **44 tests** pass. Tests verify the 1.5 mm inward edge band
 - Removed repeated unknown-connector-access notices from actionable design checks, without inventing clearance measurements.
 - Promoted only the exact RB35S, PGC and SP-1 mounting patterns confirmed by physical fit; no coordinates or dimensions change. Old saved designs and the built-in T-One layout receive the same status correction.
 - Regression coverage retains provisional warnings for changed patterns, missing-dimension errors and actual perimeter interference. All 53 tests passed; Pages build passed.
+
+### Printable labels
+
+- Added draggable raised text labels with editable content, letter height, extrusion height, numeric position, rotation, alignment, duplication and undo/redo through existing object controls.
+- Font contours are shared between SVG and printable CSG. Letter counters are preserved with even-odd filling; all letters fuse into the tray. Reference visibility does not hide printable labels.
+- All 56 tests pass, including rotated O counters, B/8/dotted glyph connectivity, watertight STL auditing, browser save/reopen geometry equality and invalid-text checks. Pages build passed.
+- Browser QA: added SMOKE PUMP, changed letter height to 8 mm and verified the resulting connected raised lettering in 3D without console errors.
