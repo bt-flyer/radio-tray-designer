@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "94bd34ec-1c5a-4844-9b0e-b82067583e62",
+  "name": "KingTech KP-600 estimated clamp fit test",
+  "updatedAt": "2026-11-08T02:37:35.933Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 115,
+    "wide": 70,
+    "narrow": 70,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "61fb2e9e-a625-435c-a19a-cffcac14dca2",
+      "kind": "component",
+      "label": "KingTech KP-600 fuel pump",
+      "x": 58,
+      "y": 35,
+      "rotation": 0,
+      "component": {
+        "id": "kp600",
+        "name": "KingTech KP-600 fuel pump",
+        "variant": "KP-600 supplied dummy STL",
+        "category": "electronics",
+        "body": {
+          "l": 65,
+          "w": 32,
+          "h": 36
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "estimated",
+        "confirmed": true,
+        "sources": {
+          "body": "User-supplied Kingtech_pump_KP-600_Dummy.stl, millimetres assumed: cylindrical case 65 × Ø32; case bottom Z4 and top Z36. Full reference including fittings is 103.71 mm long.",
+          "holes": "Estimated from supplied KP-600 photograph using the 65 mm case as scale: clamp X −22.5 mm, two holes Y ±24 mm (48 mm centres). Hidden foot assumed symmetric. Ø3 mm hardware holes estimated; printed pilots use project settings.",
+          "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local −X. Print a fit coupon before the full tray."
+        },
+        "holes": [
+          {
+            "x": -22.5,
+            "y": -24,
+            "d": 3
+          },
+          {
+            "x": -22.5,
+            "y": 24,
+            "d": 3
+          }
+        ],
+        "cutout": null,
+        "note": "Actual supplied pump mesh is reference only and excluded from STL. Silver clamp/feet and mounting pattern are photo estimates, not measured hardware. Low locating ribs are relieved around the clamp; mounting holes use the project’s 1.5 mm pilots. Nipple fittings extend 25 mm beyond the −X case end; rear fitting extends 13.71 mm beyond +X. Reference case bottom retains the STL’s 4 mm elevation.",
+        "tabs": [
+          {
+            "x": -22.5,
+            "y": -20,
+            "l": 12,
+            "w": 16
+          },
+          {
+            "x": -22.5,
+            "y": 20,
+            "l": 12,
+            "w": 16
+          }
+        ]
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 14
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 25
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}

@@ -200,3 +200,9 @@ Adjust or disable the ribs under the selected UAT's **Locating outline** control
 ### UAT overhang override
 
 The separately installed UAT mount's reference footprint may overhang the tray. This produces a warning, rather than the blocking “footprint extends beyond the tray” error. Review and acknowledge the clearance warnings in the STL dialog to export. Printed locating ribs and mounting holes are checked independently and must stay supported by the tray; disable the locating outline if only the original bolt-on mount should overhang.
+
+### KingTech KP-600 fuel pump
+
+The component library includes the supplied KP-600 dummy STL as an offline, reference-only 3D model. Its cylindrical case measures 65 × Ø32 mm; the source places its bottom 4 mm above the mounting plane (top 36 mm). Fittings extend the full reference to 103.71 mm. The silver clamp/feet are estimated from the supplied photo, with two mounting centres at local X −22.5 mm, Y ±24 mm (48 mm apart). The nipple end is −X. The hidden foot is assumed symmetric; these are **estimated**, editable holes, not confirmed measurements. Printed component pilots remain 1.5 mm by default. Low 2.5 mm outline ribs have clamp reliefs and fitting clearance zones. The supplied pump mesh is never merged into the printable tray. The existing T-One default layout is unchanged.
+
+Print `samples/kp600-fit-test.stl` to check the estimated mounting pattern first; its editable source is alongside it. Regenerate with `node --import tsx scripts/generate-kp600-fit.ts`.

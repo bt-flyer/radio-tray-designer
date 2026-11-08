@@ -17,6 +17,16 @@ export function componentModel(c:ComponentDef):THREE.Group {
  }
  function pins(x:number,y:number,count:number,z=h*.7){box(Math.min(l*.8,count*2.54+2),5,3,colors.black,x,y,z);for(let n=0;n<count;n++)cylinder(.45,1.8,colors.gold,x+(n-(count-1)/2)*2.54,y,z+2.3);}
  function screen(){box(l*.82,w*.76,.6,colors.black,0,0,h-.3);box(l*.73,w*.64,.2,0x254457,0,0,h+.05);label('KINGTECH  G4',0,-w*.17,h+.18,l*.6,w*.13,'#254457');label('READY   0 RPM',0,w*.08,h+.18,l*.6,w*.16,'#254457','#83dcce');}
+ if(c.id==='kp600'){
+  const body=cylinder(16,65,colors.black,0,0,20,'x');body.name='kp600-dummy-body';
+  const ring=new THREE.Shape();ring.absarc(0,0,17,0,Math.PI*2,false);const inner=new THREE.Path();inner.absarc(0,0,16.1,0,Math.PI*2,true);ring.holes.push(inner);
+  const band=mesh(new THREE.ExtrudeGeometry(ring,{depth:12,bevelEnabled:false,curveSegments:48}),colors.silver,-28.5,0,20);band.rotation.y=Math.PI/2;
+  onBody=false;
+  for(const t of c.tabs??[])box(t.l,t.w,2,colors.silver,t.x,t.y,1);
+  for(const sign of [-1,1])box(12,2,20,colors.silver,-22.5,sign*16,10);
+  for(const p of c.holes)cylinder((p.d??3)/2,.1,0x07090b,p.x,p.y,2.06);
+  g.userData.referenceOnly=true;return g;
+ }
  const bodyColor=c.id==='sp1'?colors.red:c.id==='drm'?colors.silver:c.id==='telemetry'?0x354e56:colors.black;
  box(l,w,h,bodyColor,0,0,h/2,Math.min(1.5,h/8));
  // Case seam and measured mounting ears, with actual hardware hole sizes.

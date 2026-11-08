@@ -20,7 +20,7 @@ function readComponentMeasurements(original:ComponentDef):ComponentDef{
  if(c.id==='telemetry')c.note+=' Connector inclusion in measured body size is unconfirmed.';
  return c;
 }
-function applyHolderDefaults(i:Item){const id=i.component?.id;if(i.component?.measurementRevision!==1)return;
+function applyHolderDefaults(i:Item){const id=i.component?.id;if(id==='kp600'){i.holder.sides.west.keepout=25;i.holder.sides.east.keepout=14;return;}if(i.component?.measurementRevision!==1)return;
  if(['telemetry','gps','airspeed','tone'].includes(id??'')){applySurroundingRibs(i);return;}
  if(id==='tone'){i.holder.enabled=false;return;}
  if(['telemetry','gps','airspeed','gsu'].includes(id??'')){i.holder.sides.east.enabled=false;}

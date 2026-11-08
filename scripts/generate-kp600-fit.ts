@@ -1,0 +1,10 @@
+import Module from 'manifold-3d';
+import {writeFile} from 'node:fs/promises';
+import {catalog} from '../src/catalog';
+import {newDesign,makeItem} from '../src/model';
+import {generateGeometry,binarySTL} from '../src/geometry';
+const api=await Module();api.setup();
+const d=newDesign();d.name='KingTech KP-600 estimated clamp fit test';d.tray={...d.tray,shape:'rectangle',length:115,wide:70,narrow:70,radius:3};d.items=[makeItem('component',[58,35],catalog.find(c=>c.id==='kp600')!)];
+const mesh=generateGeometry(api,d);if(mesh.pieces!==1)throw new Error('Disconnected fit test');
+await writeFile('samples/kp600-fit-test.stl',new Uint8Array(binarySTL(mesh)));await writeFile('samples/kp600-fit-test.tray.json',JSON.stringify(d,null,2)+'\n');
+console.log(`${mesh.triangles} triangles, ${mesh.pieces} solid; estimated 48 mm mounting centres, 1.5 mm pilots`);
