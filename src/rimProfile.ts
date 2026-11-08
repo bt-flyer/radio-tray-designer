@@ -1,4 +1,4 @@
-import {roundedOutline,signedArea,trayRim,type Design,type Point,type Side} from './model';
+import {roundedOutline,signedArea,trayRim,trayExtension,type Design,type Point,type Side} from './model';
 /** Height varies along the perimeter, blending side targets with a cosine window. */
 export function rimProfile(d:Design){
  let p=roundedOutline(d);if(signedArea(p)<0)p=[...p].reverse();const rim=trayRim(d);let total=0;
@@ -6,5 +6,8 @@ export function rimProfile(d:Design){
  const window=Math.min(rim.transitionLength??20,total/2),half=window/2;
  const primitive=(v:number)=>v/window+Math.sin(2*Math.PI*v/window)/(2*Math.PI);
  function heightAtDistance(s:number){if(!rim.sideHeights)return rim.height;let height=0;for(const segment of segments)for(const wrap of [-total,0,total]){const lo=Math.max(-half,segment.start+wrap-s),hi=Math.min(half,segment.start+segment.length+wrap-s);if(hi>lo)height+=segment.height*(primitive(hi)-primitive(lo));}return height;}
- return (x:number,y:number)=>{let nearest=Infinity,s=0;for(const e of segments){if(e.length<1e-8)continue;const t=Math.max(0,Math.min(1,((x-e.a[0])*e.dx+(y-e.a[1])*e.dy)/(e.length*e.length))),distance=(x-e.a[0]-t*e.dx)**2+(y-e.a[1]-t*e.dy)**2;if(distance<nearest){nearest=distance;s=e.start+t*e.length;}}return heightAtDistance(s);};
+ return (x:number,y:number)=>{let nearest=Infinity,s=0;for(const e of segments){if(e.length<1e-8)continue;const t=Math.max(0,Math.min(1,((x-e.a[0])*e.dx+(y-e.a[1])*e.dy)/(e.length*e.length))),distance=(x-e.a[0]-t*e.dx)**2+(y-e.a[1]-t*e.dy)**2;if(distance<nearest){nearest=distance;s=e.start+t*e.length;}}let reinforcement=1;
+ // Keep the extensions at the uniform height; blend down on the main tray.
+ if(d.tray.shape!=='polygon')for(const end of ['front','rear'] as const){const e=trayExtension(d,end);if(!e.enabled)continue;const inward=end==='front'?x:d.tray.length-x;if(inward<0)return rim.height;const across=Math.max(0,Math.abs(y-d.tray.wide/2)-e.width/2-e.radius),distance=Math.hypot(inward,across),u=Math.min(1,distance/(rim.transitionLength??20));reinforcement=Math.min(reinforcement,u*u*(3-2*u));}
+ return rim.height+(heightAtDistance(s)-rim.height)*reinforcement;};
 }
