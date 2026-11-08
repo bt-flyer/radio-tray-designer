@@ -23,7 +23,7 @@ export const itemSchema=z.object({
  grommet:z.object({enabled:z.boolean(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(5),lipHeight:n.min(.4).max(5),axialClearance:n.min(0).max(2)}).strict().optional(),
  text:z.object({value:z.string().max(80),size:n.min(2).max(30),height:n.min(.2).max(5)}).strict().optional(),
  rim:z.object({enabled:z.boolean(),height:size.max(50),wall:size.max(50)}).strict().optional(),component:componentSchema.nullable(),l:size,w:size,diameter:size,
- holder:z.object({kp600MountRevision:z.literal(1).optional(),ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),installationFitRevision:z.union([z.literal(2),z.literal(3)]).optional(),uatOutlineRevision:z.literal(1).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),
+ holder:z.object({drmRibRevision:z.literal(1).optional(),kp600MountRevision:z.literal(1).optional(),ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),installationFitRevision:z.union([z.literal(2),z.literal(3)]).optional(),uatOutlineRevision:z.literal(1).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),
  sides:z.object({north:sideSchema,south:sideSchema,east:sideSchema,west:sideSchema}).strict(),
  strap:z.object({enabled:z.boolean(),width:size,axis:z.enum(['x','y'])}).strict(),holeAllowance:n.min(0).max(5)}).strict()
 }).strict();

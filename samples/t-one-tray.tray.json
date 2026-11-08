@@ -403,13 +403,13 @@
             "keepout": 0
           },
           "east": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 0
           },
           "west": {
-            "enabled": false,
+            "enabled": true,
             "opening": 0,
             "offset": 0,
             "keepout": 0
@@ -420,7 +420,8 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0
+        "holeAllowance": 0,
+        "drmRibRevision": 1
       }
     },
     {
