@@ -221,3 +221,5 @@ Updated fit coupons: `samples/drm-fit-test.stl` and `samples/kp600-fit-test.stl`
 
 
 The T-One lighting-controller pattern is centred on the 52.5 mm case: upper-right (+30, −18.75), lower-left (−30, +18.75), each 7.5 mm from its nearest top/bottom edge. Horizontal spacing remains 60 mm and vertical spacing 37.5 mm. Tab openings move with the corrected pattern while keeping their widened 32 mm clearance. Older snapshots update once on reopen; the default tray and light-controller fit coupon are updated.
+
+The current built-in default is the uploaded **T-One Final** design: 313 mm body with a 19 mm centred rear extension (332 mm overall), 175 / 165 mm tapered width, 3.5 mm thickness, and the supplied final component placements. Only the subsequently confirmed lighting-controller hole/tab correction is applied. The design retains the usable-bed warning because its 332 mm overall length exceeds the configured 330 mm usable X dimension. Downloadable tray and TPU grommet samples match the new default.
