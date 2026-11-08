@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "517c0532-1c9b-4e0f-9074-be7479cec1a5",
+  "id": "t-one-default",
   "name": "T-One radio tray",
-  "updatedAt": "2026-11-08T03:06:45.873Z",
+  "updatedAt": "2026-11-08T02:45:24.636Z",
   "tray": {
     "shape": "trapezoid",
     "length": 313,
@@ -44,7 +44,7 @@
   "grid": 1,
   "items": [
     {
-      "id": "e8905642-7b7f-40f8-a752-be8738500624",
+      "id": "b18d5422-dd60-4c8c-beb9-28293b3afc92",
       "kind": "component",
       "label": "UAT mount",
       "x": 37,
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "6e498a6a-a025-46a8-a877-33740abd0c2c",
+      "id": "23d6e860-b6f9-4c9f-a403-82d0dfd1a3a7",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
       "x": 28.585050000000003,
@@ -248,7 +248,7 @@
       }
     },
     {
-      "id": "d78a02c8-94dd-46fa-ac67-f8988826561e",
+      "id": "07a1b597-d317-4836-9320-3b1da3c3c642",
       "kind": "component",
       "label": "Custom telemetry converter",
       "x": 253.28505,
@@ -324,7 +324,7 @@
       }
     },
     {
-      "id": "400ebdfe-3ce4-4c13-b2c6-9fdf0c742197",
+      "id": "fac6b1bd-b2d8-4e89-9d46-cea79a997098",
       "kind": "component",
       "label": "KingTech G4 DRM",
       "x": 129.8,
@@ -336,34 +336,49 @@
         "variant": "G4 external Data Relay Module",
         "category": "electronics",
         "body": {
-          "l": 58,
-          "w": 38.4,
+          "l": 51.5,
+          "w": 33.5,
           "h": 17.1
         },
-        "bodyStatus": "published",
-        "holesStatus": "published",
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "/references/kingtech-g4-drm-dimensions.png",
-          "holes": "Supplied drawing: centres at X ±32 mm, Y 0; Ø3 mm confirmed by user.",
+          "body": "User sketch and confirmation, 2026-11-08: case 51.5 × 33.5 mm. Height retained from earlier 17.1 mm drawing.",
+          "holes": "User confirmed: 58 mm horizontal centres; right 10 mm below top, left 10 mm above bottom; Ø3.5 mm hardware holes. Relative to case centre: (−29,+6.75), (+29,−6.75) mm.",
           "clearance": ""
         },
         "holes": [
           {
-            "x": -32,
-            "y": 0,
-            "d": 3
+            "x": -29,
+            "y": 6.75,
+            "d": 3.5
           },
           {
-            "x": 32,
-            "y": 0,
-            "d": 3
+            "x": 29,
+            "y": -6.75,
+            "d": 3.5
           }
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Check connector clearances against your DRM. Locating rails along long sides; both mounting-ear ends open Hole pattern centring remains provisional. Both mounting-ear ends are open; Ø3 mm mounting holes confirmed by user."
+        "note": "Updated measured case and diagonal mounting pattern. 13.5 mm vertical separation; 58 mm horizontal separation. Height retained from earlier drawing. Tab outlines are estimated 10 × 10 mm clearance geometry. Printed pilots follow project settings (normally 1.5 mm).",
+        "drmPumpMeasurementRevision": 1,
+        "tabs": [
+          {
+            "x": -27,
+            "y": 6.75,
+            "l": 10,
+            "w": 10
+          },
+          {
+            "x": 27,
+            "y": -6.75,
+            "l": 10,
+            "w": 10
+          }
+        ]
       },
       "l": 35,
       "w": 8,
@@ -409,7 +424,7 @@
       }
     },
     {
-      "id": "f7a8f6dc-97d2-4bec-b158-a94be7b77ae0",
+      "id": "b66a27f9-18ca-47c6-b227-0b25791d2165",
       "kind": "component",
       "label": "FrSky PGC",
       "x": 268.78505,
@@ -531,7 +546,7 @@
       }
     },
     {
-      "id": "e99112cd-e58c-41ab-ab21-bf31201eca64",
+      "id": "997fa5c2-bdd0-41d2-b48b-e483cfda4e30",
       "kind": "component",
       "label": "T-One lighting controller",
       "x": 265.28505,
@@ -638,7 +653,7 @@
       }
     },
     {
-      "id": "2edbb7f2-fa3e-4bd3-8e30-8a7891ae7725",
+      "id": "07e60049-0265-4761-b7d9-d852b60c8262",
       "kind": "component",
       "label": "FrSky GPS ADV",
       "x": 187.5,
@@ -713,7 +728,7 @@
       }
     },
     {
-      "id": "bfa11f6e-31eb-4208-b723-cb538bfd7252",
+      "id": "be2f3aca-fc3e-4d8b-a0ac-7ac8919e9a81",
       "kind": "component",
       "label": "FrSky ASS-70",
       "x": 187.5,
@@ -788,7 +803,7 @@
       }
     },
     {
-      "id": "adbcffb9-4dcb-4cec-a684-603b594d5dea",
+      "id": "d2668e09-d5a6-4d11-9487-f092fea87b0c",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 129.8,
@@ -847,7 +862,7 @@
       }
     },
     {
-      "id": "457373dc-9d4b-42c7-84da-fd44da3f2e3a",
+      "id": "af78170f-4ee3-4539-82af-76baef644406",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 129.8,
@@ -906,7 +921,7 @@
       }
     },
     {
-      "id": "228d6bcc-152c-4b21-8c0b-5e7aa8597a94",
+      "id": "d9f5e38a-172f-45bc-b3f4-7c98fdaae13b",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 88.90851,
@@ -965,7 +980,7 @@
       }
     },
     {
-      "id": "0e435eff-92f2-410f-bbf8-7e11bf4e1984",
+      "id": "5d0c128d-d2eb-48c6-a3e2-1f83cbeb1841",
       "kind": "component",
       "label": "FrSky RB-35S",
       "x": 154.3,
@@ -1087,7 +1102,7 @@
       }
     },
     {
-      "id": "3c4a430e-54d7-4c92-9264-24fbf3ff340d",
+      "id": "3a6cd207-045d-4fad-bcfd-894ceb85738d",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 219.5,
@@ -1146,7 +1161,7 @@
       }
     },
     {
-      "id": "314b605c-9e1a-42c0-a4e9-5c2d59d62c9e",
+      "id": "8e3378f8-d079-4761-a008-1353c8668bbf",
       "kind": "component",
       "label": "3-pin servo header",
       "x": 180.48505,
@@ -1237,7 +1252,7 @@
       }
     },
     {
-      "id": "0f828d5a-2032-4c54-9f63-15b3a16a5ecc",
+      "id": "119ac469-edfb-4bb8-a871-f976328a518a",
       "kind": "component",
       "label": "FrSky Remote NFC Panel",
       "x": 297.48505,
@@ -1310,7 +1325,7 @@
       }
     },
     {
-      "id": "8200e041-8249-4674-8e36-878318560af8",
+      "id": "41e35117-fc37-4da5-a821-937a15d96bc4",
       "kind": "component",
       "label": "KingTech KP-600 fuel pump",
       "x": 38.08505,
@@ -1322,53 +1337,54 @@
         "variant": "KP-600 supplied dummy STL",
         "category": "electronics",
         "body": {
-          "l": 65,
-          "w": 32,
-          "h": 36
+          "l": 48.5,
+          "w": 27,
+          "h": 31
         },
         "bodyStatus": "measured",
-        "holesStatus": "estimated",
+        "holesStatus": "measured",
         "clearanceStatus": "estimated",
         "confirmed": true,
         "sources": {
-          "body": "User-supplied Kingtech_pump_KP-600_Dummy.stl, millimetres assumed: cylindrical case 65 × Ø32; case bottom Z4 and top Z36. Full reference including fittings is 103.71 mm long.",
-          "holes": "Estimated from supplied KP-600 photograph using the 65 mm case as scale: clamp X −22.5 mm, two holes Y ±24 mm (48 mm centres). Hidden foot assumed symmetric. Ø3 mm hardware holes estimated; printed pilots use project settings.",
+          "body": "User sketch, 2026-11-08: 48.5 mm case length × Ø27 mm; 31 mm overall height assumes the original reference’s 4 mm bottom elevation. Fittings and clamp appearance remain estimates.",
+          "holes": "User confirmed: 32 mm transverse hole centres, mounting line 15 mm from nipple-end (−X) body edge. Local centres (−9.25,−16), (−9.25,+16) mm. Original hardware diameter remains estimated Ø3 mm; printed pilots follow project settings.",
           "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local −X. Print a fit coupon before the full tray."
         },
         "holes": [
           {
-            "x": -22.5,
-            "y": -24,
+            "x": -9.25,
+            "y": -16,
             "d": 3
           },
           {
-            "x": -22.5,
-            "y": 24,
+            "x": -9.25,
+            "y": 16,
             "d": 3
           }
         ],
         "tabs": [
           {
-            "x": -22.5,
-            "y": -20,
+            "x": -9.25,
+            "y": -16,
             "l": 12,
-            "w": 16
+            "w": 8
           },
           {
-            "x": -22.5,
-            "y": 20,
+            "x": -9.25,
+            "y": 16,
             "l": 12,
-            "w": 16
+            "w": 8
           }
         ],
         "cutout": null,
-        "note": "Actual supplied pump mesh is reference only and excluded from STL. Silver clamp/feet and mounting pattern are photo estimates, not measured hardware. No locating ribs are generated by default; mounting holes use the project’s 1.5 mm pilots. Nipple fittings extend 25 mm beyond the −X case end; rear fitting extends 13.71 mm beyond +X. Reference case bottom retains the STL’s 4 mm elevation."
+        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm.",
+        "drmPumpMeasurementRevision": 1,
+        "measurementRevision": 1
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
-        "kp600MountRevision": 1,
         "railHeightRevision": 1,
         "enabled": false,
         "height": 2.5,
@@ -1405,7 +1421,8 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0
+        "holeAllowance": 0,
+        "kp600MountRevision": 1
       }
     }
   ]

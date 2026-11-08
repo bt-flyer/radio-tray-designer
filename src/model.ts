@@ -10,7 +10,7 @@ export const holeSchema=z.object({x:coord,y:coord,d:size.nullable()}).strict();
 export const componentSchema=z.object({
  id:z.string().min(1).max(100),name:z.string().min(1).max(120),variant:z.string().max(160),category:z.enum(['electronics','connector','uat']),
  body:z.object({l:size.nullable(),w:size.nullable(),h:size.nullable()}).strict(),mountingPlate:z.object({l:size,w:size,x:coord,y:coord,h:size}).strict().optional(),bodyOffset:z.object({x:coord,y:coord}).strict().optional(),bodyOffsetRevision:z.literal(1).optional(),bodyStatus:status,holesStatus:status,clearanceStatus:status,
- confirmed:z.boolean(),sources:z.object({body:z.string().max(1000),holes:z.string().max(1000),clearance:z.string().max(1000)}).strict(),
+ confirmed:z.boolean(),drmPumpMeasurementRevision:z.literal(1).optional(),sources:z.object({body:z.string().max(1000),holes:z.string().max(1000),clearance:z.string().max(1000)}).strict(),
  holes:z.array(holeSchema).max(64),
  tabs:z.array(z.object({x:coord,y:coord,l:size,w:size,openingWidth:size.optional()}).strict()).max(16).optional(),measurementRevision:z.literal(1).optional(),physicalFitRevision:z.literal(1).optional(),fitSizingRevision:z.literal(2).optional(),lightMountRevision:z.literal(1).optional(),lightOpeningRevision:z.literal(1).optional(),mountBossDiameter:size.nullable().optional(),mountingPatternPending:z.boolean().optional(),connectorRevision:z.literal(1).optional(),
  cutout:z.object({l:size.nullable(),w:size.nullable(),r:n.min(0).max(100),flangeL:size.nullable(),flangeW:size.nullable(),printedFlange:z.boolean().optional(),flangeThickness:size.max(20).optional()}).strict().nullable(),

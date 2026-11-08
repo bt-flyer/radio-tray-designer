@@ -73,8 +73,8 @@
         "confirmed": true,
         "sources": {
           "body": "Supplied uat.stl; units assumed millimetres",
-          "holes": "Measured STL: \u00d83 mm, 50 \u00d7 20 mm centres",
-          "clearance": "Mounting face measured from supplied STL: 60 \u00d7 29.91702 mm, centre (0, \u22120.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
+          "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
+          "clearance": "Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
         },
         "holes": [
           {
@@ -171,7 +171,7 @@
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User measured case 51 \u00d7 26 \u00d7 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
+          "body": "User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
           "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
@@ -201,7 +201,7 @@
         "physicalFitRevision": 1,
         "mountBossDiameter": 8,
         "cutout": null,
-        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with \u00d88 mm boss windows. Screw centres stay at X \u00b113, Y \u00b116 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin."
+        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin."
       },
       "l": 35,
       "w": 8,
@@ -336,34 +336,49 @@
         "variant": "G4 external Data Relay Module",
         "category": "electronics",
         "body": {
-          "l": 58,
-          "w": 38.4,
+          "l": 51.5,
+          "w": 33.5,
           "h": 17.1
         },
-        "bodyStatus": "published",
-        "holesStatus": "published",
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "/references/kingtech-g4-drm-dimensions.png",
-          "holes": "Supplied drawing: centres at X \u00b132 mm, Y 0; \u00d83 mm confirmed by user.",
+          "body": "User sketch and confirmation, 2026-11-08: case 51.5 × 33.5 mm. Height retained from earlier 17.1 mm drawing.",
+          "holes": "User confirmed: 58 mm horizontal centres; right 10 mm below top, left 10 mm above bottom; Ø3.5 mm hardware holes. Relative to case centre: (−29,+6.75), (+29,−6.75) mm.",
           "clearance": ""
         },
         "holes": [
           {
-            "x": -32,
-            "y": 0,
-            "d": 3
+            "x": -29,
+            "y": 6.75,
+            "d": 3.5
           },
           {
-            "x": 32,
-            "y": 0,
-            "d": 3
+            "x": 29,
+            "y": -6.75,
+            "d": 3.5
           }
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Check connector clearances against your DRM. Locating rails along long sides; both mounting-ear ends open Hole pattern centring remains provisional. Both mounting-ear ends are open; \u00d83 mm mounting holes confirmed by user."
+        "note": "Updated measured case and diagonal mounting pattern. 13.5 mm vertical separation; 58 mm horizontal separation. Height retained from earlier drawing. Tab outlines are estimated 10 × 10 mm clearance geometry. Printed pilots follow project settings (normally 1.5 mm).",
+        "drmPumpMeasurementRevision": 1,
+        "tabs": [
+          {
+            "x": -27,
+            "y": 6.75,
+            "l": 10,
+            "w": 10
+          },
+          {
+            "x": 27,
+            "y": -6.75,
+            "l": 10,
+            "w": 10
+          }
+        ]
       },
       "l": 35,
       "w": 8,
@@ -484,7 +499,7 @@
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 \u00d7 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable."
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 × 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable."
       },
       "l": 35,
       "w": 8,
@@ -552,8 +567,8 @@
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User remeasured after physical fit: 52.5 \u00d7 52.5 \u00d7 16.5 mm. Existing mounting holes line up and remain unchanged.",
-          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. \u00d81.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
+          "body": "User remeasured after physical fit: 52.5 × 52.5 × 16.5 mm. Existing mounting holes line up and remain unchanged.",
+          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
           "clearance": ""
         },
         "holes": [
@@ -591,7 +606,7 @@
         "lightOpeningRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 \u00d7 52.5 \u00d7 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged."
+        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged."
       },
       "l": 35,
       "w": 8,
@@ -1155,7 +1170,7 @@
       "component": {
         "id": "servo3",
         "name": "3-pin servo header",
-        "variant": "Generic 1 \u00d7 3 male header \u00b7 2.54 mm pitch + printed flange",
+        "variant": "Generic 1 × 3 male header · 2.54 mm pitch + printed flange",
         "category": "connector",
         "body": {
           "l": 7.62,
@@ -1167,8 +1182,8 @@
         "clearanceStatus": "designed",
         "confirmed": true,
         "sources": {
-          "body": "Generic 2.54 mm-pitch single-row strip; 3 \u00d7 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
-          "holes": "Designed flange: two holes at X \u00b18.11 mm, Y 0; \u00d81.5 mm component pilots.",
+          "body": "Generic 2.54 mm-pitch single-row strip; 3 × 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
+          "holes": "Designed flange: two holes at X ±8.11 mm, Y 0; Ø1.5 mm component pilots.",
           "clearance": "Designed 0.3 mm per side around generic header insulator; adjust for your actual housing."
         },
         "holes": [
@@ -1192,7 +1207,7 @@
           "printedFlange": true,
           "flangeThickness": 3
         },
-        "note": "Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 \u00d7 2.54 \u00d7 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified."
+        "note": "Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 × 2.54 × 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified."
       },
       "l": 35,
       "w": 8,
@@ -1322,47 +1337,49 @@
         "variant": "KP-600 supplied dummy STL",
         "category": "electronics",
         "body": {
-          "l": 65,
-          "w": 32,
-          "h": 36
+          "l": 48.5,
+          "w": 27,
+          "h": 31
         },
         "bodyStatus": "measured",
-        "holesStatus": "estimated",
+        "holesStatus": "measured",
         "clearanceStatus": "estimated",
         "confirmed": true,
         "sources": {
-          "body": "User-supplied Kingtech_pump_KP-600_Dummy.stl, millimetres assumed: cylindrical case 65 \u00d7 \u00d832; case bottom Z4 and top Z36. Full reference including fittings is 103.71 mm long.",
-          "holes": "Estimated from supplied KP-600 photograph using the 65 mm case as scale: clamp X \u221222.5 mm, two holes Y \u00b124 mm (48 mm centres). Hidden foot assumed symmetric. \u00d83 mm hardware holes estimated; printed pilots use project settings.",
-          "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local \u2212X. Print a fit coupon before the full tray."
+          "body": "User sketch, 2026-11-08: 48.5 mm case length × Ø27 mm; 31 mm overall height assumes the original reference’s 4 mm bottom elevation. Fittings and clamp appearance remain estimates.",
+          "holes": "User confirmed: 32 mm transverse hole centres, mounting line 15 mm from nipple-end (−X) body edge. Local centres (−9.25,−16), (−9.25,+16) mm. Original hardware diameter remains estimated Ø3 mm; printed pilots follow project settings.",
+          "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local −X. Print a fit coupon before the full tray."
         },
         "holes": [
           {
-            "x": -22.5,
-            "y": -24,
+            "x": -9.25,
+            "y": -16,
             "d": 3
           },
           {
-            "x": -22.5,
-            "y": 24,
+            "x": -9.25,
+            "y": 16,
             "d": 3
           }
         ],
         "tabs": [
           {
-            "x": -22.5,
-            "y": -20,
+            "x": -9.25,
+            "y": -16,
             "l": 12,
-            "w": 16
+            "w": 8
           },
           {
-            "x": -22.5,
-            "y": 20,
+            "x": -9.25,
+            "y": 16,
             "l": 12,
-            "w": 16
+            "w": 8
           }
         ],
         "cutout": null,
-        "note": "Actual supplied pump mesh is reference only and excluded from STL. Silver clamp/feet and mounting pattern are photo estimates, not measured hardware. No locating ribs are generated by default; mounting holes use the project\u2019s 1.5 mm pilots. Nipple fittings extend 25 mm beyond the \u2212X case end; rear fitting extends 13.71 mm beyond +X. Reference case bottom retains the STL\u2019s 4 mm elevation."
+        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm.",
+        "drmPumpMeasurementRevision": 1,
+        "measurementRevision": 1
       },
       "l": 35,
       "w": 8,

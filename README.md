@@ -203,7 +203,9 @@ The separately installed UAT mount's reference footprint may overhang the tray. 
 
 ### KingTech KP-600 fuel pump
 
-The component library includes the supplied KP-600 dummy STL as an offline, reference-only 3D model. Its cylindrical case measures 65 × Ø32 mm; the source places its bottom 4 mm above the mounting plane (top 36 mm). Fittings extend the full reference to 103.71 mm. The silver clamp/feet are estimated from the supplied photo, with two mounting centres at local X −22.5 mm, Y ±24 mm (48 mm apart). The nipple end is −X. The hidden foot is assumed symmetric; these are **estimated**, editable holes, not confirmed measurements. Printed component pilots remain 1.5 mm by default. The KP-600 uses mounting holes only, without printed outline ribs; fitting clearance zones remain visible. The supplied pump mesh is never merged into the printable tray. The existing T-One default layout is unchanged.
+The KP-600 uses the confirmed 2026-11-08 measurements: 48.5 × Ø27 mm case, two holes 32 mm apart at 15 mm from the nipple-end case edge (local X −9.25, Y ±16). The original dummy STL is resized for the visual reference; its 4 mm case elevation is retained, giving an estimated 31 mm total height. Clamp/feet and fitting details remain estimates. Hardware hole diameter remains estimated Ø3 mm; printed component pilots are 1.5 mm by default. There are no printed pump outline ribs. The pump mesh is excluded from STL exports.
+
+The DRM uses a 51.5 × 33.5 mm case, retaining the earlier 17.1 mm height. Its Ø3.5 mm hardware holes have 58 mm horizontal separation, with right 10 mm below the top and left 10 mm above the bottom: local (−29,+6.75), (+29,−6.75). Printed pilots remain 1.5 mm. These updates apply once when reopening older designs, preserving item positions and subsequent manual measurement edits. The built-in default and sample STL are updated.
 
 Print `samples/kp600-fit-test.stl` to check the estimated mounting pattern first; its editable source is alongside it. Regenerate with `node --import tsx scripts/generate-kp600-fit.ts`.
 
@@ -214,3 +216,5 @@ The built-in T-One default now uses the user-approved `T-One radio tray copy.tra
 ### Centred tray extensions
 
 In Tray settings → Centred tray extensions, enable Front (−X, left in top view), Rear (+X, right), or both. Each has independent width, outward depth and corner radius in millimetres. Rectangle and trapezoid extensions are centred across the tray, share its thickness, and carry the perimeter rim. Width must be smaller than the selected end; radii are reduced locally for short edges. The complete outline is used for snapping, boundary/print-bed checks, preview and STL. Settings save with the design and participate in normal undo/redo. Existing designs have both extensions disabled. Converting to a custom polygon bakes the extension vertices for manual editing; adjustable extension controls are available on rectangles and trapezoids.
+
+Updated fit coupons: `samples/drm-fit-test.stl` and `samples/kp600-fit-test.stl`, with editable design JSON beside each. Both use 1.5 mm printed component pilots. The DRM retains locating rails; the KP-600 has no outline ribs.

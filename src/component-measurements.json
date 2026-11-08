@@ -201,20 +201,38 @@
       "id": "drm",
       "name": "KingTech G4 DRM",
       "body": {
-        "length": 58,
-        "width": 38.4,
+        "length": 51.5,
+        "width": 33.5,
         "height": 17.1,
-        "status": "User-supplied dimensioned drawing"
+        "status": "User confirmed sketch 2026-11-08; height 17.1 mm retained from earlier drawing."
+      },
+      "mounting": {
+        "holeCount": 2,
+        "diameter": 3.5,
+        "horizontalCentreSeparation": 58,
+        "verticalCentreSeparation": 13.5,
+        "status": "User confirmed right hole 10 mm below top, left 10 mm above bottom; centred horizontally; diagonal pattern."
+      },
+      "holder": "Locating rails along long sides; both mounting-ear ends open",
+      "access": "Check connector clearances against your DRM."
+    },
+    {
+      "id": "kp600",
+      "name": "KingTech KP-600 fuel pump",
+      "body": {
+        "length": 48.5,
+        "width": 27,
+        "height": 31,
+        "status": "User measured length and diameter; height includes estimated 4 mm reference elevation."
       },
       "mounting": {
         "holeCount": 2,
         "diameter": 3,
-        "horizontalCentreSeparation": 64,
-        "verticalCentreSeparation": 0,
-        "status": "Centres from drawing; Ø3 mm confirmed by user"
+        "horizontalCentreSeparation": 0,
+        "verticalCentreSeparation": 32,
+        "status": "User confirmed hole line 15 mm from nipple-end body edge; local X \u22129.25, Y \u00b116 mm. Hardware diameter estimated; printed pilots 1.5 mm."
       },
-      "holder": "Locating rails along long sides; both mounting-ear ends open",
-      "access": "Check connector clearances against your DRM."
+      "holder": "No outline ribs; holes only."
     }
   ],
   "pending": [

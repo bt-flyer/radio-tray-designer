@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "ea86932e-f442-4522-b24a-2c3c306298d6",
+  "name": "DRM measured diagonal mounting fit test",
+  "updatedAt": "2026-11-08T19:09:53.704Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 80,
+    "wide": 55,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "4e5de77a-0384-4d89-bf47-b076285a90d1",
+      "kind": "component",
+      "label": "KingTech G4 DRM",
+      "x": 40,
+      "y": 27.5,
+      "rotation": 0,
+      "component": {
+        "id": "drm",
+        "name": "KingTech G4 DRM",
+        "variant": "G4 external Data Relay Module",
+        "category": "electronics",
+        "body": {
+          "l": 51.5,
+          "w": 33.5,
+          "h": 17.1
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "measured",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "User sketch and confirmation, 2026-11-08: case 51.5 × 33.5 mm. Height retained from earlier 17.1 mm drawing.",
+          "holes": "User confirmed: 58 mm horizontal centres; right 10 mm below top, left 10 mm above bottom; Ø3.5 mm hardware holes. Relative to case centre: (−29,+6.75), (+29,−6.75) mm.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": -29,
+            "y": 6.75,
+            "d": 3.5
+          },
+          {
+            "x": 29,
+            "y": -6.75,
+            "d": 3.5
+          }
+        ],
+        "cutout": null,
+        "note": "Updated measured case and diagonal mounting pattern. 13.5 mm vertical separation; 58 mm horizontal separation. Height retained from earlier drawing. Tab outlines are estimated 10 × 10 mm clearance geometry. Printed pilots follow project settings (normally 1.5 mm).",
+        "measurementRevision": 1,
+        "drmPumpMeasurementRevision": 1,
+        "tabs": [
+          {
+            "x": -27,
+            "y": 6.75,
+            "l": 10,
+            "w": 10
+          },
+          {
+            "x": 27,
+            "y": -6.75,
+            "l": 10,
+            "w": 10
+          }
+        ]
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": false,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}
