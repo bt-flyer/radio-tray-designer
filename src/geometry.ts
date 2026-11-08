@@ -43,8 +43,9 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
  const parts=result.decompose();parts.forEach(own);const mesh=result.getMesh();const positions=new Float32Array(mesh.vertProperties.length/mesh.numProp*3);for(let k=0;k<positions.length/3;k++)for(let j=0;j<3;j++)positions[k*3+j]=mesh.vertProperties[k*mesh.numProp+j]*(j===1?-1:1);
  // Layout uses screen coordinates (+Y down). Printer/Three space is right-handed (+Z up).
  // Reflect Y and reverse triangle winding together so the top face remains outward.
- const indices=new Uint32Array(mesh.triVerts);for(let k=0;k<indices.length;k+=3){const b=indices[k+1];indices[k+1]=indices[k+2];indices[k+2]=b;}
- const meshBounds=result.boundingBox();const output={positions,indices,volume,triangles:result.numTri(),pieces:parts.length,bounds:{min:[meshBounds.min[0],-meshBounds.max[1],meshBounds.min[2]],max:[meshBounds.max[0],-meshBounds.min[1],meshBounds.max[2]]}};auditMesh(output);return output;
+ let indices:Uint32Array=new Uint32Array(mesh.triVerts);for(let k=0;k<indices.length;k+=3){const b=indices[k+1];indices[k+1]=indices[k+2];indices[k+2]=b;}
+ indices=removeCollapsedTriangles(positions,indices);
+ const meshBounds=result.boundingBox();const output={positions,indices,volume,triangles:indices.length/3,pieces:parts.length,bounds:{min:[meshBounds.min[0],-meshBounds.max[1],meshBounds.min[2]],max:[meshBounds.max[0],-meshBounds.min[1],meshBounds.max[2]]}};auditMesh(output);return output;
  }finally{for(let i=owned.length-1;i>=0;i--)owned[i].delete();}
 }
 export function binarySTL(m:MeshResult):ArrayBuffer{auditMesh(m);const b=new ArrayBuffer(84+m.indices.length/3*50),v=new DataView(b);const header=new TextEncoder().encode('Trayworks | millimetres | printable geometry only');new Uint8Array(b,0,header.length).set(header);v.setUint32(80,m.indices.length/3,true);
@@ -58,4 +59,12 @@ export function auditMesh(m:MeshResult):void{
  const edges=new Map<string,{count:number;direction:number}>();
  for(let t=0;t<m.indices.length;t+=3){const a=ids[m.indices[t]],b=ids[m.indices[t+1]],c=ids[m.indices[t+2]];if(a===b||b===c||a===c)throw new Error('STL contains a collapsed triangle. Adjust nearby openings or wall dimensions.');for(const [x,y] of [[a,b],[b,c],[c,a]]){const key=x<y?`${x}:${y}`:`${y}:${x}`;const e=edges.get(key)??{count:0,direction:0};e.count++;e.direction+=x<y?1:-1;edges.set(key,e);}}
  if([...edges.values()].some(e=>e.count!==2||e.direction!==0))throw new Error('The STL surface is not watertight. Adjust touching or nearly coincident walls and openings.');
+}
+
+/** Drop only faces whose vertices become identical in the actual STL coordinates.
+ * The full watertight/orientation audit still runs afterwards; holes are never hidden.
+ */
+export function removeCollapsedTriangles(positions:Float32Array,indices:Uint32Array):Uint32Array{
+ const same=(a:number,b:number)=>positions[a*3]===positions[b*3]&&positions[a*3+1]===positions[b*3+1]&&positions[a*3+2]===positions[b*3+2];
+ const kept:number[]=[];for(let k=0;k<indices.length;k+=3){const a=indices[k],b=indices[k+1],c=indices[k+2];if(!same(a,b)&&!same(b,c)&&!same(c,a))kept.push(a,b,c);}return new Uint32Array(kept);
 }
