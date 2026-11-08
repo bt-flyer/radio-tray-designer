@@ -124,7 +124,7 @@
         "length": 52.5,
         "width": 52.5,
         "height": 16.5,
-        "status": "User remeasured after print fit failure; existing mounting holes confirmed aligned and unchanged"
+        "status": "User measured 52.5 \u00d7 52.5 \u00d7 16.5 mm case"
       },
       "retention": "Screws",
       "holder": "Low locating ribs around the case, with tab openings once measured",
@@ -136,7 +136,8 @@
         "verticalCentreSeparation": 37.5,
         "upperRightDownFromTop": 7.5,
         "lowerLeftDownFromTop": 45,
-        "status": "Existing hole coordinates confirmed by physical fit; do not recenter from updated body dimensions"
+        "status": "User confirmed holes 7.5 mm from nearest top/bottom case edges; pattern centred on 52.5 mm case, horizontal spacing remains 60 mm.",
+        "lowerLeftUpFromBottom": 7.5
       },
       "tabClearance": {
         "width": 32,

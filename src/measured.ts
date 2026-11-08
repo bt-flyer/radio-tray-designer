@@ -30,7 +30,7 @@ function applyHolderDefaults(i:Item){const id=i.component?.id;if(id==='kp600'){i
  if(id==='drm'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
  if(id==='pgc'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
 }
-export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyDrmPumpMeasurements(applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component))));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);applyUATOutline(i);if(i.component)i.component=widenLightOpenings(applyPGCFeet(i.component));}return d;}
+export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyDrmPumpMeasurements(applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component))));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);applyUATOutline(i);if(i.component)i.component=applyLightEdgeOffsets(widenLightOpenings(applyPGCFeet(i.component)));}return d;}
 
 export function standardConnector(id:string):ComponentDef{const small=id==='xt30',l=small?10.2:15.5,w=small?5.2:8.1,h=small?12.4:20.2,openingL=l+.6,openingW=w+.6;return {id,name:small?'XT30 standard connector':'XT60 standard connector',variant:small?'Standard AMASS XT30U-F body + printed flange':'Standard AMASS XT60-F body + printed flange',category:'connector',body:{l,w,h},bodyStatus:'published',holesStatus:'designed',clearanceStatus:'designed',confirmed:true,connectorRevision:1,sources:{body:small?'https://www.micros.com.pl/mediaserver/Z_XT30U-F_AMASS_0001.pdf':'https://www.bto.pl/pdf/08031/XT60-F.pdf',holes:'Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.',clearance:'Designed 0.3 mm clearance per side.'},holes:[{x:-openingL/2-4,y:0,d:3.2},{x:openingL/2+4,y:0,d:3.2}],cutout:{l:openingL,w:openingW,r:.5,flangeL:openingL+16,flangeW:openingW+8,printedFlange:true,flangeThickness:3},note:'Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ.'};}
 
@@ -52,7 +52,7 @@ export function applyConfirmedHolePattern(c:ComponentDef):ComponentDef{
  next.note=next.note.replace(' Hole pattern centring remains provisional.','');
  return next;
 }
-export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyDrmPumpMeasurements(widenLightOpenings(applyUATPlate(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c))))))));}
+export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyLightEdgeOffsets(applyDrmPumpMeasurements(widenLightOpenings(applyUATPlate(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c)))))))));}
 
 export function servoHeader():ComponentDef{return {
  id:'servo3',name:'3-pin servo header',variant:'Generic 1 × 3 male header · 2.54 mm pitch + printed flange',category:'connector',
@@ -140,5 +140,16 @@ export function applyDrmPumpMeasurements(c:ComponentDef):ComponentDef{
   next.sources.holes='User confirmed: 32 mm transverse hole centres, mounting line 15 mm from nipple-end (−X) body edge. Local centres (−9.25,−16), (−9.25,+16) mm. Original hardware diameter remains estimated Ø3 mm; printed pilots follow project settings.';
   next.note='Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm.';
  }
+ return next;
+}
+
+/** Centre the confirmed 60 × 37.5 mm pattern on the current 52.5 mm case. */
+export function applyLightEdgeOffsets(c:ComponentDef):ComponentDef{
+ if(c.id!=='tone'||c.lightEdgeRevision===1)return c;
+ const next=structuredClone(c);next.lightEdgeRevision=1;next.holes=[{x:30,y:-18.75,d:1.5},{x:-30,y:18.75,d:1.5}];next.holesStatus='measured';next.mountingPatternPending=false;
+ // Move the tab reliefs with the corrected screw pattern; keep their chosen width.
+ if(next.tabs)for(const t of next.tabs)t.y-=4;
+ next.sources.holes='User confirmed: horizontal centres 60 mm; upper-right 7.5 mm below top, lower-left 7.5 mm above bottom of 52.5 mm case. Local centres (+30,−18.75), (−30,+18.75), mm. Printed pilots Ø1.5 mm.';
+ next.note='52.5 × 52.5 × 16.5 mm case. Confirmed diagonal hole pattern is centred on the case: 60 mm across, 37.5 mm vertically, 7.5 mm from each nearest top/bottom edge. Tab reliefs follow the pattern; their outlines are estimated, and the widened 32 mm openings remain. Printed pilots Ø1.5 mm.';
  return next;
 }

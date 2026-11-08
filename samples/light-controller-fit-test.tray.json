@@ -71,32 +71,32 @@
         "confirmed": true,
         "sources": {
           "body": "User remeasured after physical fit: 52.5 × 52.5 × 16.5 mm. Existing mounting holes line up and remain unchanged.",
-          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
+          "holes": "User confirmed: horizontal centres 60 mm; upper-right 7.5 mm below top, lower-left 7.5 mm above bottom of 52.5 mm case. Local centres (+30,−18.75), (−30,+18.75), mm. Printed pilots Ø1.5 mm.",
           "clearance": ""
         },
         "holes": [
           {
             "x": 30,
-            "y": -14.75,
+            "y": -18.75,
             "d": 1.5
           },
           {
             "x": -30,
-            "y": 22.75,
+            "y": 18.75,
             "d": 1.5
           }
         ],
         "tabs": [
           {
             "x": 27.625,
-            "y": -10.75,
+            "y": -14.75,
             "l": 10.75,
             "w": 16,
             "openingWidth": 32
           },
           {
             "x": -27.625,
-            "y": 18.75,
+            "y": 14.75,
             "l": 10.75,
             "w": 16,
             "openingWidth": 32
@@ -108,8 +108,9 @@
         "lightMountRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged.",
-        "lightOpeningRevision": 1
+        "note": "52.5 × 52.5 × 16.5 mm case. Confirmed diagonal hole pattern is centred on the case: 60 mm across, 37.5 mm vertically, 7.5 mm from each nearest top/bottom edge. Tab reliefs follow the pattern; their outlines are estimated, and the widened 32 mm openings remain. Printed pilots Ø1.5 mm.",
+        "lightOpeningRevision": 1,
+        "lightEdgeRevision": 1
       },
       "l": 35,
       "w": 8,
