@@ -35,6 +35,8 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
   for(const s of strapCuts(i))cuts.push(place(slot(s.l,s.w,Math.min(s.l,s.w)/2,s.x,s.y),i));
  }
  let result=own(M.union(solids));if(cuts.length)result=own(result.subtract(own(M.union(cuts))));
+ // Remove sub-micron slivers at rounded concave shoulders before Float32 STL conversion.
+ if(raw.length>4)result=own(result.simplify(.001));
  if(result.status()!=='NoError')throw new Error(`Solid generation failed: ${result.status()}`);
  const volume=result.volume();if(!Number.isFinite(volume)||volume<=0)throw new Error('The design has no printable volume.');
  const parts=result.decompose();parts.forEach(own);const mesh=result.getMesh();const positions=new Float32Array(mesh.vertProperties.length/mesh.numProp*3);for(let k=0;k<positions.length/3;k++)for(let j=0;j<3;j++)positions[k*3+j]=mesh.vertProperties[k*mesh.numProp+j]*(j===1?-1:1);
