@@ -79,6 +79,7 @@ export function applyFitSizing(c:ComponentDef):ComponentDef{
 export function applyHolderMeasurements(i:Item){applyHolderDefaults(i);applyInstallationFit(i);applyUATOutline(i);}
 export function applyInstallationFit(i:Item){
  const id=i.component?.id;
+ if(id==='kp600'){if(i.holder.kp600MountRevision!==1){i.holder.enabled=false;i.holder.kp600MountRevision=1;}return;}
  if(id==='sp1'){
   i.component=applyPumpBodyOffset(i.component!);if(i.holder.installationFitRevision===3)return;
   i.holder.enabled=true;for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}
