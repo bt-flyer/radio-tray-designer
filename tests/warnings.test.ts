@@ -10,11 +10,11 @@ test('fit-confirmed presets and old saved patterns shed stale warnings without c
   assert.equal(next.holesStatus,'measured');assert.deepEqual(next.holes,before.holes);assert.deepEqual(next.body,before.body);
   assert.ok(!validateDesign(d).some(i=>/provisional|connector access has not/.test(i.message)));
  }
- assert.ok(!validateDesign(tOneTemplate()).some(i=>/provisional|connector access has not/.test(i.message)));
+ const template=tOneTemplate(),estimatedPump=template.items.find(i=>i.component?.id==='kp600')!;assert.ok(!validateDesign(template).some(i=>i.itemId!==estimatedPump.id&&/provisional|connector access has not/.test(i.message)));
 });
 test('custom edits to confirmed patterns remain provisional; missing geometry and actual conflicts still warn',()=>{
  const c=structuredClone(catalog.find(c=>c.id==='rb35s')!);c.holesStatus='estimated';c.holes[0].x+=2;assert.equal(applyConfirmedHolePattern(c).holesStatus,'estimated');
  const d=newDesign();d.items=[makeItem('component',[155,87.5],c)];assert.ok(validateDesign(d).some(i=>i.message.includes('provisional')));
  d.items[0].component!.body.h=null;assert.ok(validateDesign(d).some(i=>i.level==='error'&&i.message.includes('body')));
- const edge=tOneTemplate();edge.items.find(i=>i.component?.id==='uat')!.x=261.71495;assert.ok(validateDesign(edge).some(i=>i.message.includes('outer tray rim')));
+ const edge=tOneTemplate();edge.items.find(i=>i.component?.id==='uat')!.x=edge.tray.length-48.28505;assert.ok(validateDesign(edge).some(i=>i.message.includes('outer tray rim')));
 });

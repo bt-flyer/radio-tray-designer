@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "template-t-one",
+  "id": "t-one-default",
   "name": "T-One radio tray",
-  "updatedAt": "2026-11-07T19:41:51.227Z",
+  "updatedAt": "2026-11-08T02:45:24.636Z",
   "tray": {
     "shape": "trapezoid",
-    "length": 310,
+    "length": 313,
     "wide": 175,
     "narrow": 165,
-    "thickness": 3,
+    "thickness": 2.5,
     "radius": 5,
     "points": [
       [
@@ -44,11 +44,11 @@
   "grid": 1,
   "items": [
     {
-      "id": "0630cfaa-bb46-449f-8dde-26031dbcf628",
+      "id": "b18d5422-dd60-4c8c-beb9-28293b3afc92",
       "kind": "component",
       "label": "UAT mount",
-      "x": 258,
-      "y": 87.5,
+      "x": 37,
+      "y": 34.5,
       "rotation": 180,
       "component": {
         "id": "uat",
@@ -60,14 +60,21 @@
           "w": 29.91702,
           "h": 35.34187
         },
+        "mountingPlate": {
+          "l": 60,
+          "w": 29.91702,
+          "x": 0,
+          "y": -0.04149,
+          "h": 3
+        },
         "bodyStatus": "measured",
         "holesStatus": "measured",
         "clearanceStatus": "measured",
         "confirmed": true,
         "sources": {
           "body": "Supplied uat.stl; units assumed millimetres",
-          "holes": "Measured STL: Ø3 mm, 50 × 20 mm centres",
-          "clearance": "Mounting face measured from supplied STL: 60 × 29.91702 mm, centre (0, −0.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
+          "holes": "Measured STL: \u00d83 mm, 50 \u00d7 20 mm centres",
+          "clearance": "Mounting face measured from supplied STL: 60 \u00d7 29.91702 mm, centre (0, \u22120.04149), 3 mm plate. Ribs use 0.3 mm per-side fit clearance by default."
         },
         "holes": [
           {
@@ -92,19 +99,13 @@
           }
         ],
         "cutout": null,
-        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded. Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only.",
-        "mountingPlate": {
-          "l": 60,
-          "w": 29.91702,
-          "x": 0,
-          "y": -0.04149,
-          "h": 3
-        }
+        "note": "Bolt-on reference only. Mounting face is oriented against the tray. Four holes are exported; the mount itself is excluded. Low locating ribs follow the mounting plate; the complete overhanging mesh remains reference-only."
       },
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
+        "uatOutlineRevision": 1,
         "enabled": true,
         "height": 2.5,
         "wall": 2,
@@ -140,16 +141,15 @@
           "width": 4,
           "axis": "x"
         },
-        "holeAllowance": 0,
-        "uatOutlineRevision": 1
+        "holeAllowance": 0
       }
     },
     {
-      "id": "d91c51ed-212d-4477-93af-821326174147",
+      "id": "23d6e860-b6f9-4c9f-a403-82d0dfd1a3a7",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
-      "x": 36.150000000000006,
-      "y": 146.825,
+      "x": 28.585050000000003,
+      "y": 145.825,
       "rotation": 180,
       "component": {
         "id": "sp1",
@@ -171,7 +171,7 @@
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User measured case 51 × 26 × 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
+          "body": "User measured case 51 \u00d7 26 \u00d7 36.2 mm. Front = nipple end (+X). Front/rear hole offsets 7 and 17.75 mm imply 26.25 mm centres; retain the fitted 26 mm pattern, with body centre 5.375 mm rearward of its midpoint.",
           "holes": "User physical fit check: mounting-hole centres line up on the printed tray. Original hardware diameters retained; printed component pilots are independently configured.",
           "clearance": ""
         },
@@ -201,7 +201,7 @@
         "physicalFitRevision": 1,
         "mountBossDiameter": 8,
         "cutout": null,
-        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with Ø8 mm boss windows. Screw centres stay at X ±13, Y ±16 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin."
+        "note": "Four-side 2.5 mm locating ribs around the rearward-offset case, with \u00d88 mm boss windows. Screw centres stay at X \u00b113, Y \u00b116 mm. Keeping the fitted 26 mm spacing gives edge distances 7.125 mm front / 17.875 mm rear (0.125 mm each from measurements). Body centre offset is editable; only the case and its ribs move relative to the mounting origin."
       },
       "l": 35,
       "w": 8,
@@ -248,11 +248,11 @@
       }
     },
     {
-      "id": "2be9f13d-5c56-4787-843d-2c91694be4d3",
+      "id": "07a1b597-d317-4836-9320-3b1da3c3c642",
       "kind": "component",
       "label": "Custom telemetry converter",
-      "x": 39.650000000000006,
-      "y": 30.825,
+      "x": 253.28505,
+      "y": 87.5,
       "rotation": 0,
       "component": {
         "id": "telemetry",
@@ -324,12 +324,12 @@
       }
     },
     {
-      "id": "aa753b64-1054-40d0-ac0b-2f492761677e",
+      "id": "fac6b1bd-b2d8-4e89-9d46-cea79a997098",
       "kind": "component",
       "label": "KingTech G4 DRM",
-      "x": 36.150000000000006,
-      "y": 87.5,
-      "rotation": 90,
+      "x": 129.8,
+      "y": 141.325,
+      "rotation": 360,
       "component": {
         "id": "drm",
         "name": "KingTech G4 DRM",
@@ -346,7 +346,7 @@
         "confirmed": true,
         "sources": {
           "body": "/references/kingtech-g4-drm-dimensions.png",
-          "holes": "Supplied drawing: centres at X ±32 mm, Y 0; Ø3 mm confirmed by user.",
+          "holes": "Supplied drawing: centres at X \u00b132 mm, Y 0; \u00d83 mm confirmed by user.",
           "clearance": ""
         },
         "holes": [
@@ -363,7 +363,7 @@
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Check connector clearances against your DRM. Locating rails along long sides; both mounting-ear ends open Hole pattern centring remains provisional. Both mounting-ear ends are open; Ø3 mm mounting holes confirmed by user."
+        "note": "User specification: component-measurements.json (mm). Check connector clearances against your DRM. Locating rails along long sides; both mounting-ear ends open Hole pattern centring remains provisional. Both mounting-ear ends are open; \u00d83 mm mounting holes confirmed by user."
       },
       "l": 35,
       "w": 8,
@@ -409,11 +409,11 @@
       }
     },
     {
-      "id": "c9d43cda-4d73-4a6f-9add-22cfe2840748",
+      "id": "b66a27f9-18ca-47c6-b227-0b25791d2165",
       "kind": "component",
       "label": "FrSky PGC",
-      "x": 264.78505,
-      "y": 38.30000000000001,
+      "x": 268.78505,
+      "y": 38.52499999999999,
       "rotation": 180,
       "component": {
         "id": "pgc",
@@ -484,7 +484,7 @@
         ],
         "measurementRevision": 1,
         "cutout": null,
-        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 × 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable."
+        "note": "User specification: component-measurements.json (mm). Right edge must remain open; display/buttons exposed; keep left connector edge unobstructed unless unused  Four-side locating ribs have conservative 8 \u00d7 8 mm foot clearance windows around the confirmed mounting centres. Foot outline is estimated and editable."
       },
       "l": 35,
       "w": 8,
@@ -531,11 +531,11 @@
       }
     },
     {
-      "id": "cd4ea2fd-0103-4765-aa9a-55fb6adfa92b",
+      "id": "997fa5c2-bdd0-41d2-b48b-e483cfda4e30",
       "kind": "component",
       "label": "T-One lighting controller",
-      "x": 264.78505,
-      "y": 135.45,
+      "x": 265.28505,
+      "y": 138.22499999999997,
       "rotation": 180,
       "component": {
         "id": "tone",
@@ -552,8 +552,8 @@
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
-          "body": "User remeasured after physical fit: 52.5 × 52.5 × 16.5 mm. Existing mounting holes line up and remain unchanged.",
-          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. Ø1.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
+          "body": "User remeasured after physical fit: 52.5 \u00d7 52.5 \u00d7 16.5 mm. Existing mounting holes line up and remain unchanged.",
+          "holes": "User: 60 mm horizontally, centred; upper-right 7.5 mm and lower-left 45 mm down from top. \u00d81.5 mm printed pilots selected. Hole coordinates retained unchanged after body remeasurement.",
           "clearance": ""
         },
         "holes": [
@@ -591,7 +591,7 @@
         "lightOpeningRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged."
+        "note": "52.5 \u00d7 52.5 \u00d7 16.5 mm case; two holes on upper-right/lower-left diagonal. Pattern centred horizontally; vertical offsets retained exactly. Tab clearance windows are conservatively 16 mm wide, inferred from photo and adjustable; not measured tab outlines. Original hardware hole diameter was not supplied; 1.5 mm is the requested printed pilot size. New body envelope only; mounting-hole coordinates retained from successful fit, not recalculated from case edges. Mounting-tab rib openings widened to 32 mm, plus holder clearance; actual case, tabs and screw positions unchanged."
       },
       "l": 35,
       "w": 8,
@@ -638,11 +638,11 @@
       }
     },
     {
-      "id": "1afc2746-e1bd-46d8-a22c-3a4c8b9b330d",
+      "id": "07e60049-0265-4761-b7d9-d852b60c8262",
       "kind": "component",
       "label": "FrSky GPS ADV",
-      "x": 178.98505,
-      "y": 27.099999999999977,
+      "x": 187.5,
+      "y": 121.475,
       "rotation": 0,
       "component": {
         "id": "gps",
@@ -713,11 +713,11 @@
       }
     },
     {
-      "id": "e785b27e-e9bd-4e9d-91b6-d6d8593f09a4",
+      "id": "be2f3aca-fc3e-4d8b-a0ac-7ac8919e9a81",
       "kind": "component",
       "label": "FrSky ASS-70",
-      "x": 178.98505,
-      "y": 149.02499999999998,
+      "x": 187.5,
+      "y": 152.97499999999997,
       "rotation": 0,
       "component": {
         "id": "airspeed",
@@ -788,15 +788,24 @@
       }
     },
     {
-      "id": "d09ed8ae-792b-4a2a-89a7-fdff3e4b5c76",
+      "id": "d2668e09-d5a6-4d11-9487-f092fea87b0c",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 120.78505000000001,
-      "y": 135.825,
+      "x": 129.8,
+      "y": 111.52499999999998,
       "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 50,
-      "w": 6,
+      "w": 7,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -838,15 +847,24 @@
       }
     },
     {
-      "id": "2b7fa4c7-75ee-447a-b159-26fc2d6b1671",
+      "id": "af78170f-4ee3-4539-82af-76baef644406",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 120.78505000000001,
-      "y": 39.39999999999998,
+      "x": 129.8,
+      "y": 16.224999999999984,
       "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 50,
-      "w": 6,
+      "w": 7,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -888,12 +906,21 @@
       }
     },
     {
-      "id": "88663809-c374-4c39-b7ae-48c20feef111",
+      "id": "d9f5e38a-172f-45bc-b3f4-7c98fdaae13b",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 78,
-      "y": 87.5,
+      "x": 88.90851,
+      "y": 87.50000000000001,
       "rotation": -90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 150,
       "w": 7,
@@ -938,11 +965,11 @@
       }
     },
     {
-      "id": "e54dc012-8d40-4f2f-bc7b-2d43f31560ca",
+      "id": "5d0c128d-d2eb-48c6-a3e2-1f83cbeb1841",
       "kind": "component",
       "label": "FrSky RB-35S",
-      "x": 145.78505,
-      "y": 88.5,
+      "x": 154.3,
+      "y": 63.82499999999999,
       "rotation": 0,
       "component": {
         "id": "rb35s",
@@ -1060,12 +1087,21 @@
       }
     },
     {
-      "id": "5dcc60bf-6117-4764-9d2e-d42e91f8a100",
+      "id": "3a6cd207-045d-4fad-bcfd-894ceb85738d",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 213,
+      "x": 219.5,
       "y": 87.5,
       "rotation": 90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 150,
       "w": 7,
@@ -1110,16 +1146,16 @@
       }
     },
     {
-      "id": "135b1b52-24d5-4b93-9731-dc806beb9134",
+      "id": "8e3378f8-d079-4761-a008-1353c8668bbf",
       "kind": "component",
       "label": "3-pin servo header",
-      "x": 120.78505000000001,
-      "y": 21.80000000000002,
+      "x": 180.48505,
+      "y": 15.5,
       "rotation": 0,
       "component": {
         "id": "servo3",
         "name": "3-pin servo header",
-        "variant": "Generic 1 × 3 male header · 2.54 mm pitch + printed flange",
+        "variant": "Generic 1 \u00d7 3 male header \u00b7 2.54 mm pitch + printed flange",
         "category": "connector",
         "body": {
           "l": 7.62,
@@ -1131,8 +1167,8 @@
         "clearanceStatus": "designed",
         "confirmed": true,
         "sources": {
-          "body": "Generic 2.54 mm-pitch single-row strip; 3 × 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
-          "holes": "Designed flange: two holes at X ±8.11 mm, Y 0; Ø1.5 mm component pilots.",
+          "body": "Generic 2.54 mm-pitch single-row strip; 3 \u00d7 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
+          "holes": "Designed flange: two holes at X \u00b18.11 mm, Y 0; \u00d81.5 mm component pilots.",
           "clearance": "Designed 0.3 mm per side around generic header insulator; adjust for your actual housing."
         },
         "holes": [
@@ -1156,7 +1192,7 @@
           "printedFlange": true,
           "flangeThickness": 3
         },
-        "note": "Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 × 2.54 × 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified."
+        "note": "Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 \u00d7 2.54 \u00d7 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified."
       },
       "l": 35,
       "w": 8,
@@ -1201,23 +1237,41 @@
       }
     },
     {
-      "id": "a9e9ab77-db52-47ab-863c-b927e324c363",
-      "kind": "label",
-      "label": "Text label",
-      "x": 138,
-      "y": 21.800000000000004,
+      "id": "119ac469-edfb-4bb8-a871-f976328a518a",
+      "kind": "component",
+      "label": "FrSky Remote NFC Panel",
+      "x": 297.48505,
+      "y": 87.72499999999998,
       "rotation": 90,
-      "text": {
-        "value": "GSU",
-        "size": 4,
-        "height": 0.6
+      "component": {
+        "id": "nfc",
+        "name": "FrSky Remote NFC Panel",
+        "variant": "Remote NFC Panel",
+        "category": "electronics",
+        "body": {
+          "l": 33,
+          "w": 19,
+          "h": 6.2
+        },
+        "bodyStatus": "published",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "https://www.greathobbies.com/manuals/f/frs/frs03071404_manual.pdf",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "Nominal published envelope. Check connector access and holder fit on your hardware."
       },
-      "component": null,
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
-        "enabled": false,
+        "railHeightRevision": 1,
+        "enabled": true,
         "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
@@ -1245,6 +1299,104 @@
             "opening": 0,
             "offset": 0,
             "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "41e35117-fc37-4da5-a821-937a15d96bc4",
+      "kind": "component",
+      "label": "KingTech KP-600 fuel pump",
+      "x": 38.08505,
+      "y": 91.82499999999999,
+      "rotation": 0,
+      "component": {
+        "id": "kp600",
+        "name": "KingTech KP-600 fuel pump",
+        "variant": "KP-600 supplied dummy STL",
+        "category": "electronics",
+        "body": {
+          "l": 65,
+          "w": 32,
+          "h": 36
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "estimated",
+        "confirmed": true,
+        "sources": {
+          "body": "User-supplied Kingtech_pump_KP-600_Dummy.stl, millimetres assumed: cylindrical case 65 \u00d7 \u00d832; case bottom Z4 and top Z36. Full reference including fittings is 103.71 mm long.",
+          "holes": "Estimated from supplied KP-600 photograph using the 65 mm case as scale: clamp X \u221222.5 mm, two holes Y \u00b124 mm (48 mm centres). Hidden foot assumed symmetric. \u00d83 mm hardware holes estimated; printed pilots use project settings.",
+          "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local \u2212X. Print a fit coupon before the full tray."
+        },
+        "holes": [
+          {
+            "x": -22.5,
+            "y": -24,
+            "d": 3
+          },
+          {
+            "x": -22.5,
+            "y": 24,
+            "d": 3
+          }
+        ],
+        "tabs": [
+          {
+            "x": -22.5,
+            "y": -20,
+            "l": 12,
+            "w": 16
+          },
+          {
+            "x": -22.5,
+            "y": 20,
+            "l": 12,
+            "w": 16
+          }
+        ],
+        "cutout": null,
+        "note": "Actual supplied pump mesh is reference only and excluded from STL. Silver clamp/feet and mounting pattern are photo estimates, not measured hardware. Low locating ribs are relieved around the clamp; mounting holes use the project\u2019s 1.5 mm pilots. Nipple fittings extend 25 mm beyond the \u2212X case end; rear fitting extends 13.71 mm beyond +X. Reference case bottom retains the STL\u2019s 4 mm elevation."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 14
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 25
           }
         },
         "strap": {

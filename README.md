@@ -208,3 +208,5 @@ The component library includes the supplied KP-600 dummy STL as an offline, refe
 Print `samples/kp600-fit-test.stl` to check the estimated mounting pattern first; its editable source is alongside it. Regenerate with `node --import tsx scripts/generate-kp600-fit.ts`.
 
 The UAT preview also includes an estimated translucent tank (70 × 32 × 32 mm), filler neck and two red retaining straps, oriented to the supplied mount’s 30° seat. These photo-based appearance objects toggle with the other reference bodies and never enter tray STL generation or alter the measured mounting pattern. They are not measured clearance specifications.
+
+The built-in T-One default now uses the user-approved `T-One radio tray copy.tray (1).json` snapshot: 313 × 175 / 165 mm, 2.5 mm tray thickness, 12 components including the KP-600 and NFC panel, and four cable openings. All supplied placements and holder settings are retained. Existing saved designs are unaffected. The downloadable T-One tray and TPU grommet samples match this default.

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "8a56fcb5-a259-4834-a129-766a6ba2da65",
+  "id": "2a67d254-b4b9-4ab5-9518-d6bd8c919ed8",
   "name": "T-One radio tray",
-  "updatedAt": "2026-11-07T22:26:35.262Z",
+  "updatedAt": "2026-11-08T02:45:54.894Z",
   "tray": {
     "shape": "trapezoid",
-    "length": 310,
+    "length": 313,
     "wide": 175,
     "narrow": 165,
-    "thickness": 3,
+    "thickness": 2.5,
     "radius": 5,
     "points": [
       [
@@ -44,11 +44,11 @@
   "grid": 1,
   "items": [
     {
-      "id": "bea149ea-f60b-4d84-b4ff-a94ac8e734b4",
+      "id": "b573469f-3c9e-4b31-a7cc-df38a444b4c9",
       "kind": "component",
       "label": "UAT mount",
-      "x": 258,
-      "y": 87.5,
+      "x": 37,
+      "y": 34.5,
       "rotation": 180,
       "component": {
         "id": "uat",
@@ -145,11 +145,11 @@
       }
     },
     {
-      "id": "2c9b6ef2-f491-4da1-839d-86c7f5f41a00",
+      "id": "3347cc31-ddaa-42a2-ac74-a3ebdc056449",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
-      "x": 36.150000000000006,
-      "y": 146.825,
+      "x": 28.585050000000003,
+      "y": 145.825,
       "rotation": 180,
       "component": {
         "id": "sp1",
@@ -248,11 +248,11 @@
       }
     },
     {
-      "id": "81f3f4ed-3293-4643-97ee-7a229dbd1d45",
+      "id": "20bf9650-eab4-4212-837a-32ec74602f62",
       "kind": "component",
       "label": "Custom telemetry converter",
-      "x": 39.650000000000006,
-      "y": 30.825,
+      "x": 253.28505,
+      "y": 87.5,
       "rotation": 0,
       "component": {
         "id": "telemetry",
@@ -324,12 +324,12 @@
       }
     },
     {
-      "id": "f5d5b0be-d877-4f0f-8424-3706517a2207",
+      "id": "10ace35c-7e8d-4016-9d34-943bda788916",
       "kind": "component",
       "label": "KingTech G4 DRM",
-      "x": 36.150000000000006,
-      "y": 87.5,
-      "rotation": 90,
+      "x": 129.8,
+      "y": 141.325,
+      "rotation": 360,
       "component": {
         "id": "drm",
         "name": "KingTech G4 DRM",
@@ -409,11 +409,11 @@
       }
     },
     {
-      "id": "97bcad64-7e24-45ce-8243-8ddaf855afec",
+      "id": "04083555-eb2c-4881-8765-897abc5fc3e1",
       "kind": "component",
       "label": "FrSky PGC",
-      "x": 264.78505,
-      "y": 38.30000000000001,
+      "x": 268.78505,
+      "y": 38.52499999999999,
       "rotation": 180,
       "component": {
         "id": "pgc",
@@ -531,11 +531,11 @@
       }
     },
     {
-      "id": "a531970c-410d-485c-aa46-97d58c14c0cf",
+      "id": "f7fbbf41-9ab7-4080-8c03-225dd4b21214",
       "kind": "component",
       "label": "T-One lighting controller",
-      "x": 264.78505,
-      "y": 135.45,
+      "x": 265.28505,
+      "y": 138.22499999999997,
       "rotation": 180,
       "component": {
         "id": "tone",
@@ -638,11 +638,11 @@
       }
     },
     {
-      "id": "771dad80-3b72-485e-9f35-3c0b40525f71",
+      "id": "e8df230e-4641-48e1-8992-754940c81076",
       "kind": "component",
       "label": "FrSky GPS ADV",
-      "x": 178.98505,
-      "y": 27.099999999999977,
+      "x": 187.5,
+      "y": 121.475,
       "rotation": 0,
       "component": {
         "id": "gps",
@@ -713,11 +713,11 @@
       }
     },
     {
-      "id": "528da6be-7df0-4726-b1d9-be3645485a71",
+      "id": "85023834-3754-471d-af90-36dd34b7aa05",
       "kind": "component",
       "label": "FrSky ASS-70",
-      "x": 178.98505,
-      "y": 149.02499999999998,
+      "x": 187.5,
+      "y": 152.97499999999997,
       "rotation": 0,
       "component": {
         "id": "airspeed",
@@ -788,15 +788,24 @@
       }
     },
     {
-      "id": "8fca90d3-33ce-40bd-bcee-d2a9f097bb07",
+      "id": "da0a5066-5383-45a2-8e89-b7f2d33c47a3",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 120.78505000000001,
-      "y": 135.825,
+      "x": 129.8,
+      "y": 111.52499999999998,
       "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 50,
-      "w": 6,
+      "w": 7,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -838,15 +847,24 @@
       }
     },
     {
-      "id": "688586d1-8a57-49bb-abcd-dee02231c3a6",
+      "id": "1fb9fe82-66a9-4b91-8959-75a437b9e188",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 120.78505000000001,
-      "y": 39.39999999999998,
+      "x": 129.8,
+      "y": 16.224999999999984,
       "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 50,
-      "w": 6,
+      "w": 7,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -888,12 +906,21 @@
       }
     },
     {
-      "id": "dbd7430b-93d8-4c2a-82f1-af1a660e1337",
+      "id": "76a5703b-812d-4a48-b25c-0a120e6dd2c1",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 78,
-      "y": 87.5,
+      "x": 88.90851,
+      "y": 87.50000000000001,
       "rotation": -90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 150,
       "w": 7,
@@ -938,11 +965,11 @@
       }
     },
     {
-      "id": "1a357cd8-079b-4892-8572-7ceabd2147f9",
+      "id": "1971f553-7f19-40b0-b24f-873b73afd1e0",
       "kind": "component",
       "label": "FrSky RB-35S",
-      "x": 145.78505,
-      "y": 88.5,
+      "x": 154.3,
+      "y": 63.82499999999999,
       "rotation": 0,
       "component": {
         "id": "rb35s",
@@ -1060,12 +1087,21 @@
       }
     },
     {
-      "id": "440bdd1e-8055-4475-8a1f-b2df5b79a6a6",
+      "id": "f84d5615-5567-42c9-9201-c2cba49af5be",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 213,
+      "x": 219.5,
       "y": 87.5,
       "rotation": 90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2
+      },
       "component": null,
       "l": 150,
       "w": 7,
@@ -1110,11 +1146,11 @@
       }
     },
     {
-      "id": "7fa13858-846b-426e-af23-77fb401e009d",
+      "id": "60a293eb-a0ef-491b-912c-b671475b42dc",
       "kind": "component",
       "label": "3-pin servo header",
-      "x": 120.78505000000001,
-      "y": 21.80000000000002,
+      "x": 180.48505,
+      "y": 15.5,
       "rotation": 0,
       "component": {
         "id": "servo3",
@@ -1201,23 +1237,41 @@
       }
     },
     {
-      "id": "75a9edf8-e0bd-47fa-9c4a-0fdaded704cb",
-      "kind": "label",
-      "label": "Text label",
-      "x": 138,
-      "y": 21.800000000000004,
+      "id": "cb42a87b-1592-4186-a768-de0f79140fe3",
+      "kind": "component",
+      "label": "FrSky Remote NFC Panel",
+      "x": 297.48505,
+      "y": 87.72499999999998,
       "rotation": 90,
-      "text": {
-        "value": "GSU",
-        "size": 4,
-        "height": 0.6
+      "component": {
+        "id": "nfc",
+        "name": "FrSky Remote NFC Panel",
+        "variant": "Remote NFC Panel",
+        "category": "electronics",
+        "body": {
+          "l": 33,
+          "w": 19,
+          "h": 6.2
+        },
+        "bodyStatus": "published",
+        "holesStatus": "unknown",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "https://www.greathobbies.com/manuals/f/frs/frs03071404_manual.pdf",
+          "holes": "",
+          "clearance": ""
+        },
+        "holes": [],
+        "cutout": null,
+        "note": "Nominal published envelope. Check connector access and holder fit on your hardware."
       },
-      "component": null,
       "l": 35,
       "w": 8,
       "diameter": 3.2,
       "holder": {
-        "enabled": false,
+        "railHeightRevision": 1,
+        "enabled": true,
         "height": 2.5,
         "wall": 2,
         "clearance": 0.3,
@@ -1245,6 +1299,104 @@
             "opening": 0,
             "offset": 0,
             "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "bfea960b-2f9f-41b6-9958-4cc2c9ff9c6a",
+      "kind": "component",
+      "label": "KingTech KP-600 fuel pump",
+      "x": 38.08505,
+      "y": 91.82499999999999,
+      "rotation": 0,
+      "component": {
+        "id": "kp600",
+        "name": "KingTech KP-600 fuel pump",
+        "variant": "KP-600 supplied dummy STL",
+        "category": "electronics",
+        "body": {
+          "l": 65,
+          "w": 32,
+          "h": 36
+        },
+        "bodyStatus": "measured",
+        "holesStatus": "estimated",
+        "clearanceStatus": "estimated",
+        "confirmed": true,
+        "sources": {
+          "body": "User-supplied Kingtech_pump_KP-600_Dummy.stl, millimetres assumed: cylindrical case 65 × Ø32; case bottom Z4 and top Z36. Full reference including fittings is 103.71 mm long.",
+          "holes": "Estimated from supplied KP-600 photograph using the 65 mm case as scale: clamp X −22.5 mm, two holes Y ±24 mm (48 mm centres). Hidden foot assumed symmetric. Ø3 mm hardware holes estimated; printed pilots use project settings.",
+          "clearance": "Clamp and feet estimated from supplied photograph; nipple end faces local −X. Print a fit coupon before the full tray."
+        },
+        "holes": [
+          {
+            "x": -22.5,
+            "y": -24,
+            "d": 3
+          },
+          {
+            "x": -22.5,
+            "y": 24,
+            "d": 3
+          }
+        ],
+        "tabs": [
+          {
+            "x": -22.5,
+            "y": -20,
+            "l": 12,
+            "w": 16
+          },
+          {
+            "x": -22.5,
+            "y": 20,
+            "l": 12,
+            "w": 16
+          }
+        ],
+        "cutout": null,
+        "note": "Actual supplied pump mesh is reference only and excluded from STL. Silver clamp/feet and mounting pattern are photo estimates, not measured hardware. Low locating ribs are relieved around the clamp; mounting holes use the project’s 1.5 mm pilots. Nipple fittings extend 25 mm beyond the −X case end; rear fitting extends 13.71 mm beyond +X. Reference case bottom retains the STL’s 4 mm elevation."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "railHeightRevision": 1,
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 14
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 25
           }
         },
         "strap": {
