@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "id": "dcebfdaa-16ef-45fd-8c43-54fbe7197ffa",
+  "name": "TPU cut flap fit test",
+  "updatedAt": "2026-11-09T14:15:54.535Z",
+  "tray": {
+    "extensions": {
+      "front": {
+        "enabled": false,
+        "width": 60,
+        "depth": 20,
+        "radius": 5
+      },
+      "rear": {
+        "enabled": true,
+        "width": 60,
+        "depth": 15,
+        "radius": 5
+      }
+    },
+    "rim": {
+      "enabled": true,
+      "height": 4,
+      "wall": 3,
+      "sideHeights": {
+        "north": 15,
+        "east": 4,
+        "south": 15,
+        "west": 4
+      },
+      "transitionLength": 20
+    },
+    "shape": "trapezoid",
+    "length": 313,
+    "wide": 175,
+    "narrow": 165,
+    "thickness": 3.5,
+    "radius": 5,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "bde933b8-6677-4ec8-a8be-3b52cbcb0c21",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 114,
+      "y": 135.5,
+      "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "axialClearance": 0.2,
+        "flap": {
+          "enabled": true,
+          "thickness": 0.6,
+          "slit": 0.4,
+          "pitch": 10
+        }
+      },
+      "component": null,
+      "l": 50,
+      "w": 7,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 4,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}

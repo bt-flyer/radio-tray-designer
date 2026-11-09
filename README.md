@@ -242,3 +242,10 @@ The servo panel preset fits the user’s 10.75 × 4 mm male connector with a tig
 
 
 The current default is **T-One Final-withall**, based on the supplied file of that name. Its placements and reinforced rim settings are preserved, with the latest confirmed component corrections (including the 10.95 × 4.2 mm tight servo opening). Four Ø3 mm aircraft mounting holes are added at X 4.3 / 307.3 and Y 36.5 / 138.5 mm. It has six cable slots, a 15 mm rear extension (328 mm total length), and 3.5 mm thickness. Review the front mounting-hole clearances near the smoke/fuel pump footprints before printing; geometry is connected and watertight. Tray and TPU samples match this default.
+
+
+### Optional TPU cut flaps
+
+In Export TPU grommets, select openings and enable **Add cut flaps to selected TPU parts**. Each grommet can also enable its own **Add internal cut flap** under Object properties → TPU wire grommet. This adds a bed-facing flexible membrane inside the bore, with a central slit and repeated transverse cuts on long slots, or crossed slits on circular openings. Hinges remain around the perimeter. The membrane prints on the bed, avoiding an unsupported bridge across the opening. Defaults are 0.6 mm membrane, 0.4 mm cut width and 10 mm finger spacing, all editable per opening. Membrane thickness must not exceed retaining-lip thickness; invalid cuts are rejected before export. It is optional and off by default, saved in the design, and never changes the main tray STL.
+
+Try `samples/grommet-flap-fit-test.stl` first; `samples/t-one-tpu-grommets-flaps.stl` contains all six grommets for the current default with cut flaps. Existing open-grommet samples remain unchanged.
