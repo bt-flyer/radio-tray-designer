@@ -239,3 +239,6 @@ Use **Circular wire pass-through** in Tray features to click or drag a round cab
 
 
 The servo panel preset fits the user’s 10.75 × 4 mm male connector with a tight 10.95 × 4.2 mm opening (0.1 mm per-side clearance). Flange dimensions and screw centres stay unchanged. Housing height and pin details remain illustrative. Old servo presets and saved instances update once on reopen, preserving later edits. The default tray and `samples/servo-connector-fit-test.stl` use this opening; print the small coupon first to check your printer’s fit.
+
+
+The current default is **T-One Final-withall**, based on the supplied file of that name. Its placements and reinforced rim settings are preserved, with the latest confirmed component corrections (including the 10.95 × 4.2 mm tight servo opening). Four Ø3 mm aircraft mounting holes are added at X 4.3 / 307.3 and Y 36.5 / 138.5 mm. It has six cable slots, a 15 mm rear extension (328 mm total length), and 3.5 mm thickness. Review the front mounting-hole clearances near the smoke/fuel pump footprints before printing; geometry is connected and watertight. Tray and TPU samples match this default.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "id": "t-one-default",
-  "name": "T-One Final",
-  "updatedAt": "2026-11-08T19:23:36.163Z",
+  "name": "T-One Final-withall",
+  "updatedAt": "2026-11-09T14:06:29.073Z",
   "tray": {
     "extensions": {
       "front": {
@@ -14,9 +14,21 @@
       "rear": {
         "enabled": true,
         "width": 60,
-        "depth": 19,
+        "depth": 15,
         "radius": 5
       }
+    },
+    "rim": {
+      "enabled": true,
+      "height": 4,
+      "wall": 3,
+      "sideHeights": {
+        "north": 15,
+        "east": 4,
+        "south": 15,
+        "west": 4
+      },
+      "transitionLength": 20
     },
     "shape": "trapezoid",
     "length": 313,
@@ -61,7 +73,7 @@
       "id": "b18d5422-dd60-4c8c-beb9-28293b3afc92",
       "kind": "component",
       "label": "UAT mount",
-      "x": 297,
+      "x": 290.5,
       "y": 87.5,
       "rotation": 180,
       "component": {
@@ -162,8 +174,8 @@
       "id": "23d6e860-b6f9-4c9f-a403-82d0dfd1a3a7",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
-      "x": 31.074999999999996,
-      "y": 146.2,
+      "x": 27,
+      "y": 144,
       "rotation": 180,
       "component": {
         "id": "sp1",
@@ -265,8 +277,8 @@
       "id": "07a1b597-d317-4836-9320-3b1da3c3c642",
       "kind": "component",
       "label": "Custom telemetry converter",
-      "x": 235.5,
-      "y": 87.72499999999998,
+      "x": 230,
+      "y": 87.5,
       "rotation": 0,
       "component": {
         "id": "telemetry",
@@ -341,8 +353,8 @@
       "id": "fac6b1bd-b2d8-4e89-9d46-cea79a997098",
       "kind": "component",
       "label": "KingTech G4 DRM",
-      "x": 44.074999999999996,
-      "y": 87.72499999999998,
+      "x": 42.12499999999999,
+      "y": 87.5,
       "rotation": 450,
       "component": {
         "id": "drm",
@@ -442,7 +454,7 @@
       "id": "b66a27f9-18ca-47c6-b227-0b25791d2165",
       "kind": "component",
       "label": "FrSky PGC",
-      "x": 256.5,
+      "x": 250,
       "y": 38.30000000000001,
       "rotation": 180,
       "component": {
@@ -619,10 +631,10 @@
         "fitSizingRevision": 2,
         "lightMountRevision": 1,
         "lightOpeningRevision": 1,
+        "lightEdgeRevision": 1,
         "mountingPatternPending": false,
         "cutout": null,
-        "note": "52.5 × 52.5 × 16.5 mm case. Confirmed diagonal hole pattern is centred on the case: 60 mm across, 37.5 mm vertically, 7.5 mm from each nearest top/bottom edge. Tab reliefs follow the pattern; their outlines are estimated, and the widened 32 mm openings remain. Printed pilots Ø1.5 mm.",
-        "lightEdgeRevision": 1
+        "note": "52.5 × 52.5 × 16.5 mm case. Confirmed diagonal hole pattern is centred on the case: 60 mm across, 37.5 mm vertically, 7.5 mm from each nearest top/bottom edge. Tab reliefs follow the pattern; their outlines are estimated, and the widened 32 mm openings remain. Printed pilots Ø1.5 mm."
       },
       "l": 35,
       "w": 8,
@@ -823,7 +835,7 @@
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 114,
-      "y": 137.39999999999998,
+      "y": 135.5,
       "rotation": 0,
       "grommet": {
         "enabled": true,
@@ -882,7 +894,7 @@
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 114,
-      "y": 38.300000000000026,
+      "y": 39.5,
       "rotation": 0,
       "grommet": {
         "enabled": true,
@@ -940,8 +952,8 @@
       "id": "d9f5e38a-172f-45bc-b3f4-7c98fdaae13b",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 73,
-      "y": 87.72499999999998,
+      "x": 70,
+      "y": 67.5,
       "rotation": -90,
       "grommet": {
         "enabled": true,
@@ -953,7 +965,7 @@
         "axialClearance": 0.2
       },
       "component": null,
-      "l": 150,
+      "l": 110,
       "w": 7,
       "diameter": 3.2,
       "holder": {
@@ -999,8 +1011,8 @@
       "id": "5d0c128d-d2eb-48c6-a3e2-1f83cbeb1841",
       "kind": "component",
       "label": "FrSky RB-35S",
-      "x": 136.69,
-      "y": 87.72499999999998,
+      "x": 134,
+      "y": 87.5,
       "rotation": 0,
       "component": {
         "id": "rb35s",
@@ -1121,7 +1133,7 @@
       "id": "3a6cd207-045d-4fad-bcfd-894ceb85738d",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 202,
+      "x": 198,
       "y": 87.5,
       "rotation": 90,
       "grommet": {
@@ -1272,7 +1284,7 @@
       "id": "119ac469-edfb-4bb8-a871-f976328a518a",
       "kind": "component",
       "label": "FrSky Remote NFC Panel",
-      "x": 107.30999999999999,
+      "x": 107.5,
       "y": 19.2,
       "rotation": 0,
       "component": {
@@ -1306,10 +1318,6 @@
             "d": 2.5
           }
         ],
-        "cutout": null,
-        "note": "33 × 19 × 6.2 mm nominal case. Two diagonal reference mounting ears, with cradle-wall relief and matching tray pilots. Hole centres estimated at 40 mm horizontally / 9 mm vertically; ear rectangles estimated 8 × 6 mm. Verify actual hardware before a full print. Printed pilots follow project settings (normally Ø1.5 mm); original hardware holes estimated Ø2.5 mm. Reference ears are not separate printed parts.",
-        "nfcMountRevision": 1,
-        "mountingPatternPending": false,
         "tabs": [
           {
             "x": 18.5,
@@ -1323,7 +1331,11 @@
             "l": 8,
             "w": 6
           }
-        ]
+        ],
+        "nfcMountRevision": 1,
+        "mountingPatternPending": false,
+        "cutout": null,
+        "note": "33 × 19 × 6.2 mm nominal case. Two diagonal reference mounting ears, with cradle-wall relief and matching tray pilots. Hole centres estimated at 40 mm horizontally / 9 mm vertically; ear rectangles estimated 8 × 6 mm. Verify actual hardware before a full print. Printed pilots follow project settings (normally Ø1.5 mm); original hardware holes estimated Ø2.5 mm. Reference ears are not separate printed parts."
       },
       "l": 35,
       "w": 8,
@@ -1372,7 +1384,7 @@
       "id": "41e35117-fc37-4da5-a821-937a15d96bc4",
       "kind": "component",
       "label": "KingTech KP-600 fuel pump",
-      "x": 37.32499999999999,
+      "x": 28.825,
       "y": 31,
       "rotation": 0,
       "component": {
@@ -1470,7 +1482,117 @@
       }
     },
     {
-      "id": "02a8e2f1-3d3e-417f-a763-5052f640725d",
+      "id": "9bcdb013-ad8c-4055-9753-79bafbe2b166",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 300,
+      "y": 38.2,
+      "rotation": 270,
+      "rim": {
+        "enabled": true,
+        "height": 1.5,
+        "wall": 1.5
+      },
+      "component": null,
+      "l": 35,
+      "w": 7,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "1d242949-c7f0-4413-be3d-1535014845a8",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 300,
+      "y": 138.72499999999997,
+      "rotation": 90,
+      "rim": {
+        "enabled": true,
+        "height": 1.5,
+        "wall": 1.5
+      },
+      "component": null,
+      "l": 35,
+      "w": 7,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "c93021b6-a70d-467b-b373-86ccb68009a4",
       "kind": "hole",
       "label": "Aircraft mounting hole front upper",
       "x": 4.3,
@@ -1520,7 +1642,7 @@
       }
     },
     {
-      "id": "a235b357-f883-460b-86df-024fa2c6b3b7",
+      "id": "f1551fb9-ea78-4507-8481-6fce66e805eb",
       "kind": "hole",
       "label": "Aircraft mounting hole front lower",
       "x": 4.3,
@@ -1570,7 +1692,7 @@
       }
     },
     {
-      "id": "0379b7f4-c09d-4c0e-8de7-2c1ce3c864df",
+      "id": "9ef05db6-f0a2-4f0d-8b6e-e0d71f43857a",
       "kind": "hole",
       "label": "Aircraft mounting hole rear upper",
       "x": 307.3,
@@ -1620,7 +1742,7 @@
       }
     },
     {
-      "id": "9ba46514-2288-4561-bedf-bd9f19d6a161",
+      "id": "a4031cc5-b926-490e-8aa5-045eb43f7524",
       "kind": "hole",
       "label": "Aircraft mounting hole rear lower",
       "x": 307.3,
