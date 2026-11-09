@@ -236,3 +236,6 @@ The NFC reference model has two diagonal mounting ears, matching cradle reliefs 
 The T-One Final default includes four Ø3 mm aircraft attachment holes: X 4.3 / 307.3 mm (303 mm apart), Y 36.5 / 138.5 mm (102 mm apart, centred on Y 87.5). These are standalone tray holes and retain Ø3 mm with the standard component-only pilot setting.
 
 Use **Circular wire pass-through** in Tray features to click or drag a round cable opening onto the tray. Set its diameter in Object properties; drag handles resize it while preserving circular shape. The opening supports the standard 1.5 mm cable rim and a separately exported round TPU grommet. Existing cable openings can switch between rounded slot and circular hole using Opening shape. Wire openings are independent of screw pilot-hole settings and save with the design.
+
+
+The servo panel preset fits the user’s 10.75 × 4 mm male connector with a tight 10.95 × 4.2 mm opening (0.1 mm per-side clearance). Flange dimensions and screw centres stay unchanged. Housing height and pin details remain illustrative. Old servo presets and saved instances update once on reopen, preserving later edits. The default tray and `samples/servo-connector-fit-test.stl` use this opening; print the small coupon first to check your printer’s fit.

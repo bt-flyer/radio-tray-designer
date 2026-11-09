@@ -1186,21 +1186,21 @@
       "component": {
         "id": "servo3",
         "name": "3-pin servo header",
-        "variant": "Generic 1 × 3 male header · 2.54 mm pitch + printed flange",
+        "variant": "10.75 × 4 mm male servo connector · tight panel opening",
         "category": "connector",
         "body": {
-          "l": 7.62,
-          "w": 2.54,
+          "l": 10.75,
+          "w": 4,
           "h": 2.54
         },
-        "bodyStatus": "designed",
+        "bodyStatus": "measured",
         "holesStatus": "designed",
         "clearanceStatus": "designed",
         "confirmed": true,
         "sources": {
-          "body": "Generic 2.54 mm-pitch single-row strip; 3 × 2.54 mm insulator envelope. Pitch reference: https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
+          "body": "User measured male connector footprint: 10.75 × 4 mm. Reference housing height 2.54 mm and 2.54 mm pin pitch remain illustrative.",
           "holes": "Designed flange: two holes at X ±8.11 mm, Y 0; Ø1.5 mm component pilots.",
-          "clearance": "Designed 0.3 mm per side around generic header insulator; adjust for your actual housing."
+          "clearance": "Tight-fit opening: 10.95 × 4.2 mm, allowing 0.1 mm per side around the 10.75 × 4 mm male connector. Fit-test before printing the tray."
         },
         "holes": [
           {
@@ -1215,15 +1215,16 @@
           }
         ],
         "cutout": {
-          "l": 8.22,
-          "w": 3.14,
+          "l": 10.95,
+          "w": 4.2,
           "r": 0.2,
           "flangeL": 24.22,
           "flangeW": 11.14,
           "printedFlange": true,
           "flangeThickness": 3
         },
-        "note": "Upward-facing generic three-pin male servo header, 2.54 mm pitch. Insulator 7.62 × 2.54 × 2.54 mm; six-millimetre mating pins are illustrative. Printed flange and through-opening only: install the metal header separately and retain with adhesive or a separate retainer. Not a keyed Futaba/JR housing or a specific panel connector. Measure your actual header and mating plug; adjust cutout and flange in Measurements. Pin assignment is intentionally unspecified."
+        "note": "User specified 10.75 × 4 mm male connector footprint. Tight 10.95 × 4.2 mm through-opening (0.1 mm per side), with existing flange and screw centres retained. Reference housing height, pin pitch and pin length are illustrative; install the actual connector separately. Print the fit coupon first; printer and material variation affect fit.",
+        "servoFitRevision": 1
       },
       "l": 35,
       "w": 8,

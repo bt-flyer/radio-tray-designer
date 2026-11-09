@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "id": "7f5dc675-efe9-44fb-b65e-0cde85b0ef74",
+  "name": "Male servo connector tight-fit test",
+  "updatedAt": "2026-11-09T14:05:46.712Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 45,
+    "wide": 30,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "2bc01f16-9d24-4f0d-a19d-094ceb633fdb",
+      "kind": "component",
+      "label": "3-pin servo header",
+      "x": 22.5,
+      "y": 15,
+      "rotation": 0,
+      "component": {
+        "id": "servo3",
+        "name": "3-pin servo header",
+        "variant": "10.75 × 4 mm male servo connector · tight panel opening",
+        "servoFitRevision": 1,
+        "category": "connector",
+        "body": {
+          "l": 10.75,
+          "w": 4,
+          "h": 2.54
+        },
+        "bodyStatus": "designed",
+        "holesStatus": "designed",
+        "clearanceStatus": "designed",
+        "confirmed": true,
+        "sources": {
+          "body": "User measured male connector footprint: 10.75 × 4 mm. Reference housing height 2.54 mm and 2.54 mm pin pitch remain illustrative.",
+          "holes": "Designed flange: two holes at X ±8.11 mm, Y 0; Ø1.5 mm component pilots.",
+          "clearance": "Tight-fit opening: 10.95 × 4.2 mm, allowing 0.1 mm per side around the 10.75 × 4 mm male connector. Fit-test before printing the tray."
+        },
+        "holes": [
+          {
+            "x": -8.11,
+            "y": 0,
+            "d": 1.5
+          },
+          {
+            "x": 8.11,
+            "y": 0,
+            "d": 1.5
+          }
+        ],
+        "cutout": {
+          "l": 10.95,
+          "w": 4.2,
+          "r": 0.2,
+          "flangeL": 24.22,
+          "flangeW": 11.14,
+          "printedFlange": true,
+          "flangeThickness": 3
+        },
+        "note": "User specified 10.75 × 4 mm male connector footprint. Tight 10.95 × 4.2 mm through-opening (0.1 mm per side), with existing flange and screw centres retained. Reference housing height, pin pitch and pin length are illustrative; install the actual connector separately. Print the fit coupon first; printer and material variation affect fit."
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    }
+  ]
+}
