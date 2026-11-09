@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import Module from 'manifold-3d';
+import {catalog} from '../src/catalog';
+import {newDesign,makeItem,clone,wallGaps,transform,printedHoleDiameter,designSchema} from '../src/model';
+import {integrateMeasurements} from '../src/measured';
+import {generateGeometry,binarySTL} from '../src/geometry';
+import {componentModel} from '../src/componentModels';
+const api=await Module();api.setup();
+test('NFC has clearly estimated diagonal ears and pilot holes with corresponding wall reliefs',()=>{const c=catalog.find(c=>c.id==='nfc')!;assert.equal(c.holesStatus,'estimated');assert.deepEqual(c.holes,[{x:20,y:-4.5,d:2.5},{x:-20,y:4.5,d:2.5}]);const model=componentModel(c);for(const t of c.tabs!)assert.ok(model.children.some(o=>o.position.x===t.x&&o.position.y===-t.y));for(const rotation of [0,90,180,37]){const d=newDesign(),i=makeItem('component',[100,80],c);i.rotation=rotation;d.items=[i];assert.equal(printedHoleDiameter(d,c.holes[0].d),1.5);assert.ok(wallGaps(i,'east').some(([a,b])=>a< -4.5&&b> -4.5));assert.ok(wallGaps(i,'west').some(([a,b])=>a<4.5&&b>4.5));const h=c.holes.map(h=>transform([h.x,h.y],i));assert.ok(Math.abs(Math.hypot(h[0][0]-h[1][0],h[0][1]-h[1][1])-41)<1e-8);const m=generateGeometry(api,d);assert.equal(m.pieces,1);binarySTL(m);assert.deepEqual(generateGeometry(api,designSchema.parse(JSON.parse(JSON.stringify(d)))),m);}});
+test('old NFC snapshots gain ears once without moving placements or overriding measured custom holes',()=>{const d=newDesign(),i=makeItem('component',[107.31,19.2],catalog.find(c=>c.id==='nfc')!);delete i.component!.nfcMountRevision;i.component!.holes=[];delete i.component!.tabs;d.items=[i];integrateMeasurements(d);assert.equal(i.component!.holes.length,2);assert.equal(i.component!.tabs!.length,2);assert.deepEqual([i.x,i.y],[107.31,19.2]);i.component!.holes[0].x=21;const before=clone(d);integrateMeasurements(d);assert.deepEqual(d,before);delete i.component!.nfcMountRevision;i.component!.holesStatus='measured';integrateMeasurements(d);assert.equal(i.component!.holes[0].x,21);assert.equal(i.component!.holesStatus,'measured');});

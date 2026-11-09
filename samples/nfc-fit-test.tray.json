@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "e2453e26-0a07-44b5-b1df-0e43fa1c6ab5",
+  "name": "NFC estimated mounting-ear fit test",
+  "updatedAt": "2026-11-09T13:55:58.416Z",
+  "tray": {
+    "shape": "rectangle",
+    "length": 60,
+    "wide": 40,
+    "narrow": 165,
+    "thickness": 3,
+    "radius": 3,
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        310,
+        5
+      ],
+      [
+        310,
+        170
+      ],
+      [
+        0,
+        175
+      ]
+    ]
+  },
+  "printer": {
+    "name": "Bambu H2S",
+    "x": 340,
+    "y": 320,
+    "z": 340,
+    "material": "PETG",
+    "margin": 5
+  },
+  "screwHoles": {
+    "mode": "components",
+    "pilotDiameter": 1.5
+  },
+  "grid": 1,
+  "items": [
+    {
+      "id": "0d9fd8e4-679d-4d22-9bf0-824627a75378",
+      "kind": "component",
+      "label": "FrSky Remote NFC Panel",
+      "x": 30,
+      "y": 20,
+      "rotation": 0,
+      "component": {
+        "id": "nfc",
+        "name": "FrSky Remote NFC Panel",
+        "variant": "Remote NFC Panel",
+        "category": "electronics",
+        "body": {
+          "l": 33,
+          "w": 19,
+          "h": 6.2
+        },
+        "bodyStatus": "published",
+        "holesStatus": "estimated",
+        "clearanceStatus": "unknown",
+        "confirmed": true,
+        "sources": {
+          "body": "https://www.greathobbies.com/manuals/f/frs/frs03071404_manual.pdf",
+          "holes": "Estimated from FrSky Remote NFC Panel manual overview: https://blog.horusrc.com/wp-content/uploads/2025/02/1738894909876.png . Scale against labelled 33 × 19 mm case. Approximate diagonal centres (+20,−4.5), (−20,+4.5) mm; Ø2.5 mm hardware holes estimated, not dimensioned by manufacturer.",
+          "clearance": ""
+        },
+        "holes": [
+          {
+            "x": 20,
+            "y": -4.5,
+            "d": 2.5
+          },
+          {
+            "x": -20,
+            "y": 4.5,
+            "d": 2.5
+          }
+        ],
+        "cutout": null,
+        "note": "33 × 19 × 6.2 mm nominal case. Two diagonal reference mounting ears, with cradle-wall relief and matching tray pilots. Hole centres estimated at 40 mm horizontally / 9 mm vertically; ear rectangles estimated 8 × 6 mm. Verify actual hardware before a full print. Printed pilots follow project settings (normally Ø1.5 mm); original hardware holes estimated Ø2.5 mm. Reference ears are not separate printed parts.",
+        "nfcMountRevision": 1,
+        "mountingPatternPending": false,
+        "tabs": [
+          {
+            "x": 18.5,
+            "y": -4.5,
+            "l": 8,
+            "w": 6
+          },
+          {
+            "x": -18.5,
+            "y": 4.5,
+            "l": 8,
+            "w": 6
+          }
+        ]
+      },
+      "l": 35,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": true,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0,
+        "railHeightRevision": 1
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@ test('fit-confirmed presets and old saved patterns shed stale warnings without c
   assert.equal(next.holesStatus,'measured');assert.deepEqual(next.holes,before.holes);assert.deepEqual(next.body,before.body);
   assert.ok(!validateDesign(d).some(i=>/provisional|connector access has not/.test(i.message)));
  }
- const template=tOneTemplate(),estimatedPump=template.items.find(i=>i.component?.id==='kp600')!;assert.ok(!validateDesign(template).some(i=>i.itemId!==estimatedPump.id&&/provisional|connector access has not/.test(i.message)));
+ const template=tOneTemplate(),estimatedIds=template.items.filter(i=>['kp600','nfc'].includes(i.component?.id??'')).map(i=>i.id);assert.ok(!validateDesign(template).some(i=>!estimatedIds.includes(i.itemId??'')&&/provisional|connector access has not/.test(i.message)));
 });
 test('custom edits to confirmed patterns remain provisional; missing geometry and actual conflicts still warn',()=>{
  const c=structuredClone(catalog.find(c=>c.id==='rb35s')!);c.holesStatus='estimated';c.holes[0].x+=2;assert.equal(applyConfirmedHolePattern(c).holesStatus,'estimated');

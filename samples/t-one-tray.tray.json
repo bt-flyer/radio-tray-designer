@@ -1285,17 +1285,44 @@
           "h": 6.2
         },
         "bodyStatus": "published",
-        "holesStatus": "unknown",
+        "holesStatus": "estimated",
         "clearanceStatus": "unknown",
         "confirmed": true,
         "sources": {
           "body": "https://www.greathobbies.com/manuals/f/frs/frs03071404_manual.pdf",
-          "holes": "",
+          "holes": "Estimated from FrSky Remote NFC Panel manual overview: https://blog.horusrc.com/wp-content/uploads/2025/02/1738894909876.png . Scale against labelled 33 × 19 mm case. Approximate diagonal centres (+20,−4.5), (−20,+4.5) mm; Ø2.5 mm hardware holes estimated, not dimensioned by manufacturer.",
           "clearance": ""
         },
-        "holes": [],
+        "holes": [
+          {
+            "x": 20,
+            "y": -4.5,
+            "d": 2.5
+          },
+          {
+            "x": -20,
+            "y": 4.5,
+            "d": 2.5
+          }
+        ],
         "cutout": null,
-        "note": "Nominal published envelope. Check connector access and holder fit on your hardware."
+        "note": "33 × 19 × 6.2 mm nominal case. Two diagonal reference mounting ears, with cradle-wall relief and matching tray pilots. Hole centres estimated at 40 mm horizontally / 9 mm vertically; ear rectangles estimated 8 × 6 mm. Verify actual hardware before a full print. Printed pilots follow project settings (normally Ø1.5 mm); original hardware holes estimated Ø2.5 mm. Reference ears are not separate printed parts.",
+        "nfcMountRevision": 1,
+        "mountingPatternPending": false,
+        "tabs": [
+          {
+            "x": 18.5,
+            "y": -4.5,
+            "l": 8,
+            "w": 6
+          },
+          {
+            "x": -18.5,
+            "y": 4.5,
+            "l": 8,
+            "w": 6
+          }
+        ]
       },
       "l": 35,
       "w": 8,
