@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import Module from 'manifold-3d';
+import {newDesign,makeWireHole,resizeSlot,designSchema,clone} from '../src/model';
+import {generateGeometry,binarySTL} from '../src/geometry';
+import {generateGrommets,grommetDimensions} from '../src/grommets';
+import {grommetDefaults} from '../src/grommetSettings';
+const api=await Module();api.setup();
+test('round wire holes keep their diameter through dragging, numeric sizing, save and pilot overrides',()=>{const d=newDesign(),i=makeWireHole([150,85]);d.items=[i];d.screwHoles={mode:'all',pilotDiameter:1.5};assert.equal(i.l,12);for(const rotation of [0,90,37]){i.rotation=rotation;for(const handle of [[1,0],[0,-1],[1,1]] as [number,number][]){const resized=resizeSlot(i,handle,[5,3],.5);assert.equal(resized.l,resized.w);}const m=generateGeometry(api,d);assert.equal(m.pieces,1);binarySTL(m);assert.deepEqual(generateGeometry(api,designSchema.parse(JSON.parse(JSON.stringify(d)))),m);}const invalid=clone(d);invalid.items[0].w=6;assert.equal(designSchema.safeParse(invalid).success,false);});
+test('circular openings export separate round TPU grommets without modifying tray geometry',()=>{const d=newDesign(),i=makeWireHole([150,85]);d.items=[i];const before=generateGeometry(api,d);i.grommet={...grommetDefaults(),enabled:true};const g=generateGrommets(api,d),q=grommetDimensions(d,i);assert.equal(g.pieces,1);assert.ok(Math.abs(g.bounds.max[0]-g.bounds.min[0]-q.outerL)<.001);assert.ok(Math.abs(g.bounds.max[1]-g.bounds.min[1]-q.outerW)<.001);assert.equal(q.outerL,q.outerW);binarySTL(g);assert.deepEqual(generateGeometry(api,d),before);});

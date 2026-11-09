@@ -1467,6 +1467,206 @@
         },
         "holeAllowance": 0
       }
+    },
+    {
+      "id": "02a8e2f1-3d3e-417f-a763-5052f640725d",
+      "kind": "hole",
+      "label": "Aircraft mounting hole front upper",
+      "x": 4.3,
+      "y": 36.5,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "a235b357-f883-460b-86df-024fa2c6b3b7",
+      "kind": "hole",
+      "label": "Aircraft mounting hole front lower",
+      "x": 4.3,
+      "y": 138.5,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "0379b7f4-c09d-4c0e-8de7-2c1ce3c864df",
+      "kind": "hole",
+      "label": "Aircraft mounting hole rear upper",
+      "x": 307.3,
+      "y": 36.5,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "9ba46514-2288-4561-bedf-bd9f19d6a161",
+      "kind": "hole",
+      "label": "Aircraft mounting hole rear lower",
+      "x": 307.3,
+      "y": 138.5,
+      "rotation": 0,
+      "component": null,
+      "l": 35,
+      "w": 8,
+      "diameter": 3,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
     }
   ]
 }
