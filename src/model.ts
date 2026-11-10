@@ -18,7 +18,7 @@ export const componentSchema=z.object({
 }).strict();
 export type ComponentDef=z.infer<typeof componentSchema>;
 const sideSchema=z.object({enabled:z.boolean(),opening:n.min(0).max(1000),offset:coord,keepout:n.min(0).max(200)}).strict();
-export const grommetSchema=z.object({enabled:z.boolean(),useGlobal:z.boolean().optional(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(10),lipHeight:n.min(.4).max(5),topLipHeight:n.min(.2).max(5).optional(),bottomLipHeight:n.min(.2).max(5).optional(),gripHeight:n.min(.2).max(100).optional(),axialClearance:n.min(0).max(2),flap:z.object({enabled:z.boolean(),thickness:n.min(.2).max(2),slit:n.min(.2).max(2),pitch:n.min(2).max(40)}).strict().optional()}).strict();
+export const grommetSchema=z.object({enabled:z.boolean(),useGlobal:z.boolean().optional(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(0).max(10),retention:n.min(0).max(10),lipHeight:n.min(0).max(5),topLipHeight:n.min(0).max(5).optional(),bottomLipHeight:n.min(0).max(5).optional(),gripHeight:n.min(.2).max(100).optional(),axialClearance:n.min(0).max(2),flap:z.object({enabled:z.boolean(),thickness:n.min(.2).max(2),slit:n.min(.2).max(2),pitch:n.min(2).max(40)}).strict().optional()}).strict();
 export const itemSchema=z.object({
  id:z.string().min(1).max(100),kind:z.enum(['component','slot','hole','label']),label:z.string().min(1).max(120),x:coord,y:coord,rotation:n.min(-36000).max(36000),
  openingShape:z.enum(['slot','circle']).optional(),grommet:grommetSchema.optional(),
