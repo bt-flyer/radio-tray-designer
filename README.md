@@ -262,3 +262,6 @@ The global gasket designer includes an interactive cross-section: click a lip, t
 
 
 Set either lip’s overhang **or** thickness to **0** to remove that lip completely. Top-only, bottom-only and lip-free sleeves are supported; packing and total height use only the remaining geometry. The cross-section labels absent lips as Removed. Optional cut flaps can remain when the bottom lip is removed and attach directly to the sleeve at its bed-facing edge.
+
+
+Top lip overhang is freely configurable, including positive values smaller than the cable-opening rim. Covering that rim is not required for TPU generation or STL export. Zero still removes the lip.
