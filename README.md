@@ -249,3 +249,10 @@ The current default is **T-One Final-withall**, based on the supplied file of th
 In Export TPU grommets, select openings and enable **Add cut flaps to selected TPU parts**. Each grommet can also enable its own **Add internal cut flap** under Object properties → TPU wire grommet. This adds a bed-facing flexible membrane inside the bore, with a central slit and repeated transverse cuts on long slots, or crossed slits on circular openings. Hinges remain around the perimeter. The membrane prints on the bed, avoiding an unsupported bridge across the opening. Defaults are 0.6 mm membrane, 0.4 mm cut width and 10 mm finger spacing, all editable per opening. Membrane thickness must not exceed retaining-lip thickness; invalid cuts are rejected before export. It is optional and off by default, saved in the design, and never changes the main tray STL.
 
 Try `samples/grommet-flap-fit-test.stl` first; `samples/t-one-tpu-grommets-flaps.stl` contains all six grommets for the current default with cut flaps. Existing open-grommet samples remain unchanged.
+
+
+### Detailed TPU gasket dimensions
+
+In TPU export, expand **Configure opening N** to edit that gasket directly. Top and bottom lip overhangs and thicknesses are independent. Sleeve wall thickness, fit clearance, automatic grip allowance or explicit sleeve grip height, and cut-flap dimensions are also available. The panel reports resulting lip dimensions, clear cable bore, grip and total height. **Copy these settings to selected openings** applies the current configuration to the selected TPU parts without changing their opening shapes or placements. The same controls appear in Object properties → TPU wire grommet. Lip overhang means extension per side from the sleeve, not total lip width.
+
+Legacy saved designs retain their shared lip thickness until independent values are set. Automatic grip follows tray thickness plus the local cable rim and allowance; manual grip overrides that calculation. The bottom lip may be wider than the top, and print packing uses whichever lip is larger. The flap must fit within the bottom lip’s thickness. These settings affect only the separate TPU file.
