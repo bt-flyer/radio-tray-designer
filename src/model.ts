@@ -18,9 +18,10 @@ export const componentSchema=z.object({
 }).strict();
 export type ComponentDef=z.infer<typeof componentSchema>;
 const sideSchema=z.object({enabled:z.boolean(),opening:n.min(0).max(1000),offset:coord,keepout:n.min(0).max(200)}).strict();
+export const grommetSchema=z.object({enabled:z.boolean(),useGlobal:z.boolean().optional(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(10),lipHeight:n.min(.4).max(5),topLipHeight:n.min(.2).max(5).optional(),bottomLipHeight:n.min(.2).max(5).optional(),gripHeight:n.min(.2).max(100).optional(),axialClearance:n.min(0).max(2),flap:z.object({enabled:z.boolean(),thickness:n.min(.2).max(2),slit:n.min(.2).max(2),pitch:n.min(2).max(40)}).strict().optional()}).strict();
 export const itemSchema=z.object({
  id:z.string().min(1).max(100),kind:z.enum(['component','slot','hole','label']),label:z.string().min(1).max(120),x:coord,y:coord,rotation:n.min(-36000).max(36000),
- openingShape:z.enum(['slot','circle']).optional(),grommet:z.object({enabled:z.boolean(),wall:n.min(.4).max(10),clearance:n.min(0).max(2),flange:n.min(.4).max(10),retention:n.min(.2).max(10),lipHeight:n.min(.4).max(5),topLipHeight:n.min(.2).max(5).optional(),bottomLipHeight:n.min(.2).max(5).optional(),gripHeight:n.min(.2).max(100).optional(),axialClearance:n.min(0).max(2),flap:z.object({enabled:z.boolean(),thickness:n.min(.2).max(2),slit:n.min(.2).max(2),pitch:n.min(2).max(40)}).strict().optional()}).strict().optional(),
+ openingShape:z.enum(['slot','circle']).optional(),grommet:grommetSchema.optional(),
  text:z.object({value:z.string().max(80),size:n.min(2).max(30),height:n.min(.2).max(5)}).strict().optional(),
  rim:z.object({enabled:z.boolean(),height:size.max(50),wall:size.max(50)}).strict().optional(),component:componentSchema.nullable(),l:size,w:size,diameter:size,
  holder:z.object({drmRibRevision:z.literal(1).optional(),kp600MountRevision:z.literal(1).optional(),ribRevision:z.literal(1).optional(),railHeightRevision:z.literal(1).optional(),installationFitRevision:z.union([z.literal(2),z.literal(3)]).optional(),uatOutlineRevision:z.literal(1).optional(),enabled:z.boolean(),height:size,wall:size,clearance:n.min(0).max(10),
@@ -29,7 +30,7 @@ export const itemSchema=z.object({
 }).strict().superRefine((i,ctx)=>{if(i.openingShape==='circle'&&(i.kind!=='slot'||Math.abs(i.l-i.w)>1e-6))ctx.addIssue({code:'custom',message:'Circular wire openings must have equal length and width.'});});
 export type Item=z.infer<typeof itemSchema>;
 export const designSchema=z.object({
- schemaVersion:z.literal(1),id:z.string().regex(/^[a-zA-Z0-9_-]{1,80}$/),name:z.string().min(1).max(120),updatedAt:z.string().max(50),
+ grommetSettings:grommetSchema.optional(),schemaVersion:z.literal(1),id:z.string().regex(/^[a-zA-Z0-9_-]{1,80}$/),name:z.string().min(1).max(120),updatedAt:z.string().max(50),
  tray:z.object({extensions:z.object({front:z.object({enabled:z.boolean(),width:size,depth:size,radius:n.min(0).max(100)}).strict(),rear:z.object({enabled:z.boolean(),width:size,depth:size,radius:n.min(0).max(100)}).strict()}).strict().optional(),rim:z.object({enabled:z.boolean(),height:size.max(50),wall:size.max(50),sideHeights:z.object({north:size.max(50),east:size.max(50),south:size.max(50),west:size.max(50)}).strict().optional(),transitionLength:n.min(1).max(200).optional()}).strict().optional(),shape:z.enum(['rectangle','trapezoid','polygon']),length:size,wide:size,narrow:size,thickness:size,radius:n.min(0).max(100),points:z.array(pointSchema).min(3).max(128)}).strict(),
  printer:z.object({name:z.string().max(100),x:size,y:size,z:size,material:z.string().max(50),margin:n.min(0).max(30)}).strict(),
  screwHoles:z.object({mode:z.enum(['measured','components','all']),pilotDiameter:size.max(10)}).strict().optional(),grid:size,items:z.array(itemSchema).max(200)

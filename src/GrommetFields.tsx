@@ -1,6 +1,6 @@
 import type {Design,Item} from './model';
 import {grommetDimensions} from './grommets';
-import {flapDefaults,type GrommetSettings} from './grommetSettings';
+import {flapDefaults,withGrommetOverride,type GrommetSettings} from './grommetSettings';
 import {NumberField} from './NumberField';
 export function GrommetFields({design,item,change}:{design:Design;item:Item;change:(settings:GrommetSettings)=>void}){
  const q=grommetDimensions(design,item),s=q.settings,flap=q.flap;
@@ -14,4 +14,9 @@ export function GrommetFields({design,item,change}:{design:Design;item:Item;chan
  {flap.enabled&&<div className="field-pair">{([['thickness','Flap thickness',.2,2],['slit','Cut width',.2,2],['pitch','Finger spacing',2,40]] as const).filter(([key])=>key!=='pitch'||Math.abs(item.l-item.w)>.001).map(([key,label,min,max])=><NumberField key={key} label={label} value={flap[key]} min={min} max={max} onChange={v=>update({flap:{...flap,[key]:v!}})}/>)}</div>}
  <p className="field-help">Top lip: {q.outerL.toFixed(1)} × {q.outerW.toFixed(1)} mm · bottom lip: {q.bottomOuterL.toFixed(1)} × {q.bottomOuterW.toFixed(1)} mm.<br/>Cable bore: {q.boreL.toFixed(1)} × {q.boreW.toFixed(1)} mm · grip: {q.grip.toFixed(1)} mm · total height: {q.height.toFixed(1)} mm.</p>
  </div>;
+}
+
+export function GrommetOpeningFields({design,item,change}:{design:Design;item:Item;change:(d:Design)=>void}){
+ const inherited=!!design.grommetSettings&&item.grommet?.useGlobal!==false;
+ return <>{design.grommetSettings&&<label className="check-row"><input type="checkbox" checked={!inherited} onChange={e=>change(withGrommetOverride(design,item.id,e.target.checked))}/> Override global settings for this opening</label>}<fieldset disabled={inherited} style={{border:0,padding:0,margin:0,opacity:inherited?.55:1}}><GrommetFields design={design} item={item} change={settings=>change({...design,items:design.items.map(i=>i.id===item.id?{...i,grommet:{...settings,useGlobal:false}}:i)})}/></fieldset>{inherited&&<p className="field-help">Following global gasket settings. Enable override to adjust this opening independently.</p>}</>;
 }

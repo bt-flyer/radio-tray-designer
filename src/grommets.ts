@@ -1,9 +1,9 @@
 import type {ManifoldToplevel,Manifold} from 'manifold-3d';
 import {type Design,type Item,slotRim} from './model';
-import {grommetDefaults,flapDefaults} from './grommetSettings';
+import {effectiveGrommetSettings,flapDefaults} from './grommetSettings';
 import {roundedRect,auditMesh,removeCollapsedTriangles,type MeshResult} from './geometry';
 export function grommetDimensions(d:Design,i:Item){
- const s={...grommetDefaults(),...i.grommet},rim=slotRim(i),l=Math.max(i.l,i.w)-2*s.clearance,w=Math.min(i.l,i.w)-2*s.clearance;
+ const s=effectiveGrommetSettings(d,i),rim=slotRim(i),l=Math.max(i.l,i.w)-2*s.clearance,w=Math.min(i.l,i.w)-2*s.clearance;
  const autoGrip=d.tray.thickness+(rim.enabled?rim.height:0)+s.axialClearance,grip=s.gripHeight??autoGrip,topLipHeight=s.topLipHeight??s.lipHeight,bottomLipHeight=s.bottomLipHeight??s.lipHeight;
  return {settings:s,flap:{...flapDefaults(),...s.flap},l,w,boreL:l-2*s.wall,boreW:w-2*s.wall,outerL:l+2*s.flange,outerW:w+2*s.flange,bottomOuterL:l+2*s.retention,bottomOuterW:w+2*s.retention,packingL:l+2*Math.max(s.flange,s.retention),packingW:w+2*Math.max(s.flange,s.retention),autoGrip,grip,topLipHeight,bottomLipHeight,height:grip+topLipHeight+bottomLipHeight};
 }
