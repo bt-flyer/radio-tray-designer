@@ -72,7 +72,7 @@ export function selfIntersect(p:Point[]){
 export function overlaps(a:Point[],b:Point[]){return a.some(p=>inside(p,b))||b.some(p=>inside(p,a))||a.some((p,i)=>b.some((q,j)=>intersects(p,a[(i+1)%a.length],q,b[(j+1)%b.length])));}
 export interface Issue{level:'error'|'warning';message:string;itemId?:string}
 export function clearanceZones(i:Item):Point[][]{const [l,w]=bodySize(i);return sides.flatMap(s=>{const k=i.holder.sides[s].keepout;if(!k)return [];const horizontal=s==='north'||s==='south';const offset=bodyOffset(i),c:Point=s==='north'?[0,-w/2-k/2]:s==='south'?[0,w/2+k/2]:s==='east'?[l/2+k/2,0]:[-l/2-k/2,0];c[0]+=offset[0];c[1]+=offset[1];return [rectangle(horizontal?l:k,horizontal?k:w,c).map(p=>transform(p,i))];});}
-export function validateDesign(d:Design):Issue[]{const issues:Issue[]=[];const p=rawOutline(d),round=roundedOutline(d),bb=bounds(round);const add=(level:Issue['level'],message:string,itemId?:string)=>issues.push({level,message,itemId});
+export function validateDesign(d:Design):Issue[]{const issues:Issue[]=[];const p=rawOutline(d),base=roundedOutline(d),round=trayOutline(d),bb=bounds(round);const add=(level:Issue['level'],message:string,itemId?:string)=>issues.push({level,message,itemId});
  for(const end of ['front','rear'] as const){const e=trayExtension(d,end),available=end==='rear'&&d.tray.shape==='trapezoid'?d.tray.narrow:d.tray.wide;if(d.tray.shape!=='polygon'&&e.enabled&&e.width>=available)add('error',`${end==='front'?'Front':'Rear'} extension width must be smaller than the tray end (${available} mm).`);}
  if(selfIntersect(p)||Math.abs(signedArea(p))<1||p.some((v,i)=>Math.hypot(v[0]-p[(i+1)%p.length][0],v[1]-p[(i+1)%p.length][1])<.1))add('error','Tray outline is degenerate or intersects itself.');
  if(bb.maxX-bb.minX>d.printer.x-2*d.printer.margin||bb.maxY-bb.minY>d.printer.y-2*d.printer.margin)add('warning','Tray exceeds the configured usable printer bed.');
@@ -92,10 +92,10 @@ export function validateDesign(d:Design):Issue[]{const issues:Issue[]=[];const p
   const offTray=(region:Point[])=>region.some(v=>!inside(v,round))||region.some((v,j)=>round.some((p,k)=>intersects(v,region[(j+1)%region.length],p,round[(k+1)%round.length])));
   if(offTray(footprint(i,false)))add('warning',`${i.label}: reference mount overhangs the tray; review clearance to the aircraft before exporting.`,i.id);
   if(i.holder.enabled){const [l,w]=holderBodySize(i),extra=i.holder.clearance+i.holder.wall,outline=rectangle(l+2*extra,w+2*extra,holderOffset(i)).map(p=>transform(p,i));if(offTray(outline))add('error',`${i.label}: printed locating ribs extend beyond the tray. Move the mount or disable its locating outline.`,i.id);}
- }else if(i.kind==='hole'&&holeBoss(i).enabled){const b=holeBoss(i),R=b.diameter/2,centre:Point=[i.x,i.y],edge=Math.min(...round.map((p,j)=>distanceSegment(centre,p,round[(j+1)%round.length]))),centreInside=inside(centre,round);
+ }else if(i.kind==='hole'&&holeBoss(i).enabled){const b=holeBoss(i),R=b.diameter/2,centre:Point=[i.x,i.y],edge=Math.min(...base.map((p,j)=>distanceSegment(centre,p,base[(j+1)%base.length]))),centreInside=inside(centre,base);
   if(b.diameter<=i.diameter)add('error',`${i.label}: boss diameter must be larger than the hole diameter.`,i.id);
   else if(!centreInside&&edge>=R-.5)add('error',`${i.label}: boss does not join the tray. Move the hole inward or enlarge the boss.`,i.id);
-  else{if((b.diameter-i.diameter)/2<2)add('warning',`${i.label}: boss leaves less than 2 mm of material around the hole.`,i.id);
+  else{if((b.diameter-i.diameter)/2<2)add('warning',`${i.label}: boss leaves less than 2 mm of material around the hole.`,i.id);if(trayRim(d).enabled&&!centreInside||trayRim(d).enabled&&edge<b.diameter/2){if(b.diameter/2-trayRim(d).wall-i.diameter/2<1.5)add('warning',`${i.label}: the outer rim following the boss leaves little room for the screw head; enlarge the boss.`,i.id);}
    if(!centreInside&&2*Math.sqrt(R*R-edge*edge)<i.diameter+4)add('warning',`${i.label}: boss joins the tray over a narrow neck; move the hole inward or enlarge the boss.`,i.id);}}
  else if(outside)add('error',`${i.label}: footprint extends beyond the tray.`,i.id);
  if(i.kind==='slot'||(i.kind==='hole'&&!holeBoss(i).enabled)){const dist=Math.min(...fp.map(v=>Math.min(...round.map((p,j)=>distanceSegment(v,p,round[(j+1)%round.length])))));if(dist<2)add('warning',`${i.label}: less than 2 mm of material to the tray edge.`,i.id);}
@@ -117,10 +117,24 @@ export function resizeSlot(i:Item,handle:Point,delta:Point,grid=0):Item{const a=
 export function printedHoleDiameter(d:Design,diameter:number|null,component=true):number|null{const s=d.screwHoles;return s&&(s.mode==='all'||(component&&s.mode==='components'))?s.pilotDiameter:diameter;}
 
 /** Defaults for a printed boss around an aircraft mounting hole. */
-export function bossDefaults(diameter:number):NonNullable<Item['boss']>{return {enabled:true,diameter:Math.round(Math.max(8,diameter+5)*10)/10,height:0,fillet:2};}
+/** Leaves about 3 mm around the hole for a screw head inside any perimeter rim that wraps the boss. */
+export function bossDefaults(diameter:number,rimWall=0):NonNullable<Item['boss']>{return {enabled:true,diameter:Math.round(Math.max(10,diameter+7,diameter+2*rimWall+6)*10)/10,height:0,fillet:2};}
 export function holeBoss(i:Item):NonNullable<Item['boss']>{return i.kind==='hole'&&i.boss?i.boss:{...bossDefaults(i.diameter),enabled:false};}
 /** Circle approximating a boss outline, in item-local coordinates. */
 export function circle(r:number,c:Point=[0,0],segments=64):Point[]{return Array.from({length:segments},(_,k)=>[c[0]+r*Math.cos(2*Math.PI*k/segments),c[1]+r*Math.sin(2*Math.PI*k/segments)] as Point);}
+
+/** Union of a positively oriented polygon with a disc, keeping the outer boundary. */
+export function unionCircle(poly:Point[],c:Point,r:number,step=.5):Point[]{const n=poly.length,inC=(p:Point)=>Math.hypot(p[0]-c[0],p[1]-c[1])<r,angle=(p:Point)=>Math.atan2(p[1]-c[1],p[0]-c[0]);
+ type Node={p:Point;cross?:'in'|'out';a?:number};const nodes:Node[]=[];
+ for(let k=0;k<n;k++){const a=poly[k],b=poly[(k+1)%n];nodes.push({p:a});const dx=b[0]-a[0],dy=b[1]-a[1],fx=a[0]-c[0],fy=a[1]-c[1],A=dx*dx+dy*dy,B=2*(fx*dx+fy*dy),C=fx*fx+fy*fy-r*r,disc=B*B-4*A*C;if(A<1e-12||disc<=0)continue;const q=Math.sqrt(disc);for(const t of [(-B-q)/(2*A),(-B+q)/(2*A)])if(t>1e-9&&t<1-1e-9){const p:Point=[a[0]+t*dx,a[1]+t*dy];nodes.push({p,cross:t===(-B-q)/(2*A)?'in':'out',a:angle(p)});}}
+ const crossings=nodes.map((v,k)=>k).filter(k=>nodes[k].cross);
+ if(!crossings.length)return poly.every(inC)?circle(r,c,Math.max(32,Math.ceil(2*Math.PI*r/step))):poly;
+ const start=nodes.findIndex(v=>!v.cross&&!inC(v.p));if(start<0)return poly;const out:Point[]=[];let k=start,guard=0;
+ do{const v=nodes[k];if(!v.cross){if(!inC(v.p))out.push(v.p);k=(k+1)%nodes.length;}else if(v.cross==='out'){out.push(v.p);k=(k+1)%nodes.length;}else{out.push(v.p);let best=-1,sweep=Infinity;for(const j of crossings){if(j===k)continue;let d=(nodes[j].a!-v.a!)%(2*Math.PI);if(d<=1e-12)d+=2*Math.PI;if(d<sweep){sweep=d;best=j;}}if(best<0)return poly;const steps=Math.ceil(sweep*r/step);for(let m=1;m<steps;m++){const t=v.a!+sweep*m/steps;out.push([c[0]+r*Math.cos(t),c[1]+r*Math.sin(t)]);}out.push(nodes[best].p);k=(best+1)%nodes.length;}
+ if(++guard>nodes.length*4)return poly;}while(k!==start);
+ return out;}
+/** Tray outline including bosses around aircraft mounting holes (fillets are applied in the STL only). */
+export function trayOutline(d:Design):Point[]{let p=roundedOutline(d);for(const i of d.items){const b=holeBoss(i);if(b.enabled&&b.diameter>i.diameter)p=unionCircle(p,[i.x,i.y],b.diameter/2);}return p;}
 
 export function slotRim(i:Item):{enabled:boolean;height:number;wall:number}{return i.rim??{enabled:true,height:1.5,wall:1.5};}
 
