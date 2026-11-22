@@ -1,7 +1,7 @@
 import {rimProfile} from './rimProfile';
 import {labelOutline} from './labels';
 import type { Manifold, ManifoldToplevel } from 'manifold-3d';
-import { type Design,type Item,type Point,roundedOutline,rawOutline,selfIntersect,signedArea,bodyOffset,bodySize,holderBodySize,holderOffset,wallSpans,printedHoleDiameter,slotRim,trayRim,maxRimHeight } from './model';
+import { type Design,type Item,type Point,roundedOutline,rawOutline,selfIntersect,signedArea,bodyOffset,bodySize,holderBodySize,holderOffset,wallSpans,printedHoleDiameter,slotRim,trayRim,maxRimHeight,holeBoss,circle,transform } from './model';
 export type MeshResult={positions:Float32Array;indices:Uint32Array;volume:number;triangles:number;pieces:number;bounds:{min:number[];max:number[]}};
 export function roundedRect(l:number,w:number,r:number):Point[]{r=Math.min(r,l/2,w/2);if(r<=0)return [[-l/2,-w/2],[l/2,-w/2],[l/2,w/2],[-l/2,w/2]];const p:Point[]=[];const centers=[[l/2-r,w/2-r],[-l/2+r,w/2-r],[-l/2+r,-w/2+r],[l/2-r,-w/2+r]];for(let k=0;k<4;k++)for(let j=0;j<=12;j++){const a=(k*Math.PI/2)+j/12*Math.PI/2;p.push([centers[k][0]+r*Math.cos(a),centers[k][1]+r*Math.sin(a)]);}return p;}
 export function strapCuts(i:Item):{l:number;w:number;x:number;y:number}[]{const [l,w]=bodySize(i),h=i.holder;if(!h.strap.enabled)return [];const [bx,by]=bodyOffset(i),gap=h.clearance+h.wall+1+h.strap.width/2;return h.strap.axis==='x'?[-1,1].map(sign=>({l:h.strap.width,w:Math.max(6,w*.65),x:bx+sign*(l/2+gap),y:by})):[-1,1].map(sign=>({l:Math.max(6,l*.65),w:h.strap.width,x:bx,y:by+sign*(w/2+gap)}));}
@@ -11,14 +11,14 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
  const extrude=(p:Point[],height:number)=>own(own(new CrossSection(p)).extrude(height));
  const box=(l:number,w:number,h:number,x:number,y:number,z:number)=>own(own(M.cube([l,w,h])).translate([x-l/2,y-w/2,z]));
  const place=(m:Manifold,i:Item)=>own(own(m.rotate([0,0,i.rotation])).translate([i.x,i.y,0]));
- const t=d.tray.thickness, solids:Manifold[]=[extrude(roundedOutline(d),t)],cuts:Manifold[]=[];
- const maxH=t+Math.max(5,trayRim(d).enabled?maxRimHeight(d):0,...d.items.map(i=>Math.max(i.text?.height??0,i.holder.height,i.component?.cutout?.flangeThickness??0,i.kind==='slot'?slotRim(i).height:0)))+2;
+ const t=d.tray.thickness, solids:Manifold[]=[own(trayBase(api,d,own).extrude(t))],cuts:Manifold[]=[];
+ const maxH=t+Math.max(5,trayRim(d).enabled?maxRimHeight(d):0,...d.items.map(i=>Math.max(i.text?.height??0,i.holder.height,i.component?.cutout?.flangeThickness??0,i.kind==='slot'?slotRim(i).height:0,holeBoss(i).enabled?holeBoss(i).height:0)))+2;
  const slot=(l:number,w:number,r:number,x=0,y=0)=>own(extrude(roundedRect(l,w,r),maxH).translate([x,y,-1]));
  try{
  const edge=trayRim(d);if(edge.enabled){const section=own(new CrossSection(roundedOutline(d))),inner=own(section.offset(-edge.wall,'Round',2,64)),ring=own(section.subtract(inner));if(edge.sideHeights){const height=rimProfile(d),rim=own(own(ring.extrude(1)).refineToLength(3));solids.push(own(rim.warp(v=>{v[2]=t-.05+v[2]*(height(v[0],v[1])+.05);})));}else solids.push(own(own(ring.extrude(edge.height+.05)).translate([0,0,t-.05])));}
  for(const i of d.items){
   if(i.kind==='label'){const text=i.text,outline=labelOutline(text);if(!text?.value.trim()||!outline.contours.length)throw new Error('Enter label text before exporting.');const section=own(new CrossSection(outline.contours,'EvenOdd'));solids.push(place(own(own(section.extrude(text.height+.05)).translate([0,0,t-.05])),i));continue;}
-  if(i.kind==='hole'){cuts.push(place(own(own(M.cylinder(maxH,printedHoleDiameter(d,i.diameter,false)!/2,printedHoleDiameter(d,i.diameter,false)!/2,64)).translate([0,0,-1])),i));continue;}
+  if(i.kind==='hole'){const boss=holeBoss(i);if(boss.enabled&&boss.height>0)solids.push(place(own(own(M.cylinder(boss.height+.05,boss.diameter/2,boss.diameter/2,64)).translate([0,0,t-.05])),i));cuts.push(place(own(own(M.cylinder(maxH,printedHoleDiameter(d,i.diameter,false)!/2,printedHoleDiameter(d,i.diameter,false)!/2,64)).translate([0,0,-1])),i));continue;}
   if(i.kind==='slot'){const rim=slotRim(i);if(rim.enabled)solids.push(place(own(extrude(roundedRect(i.l+2*rim.wall,i.w+2*rim.wall,Math.min(i.l,i.w)/2+rim.wall),rim.height+.05).translate([0,0,t-.05])),i));cuts.push(place(slot(i.l,i.w,Math.min(i.l,i.w)/2),i));continue;}
   const c=i.component;if(!c)continue;
   if(c.category==='connector'&&c.cutout?.printedFlange&&c.cutout.flangeL&&c.cutout.flangeW){solids.push(place(own(extrude(roundedRect(c.cutout.flangeL,c.cutout.flangeW,2),(c.cutout.flangeThickness??3)+.05).translate([0,0,t-.05])),i));}
@@ -48,6 +48,11 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
  const meshBounds=result.boundingBox();const output={positions,indices,volume,triangles:indices.length/3,pieces:parts.length,bounds:{min:[meshBounds.min[0],-meshBounds.max[1],meshBounds.min[2]],max:[meshBounds.max[0],-meshBounds.min[1],meshBounds.max[2]]}};auditMesh(output);return output;
  }finally{for(let i=owned.length-1;i>=0;i--)owned[i].delete();}
 }
+/** Tray base outline plus any mounting-hole bosses, with concave joints filleted locally. */
+export function trayBase(api:ManifoldToplevel,d:Design,own:<T extends {delete():void}>(v:T)=>T){const {CrossSection}=api;let base=own(new CrossSection(roundedOutline(d)));
+ for(const i of d.items){const b=holeBoss(i);if(!b.enabled)continue;const R=b.diameter/2,disc=own(new CrossSection(circle(R,[0,0],96).map(p=>transform(p,i))));const joined=own(base.add(disc));
+  if(b.fillet>0){const closed=own(own(joined.offset(b.fillet,'Round',2,64)).offset(-b.fillet,'Round',2,64)),mask=own(new CrossSection(circle(R+2*b.fillet,[0,0],96).map(p=>transform(p,i))));base=own(joined.add(own(closed.intersect(mask))));}else base=joined;}
+ return base;}
 export function binarySTL(m:MeshResult):ArrayBuffer{auditMesh(m);const b=new ArrayBuffer(84+m.indices.length/3*50),v=new DataView(b);const header=new TextEncoder().encode('Trayworks | millimetres | printable geometry only');new Uint8Array(b,0,header.length).set(header);v.setUint32(80,m.indices.length/3,true);
  for(let j=0;j<m.indices.length;j+=3){const p=[0,1,2].map(k=>[...m.positions.slice(m.indices[j+k]*3,m.indices[j+k]*3+3)]);const u=p[1].map((x,k)=>x-p[0][k]),w=p[2].map((x,k)=>x-p[0][k]);let normal=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]];const len=Math.hypot(...normal);normal=normal.map(x=>len?x/len:0);const off=84+j/3*50;[...normal,...p.flat()].forEach((x,k)=>v.setFloat32(off+k*4,x,true));v.setUint16(off+48,0,true);}
  return b;}
