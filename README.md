@@ -265,3 +265,8 @@ Set either lip’s overhang **or** thickness to **0** to remove that lip complet
 
 
 Top lip overhang is freely configurable, including positive values smaller than the cable-opening rim. Covering that rim is not required for TPU generation or STL export. Zero still removes the lip.
+
+
+### Bosses around aircraft mounting holes
+
+Aircraft mounting holes can be moved freely, by dragging or with X/Y position, to match the fuselage mounts. To move a hole close to or past the tray edge, select it and enable **Add boss around hole** under Object properties → Mounting hole. The boss is a solid pad at tray thickness, centred on the hole, fused into the tray outline. It defaults to Ø8 mm for a Ø3 mm hole (hole + 5 mm, minimum 8 mm). **Joint fillet** (default 2 mm) blends the boss into the tray edge, applied only around that boss. **Raised height above tray** adds a cylindrical boss on top; 0 keeps it flush. The outer perimeter rim keeps following the original outline. Design checks reject a boss that does not reach the tray or is not larger than its hole. They warn when less than 2 mm of material remains around the hole, or when the boss joins the tray over a narrow neck. Bosses are saved in the design and included in the preview and tray STL. Designs without bosses are unchanged.
