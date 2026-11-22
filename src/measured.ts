@@ -30,7 +30,7 @@ function applyHolderDefaults(i:Item){const id=i.component?.id;if(id==='kp600'){i
  if(id==='drm'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
  if(id==='pgc'){i.holder.sides.east.enabled=false;i.holder.sides.west.enabled=false;}
 }
-export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyDrmPumpMeasurements(applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component))));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);applyUATOutline(i);if(i.component)i.component=applyServoFit(applyNFCMount(applyLightEdgeOffsets(widenLightOpenings(applyPGCFeet(i.component)))));}return d;}
+export function integrateMeasurements(d:Design):Design{d.screwHoles??={mode:'components',pilotDiameter:1.5};for(const i of d.items){if(i.component&&((['sp1','tone'].includes(i.component.id)&&!i.component.physicalFitRevision)||(i.component.id==='sp1'&&i.component.mountBossDiameter===null)||(i.component.id==='tone'&&(!i.component.lightMountRevision||(i.component.body.l===52.35&&i.component.fitSizingRevision!==2)))||!i.component.measurementRevision||(i.component.id==='drm'&&i.component.holes.some(h=>h.d===null))||(i.component.id==='rb35s'&&i.component.body.l===98&&i.component.fitSizingRevision!==2))){const next=applyComponentMeasurements(i.component);if(next.measurementRevision||next.connectorRevision){i.component=next;applyHolderMeasurements(i);}}if(i.component)i.component=applyDrmPumpMeasurements(applyPumpBodyOffset(applyConfirmedHolePattern(applyFitSizing(i.component))));applySurroundingRibs(i);applyRailHeight(i);applyInstallationFit(i);applyUATOutline(i);if(i.component)i.component=applyKP600FootLocators(applyServoFit(applyNFCMount(applyLightEdgeOffsets(widenLightOpenings(applyPGCFeet(i.component))))));}return d;}
 
 export function standardConnector(id:string):ComponentDef{const small=id==='xt30',l=small?10.2:15.5,w=small?5.2:8.1,h=small?12.4:20.2,openingL=l+.6,openingW=w+.6;return {id,name:small?'XT30 standard connector':'XT60 standard connector',variant:small?'Standard AMASS XT30U-F body + printed flange':'Standard AMASS XT60-F body + printed flange',category:'connector',body:{l,w,h},bodyStatus:'published',holesStatus:'designed',clearanceStatus:'designed',confirmed:true,connectorRevision:1,sources:{body:small?'https://www.micros.com.pl/mediaserver/Z_XT30U-F_AMASS_0001.pdf':'https://www.bto.pl/pdf/08031/XT60-F.pdf',holes:'Designed printed flange: two Ø3.2 mm holes, 4 mm beyond opening ends.',clearance:'Designed 0.3 mm clearance per side.'},holes:[{x:-openingL/2-4,y:0,d:3.2},{x:openingL/2+4,y:0,d:3.2}],cutout:{l:openingL,w:openingW,r:.5,flangeL:openingL+16,flangeW:openingW+8,printedFlange:true,flangeThickness:3},note:'Printed adapter for a standard female connector body. Rounded rectangular clearance opening, 0.3 mm per side; 3 mm raised flange with two M3 clearance holes. Secure the connector in the adapter with a suitable adhesive or separate retainer. Mating connector and electrical contacts are references only. Check actual shell fit; male, capped and panel variants may differ.'};}
 
@@ -52,7 +52,7 @@ export function applyConfirmedHolePattern(c:ComponentDef):ComponentDef{
  next.note=next.note.replace(' Hole pattern centring remains provisional.','');
  return next;
 }
-export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyServoFit(applyNFCMount(applyLightEdgeOffsets(applyDrmPumpMeasurements(widenLightOpenings(applyUATPlate(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c)))))))))));}
+export function applyComponentMeasurements(c:ComponentDef):ComponentDef{return applyKP600FootLocators(applyServoFit(applyNFCMount(applyLightEdgeOffsets(applyDrmPumpMeasurements(widenLightOpenings(applyUATPlate(applyPumpBodyOffset(applyPGCFeet(applyConfirmedHolePattern(applyFitSizing(applyComponentUpdates(c))))))))))));}
 
 export function servoHeader():ComponentDef{return {
  id:'servo3',name:'3-pin servo header',variant:'10.75 × 4 mm male servo connector · tight panel opening',servoFitRevision:1,category:'connector',
@@ -123,6 +123,12 @@ export function applyUATOutline(i:Item){
  for(const side of Object.values(i.holder.sides)){side.enabled=true;side.opening=0;side.offset=0;}
  i.holder.uatOutlineRevision=1;
 }
+
+/** User-confirmed 2026-11-22: 10 mm wide feet ending 3 mm past each hole centre, held by C-shaped locators. One-time, later edits persist. */
+export function applyKP600FootLocators(c:ComponentDef):ComponentDef{if(c.id!=='kp600'||c.footLocatorRevision===1)return c;const next=structuredClone(c);next.footLocatorRevision=1;next.footLocator={enabled:true,width:10,reach:3};const edge=(next.body.w??27)/2;
+ next.tabs=next.holes.map(h=>{const s=h.y>=0?1:-1,tip=h.y+s*3;return {x:h.x,y:s*(edge+Math.abs(tip))/2,l:10,w:Math.abs(tip)-edge};});
+ next.sources.clearance='User confirmed 2026-11-22: feet 10 mm wide, outer edge 3 mm beyond the hole centre. C-shaped locators (holder wall, clearance and height) wrap each foot, open towards the case.';
+ next.note+=' C-shaped foot locators: 10 mm feet ending 3 mm past each hole centre; 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default.';return next;}
 
 /** User-confirmed November 8 sketch; one-time upgrade preserves later manual edits. */
 export function applyDrmPumpMeasurements(c:ComponentDef):ComponentDef{

@@ -1,7 +1,7 @@
 import {labelPath} from './labels';
 import {useEffect,useRef,useState} from 'react';
 import {ZoomIn,ZoomOut,Scan,MousePointer2,Hand,PenTool,RotateCw} from 'lucide-react';
-import {type Design,type Item,type Point,clone,roundedOutline,rawOutline,bodyOffset,bodySize,holderBodySize,holderOffset,localFootprint,bounds,clearanceZones,wallGaps,trayCenter,alignMove,matchingGuides,resizeSlot,printedHoleDiameter,slotRim,trayRim,holeBoss,trayOutline} from './model';
+import {type Design,type Item,type Point,clone,roundedOutline,rawOutline,bodyOffset,bodySize,holderBodySize,holderOffset,localFootprint,bounds,clearanceZones,wallGaps,trayCenter,alignMove,matchingGuides,resizeSlot,printedHoleDiameter,slotRim,trayRim,holeBoss,trayOutline,footLocators} from './model';
 import {strapCuts} from './geometry';
 const pts=(p:Point[])=>p.map(v=>v.join(',')).join(' ');
 export function Canvas({design,selected,setSelected,preview,commit,onDropPart,showBodies}:{design:Design;selected:string[];setSelected:(ids:string[])=>void;preview:(d:Design)=>void;commit:(d:Design,base?:Design)=>void;onDropPart:(id:string,p:Point)=>void;showBodies:boolean}){
@@ -39,6 +39,7 @@ export function Canvas({design,selected,setSelected,preview,commit,onDropPart,sh
  {showBodies&&<rect x={c?.category==='uat'?-46.90851:bx-l/2} y={c?.category==='uat'?-15:by-w/2} width={l} height={w} rx="1.5" fill={unknown?'#fff7e9':c?.category==='uat'?'#e7e9f0':'#edf5f4'} stroke={unknown?'#d49a49':'#7d9b9d'} strokeDasharray={unknown?'2 1':undefined} strokeWidth={.6*s}/>}
  {unknown&&<rect x={bx-l/2} y={by-w/2} width={l} height={w} fill="url(#unknown)" opacity=".45"/>}
  {holder.enabled&&(['north','south','east','west'] as const).flatMap(side=>{const horizontal=side==='north'||side==='south';return wallGaps(i,side).map(([a,b],k)=><rect key={side+k} x={hx+(horizontal?a:side==='west'?-hl/2-holder.clearance-holder.wall:hl/2+holder.clearance)} y={hy+(horizontal?side==='north'?-hw/2-holder.clearance-holder.wall:hw/2+holder.clearance:a)} width={horizontal?b-a:holder.wall} height={horizontal?holder.wall:b-a} fill="white"/>);})}
+ {footLocators(i).map((f,k)=><polygon key={'foot-locator'+k} className="foot-locator" points={pts(f.outline)} fill="#cedbdc" stroke="#8aabab" strokeWidth={.5*s}/>)}
  {showBodies&&c?.tabs?.map((t,k)=><rect key={'tab'+k} x={t.x-t.l/2} y={t.y-t.w/2} width={t.l} height={t.w} rx="1" fill="#edf5f4" stroke="#7d9b9d" strokeWidth={.5*s}/>)}
  {c?.cutout?.printedFlange&&c.cutout.flangeL&&c.cutout.flangeW&&<rect x={-c.cutout.flangeL/2} y={-c.cutout.flangeW/2} width={c.cutout.flangeL} height={c.cutout.flangeW} rx="2" fill="#e4ddd0" fillOpacity=".8" stroke="#b49a74" strokeWidth={.5*s}/>}
  {c?.category==='connector'&&<rect x={-(c.cutout?.l??l*.65)/2} y={-(c.cutout?.w??w*.6)/2} width={c.cutout?.l??l*.65} height={c.cutout?.w??w*.6} rx={c.cutout?.r??1} fill="#e1e7ec" stroke="#9aabb8" strokeWidth={.5*s}/>}
