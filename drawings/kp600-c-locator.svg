@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" font-family="Helvetica,Arial,sans-serif" font-size="14">
+<defs><marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<text x="30" y="34" font-size="20" font-weight="bold">KP-600 fuel pump: C-shaped foot locator (proposal, top view, one of two feet)</text>
+<rect x="126" y="70" width="928" height="320" fill="#f4f6f7" stroke="#ccc"/>
+<polygon points="126.0,70.0 1054.0,70.0 1054.0,190.0 126.0,190.0" fill="#d9dde0" stroke="#555"/>
+<text x="158" y="110" fill="#333">Pump case (27 mm wide; side edge at local Y = 13.5)</text>
+<polygon points="469.2,190.0 469.2,314.8 702.8,314.8 702.8,190.0 670.8,190.0 670.8,282.8 501.2,282.8 501.2,190.0" fill="#7fb3b5" stroke="#2f6f72" stroke-width="1.5"/>
+<polygon points="506.0,190.0 666.0,190.0 666.0,278.0 506.0,278.0" fill="#fbe6c8" stroke="#b07a2a" stroke-dasharray="5 3" stroke-width="1.5"/>
+<circle cx="586.0" cy="230" r="24.0" fill="#fff" stroke="#333" stroke-width="1.5"/><path d="M552.0,230 H620.0 M586.0,196 V264" stroke="#888" stroke-dasharray="6 3 2 3"/>
+<path d="M506.0,190.0 L506.0,166" stroke="#c0392b" stroke-width=".7"/>
+<path d="M666.0,190.0 L666.0,166" stroke="#c0392b" stroke-width=".7"/>
+<path d="M506.0,166 H666.0" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="586.0" y="160" text-anchor="middle" fill="#c0392b" font-weight="bold">Foot width 10</text>
+<path d="M469.2,314.8 L469.2,362.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M702.8,314.8 L702.8,362.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M469.2,362.8 H702.8" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="586.0" y="356.8" text-anchor="middle" fill="#c0392b" font-weight="bold">Locator outside 14.6</text>
+<path d="M586.0,230 L798,230" stroke="#c0392b" stroke-width=".7"/>
+<path d="M666.0,278 L798,278" stroke="#c0392b" stroke-width=".7"/>
+<path d="M798,230 V278" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="808" y="259.0" text-anchor="start" fill="#c0392b" font-weight="bold">3  hole centre to foot outer edge</text>
+<path d="M666.0,278 L798,278" stroke="#c0392b" stroke-width=".7"/>
+<path d="M670.8,282.8 L798,282.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M798,278 V282.8" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="808" y="285.4" text-anchor="start" fill="#c0392b" font-weight="bold"></text>
+<path d="M670.8,282.8 L894,282.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M702.8,314.8 L894,314.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M894,282.8 V314.8" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="904" y="303.8" text-anchor="start" fill="#c0392b" font-weight="bold">2 wall  (0.3 clearance above it)</text>
+<path d="M469.2,190.0 L382,190.0" stroke="#c0392b" stroke-width=".7"/>
+<path d="M469.2,314.8 L382,314.8" stroke="#c0392b" stroke-width=".7"/>
+<path d="M382,190.0 V314.8" stroke="#c0392b" marker-start="url(#a)" marker-end="url(#a)"/><text x="372" y="257.4" text-anchor="end" fill="#c0392b" font-weight="bold">7.8 arm length</text>
+<path d="M420,174 L568,218" stroke="#333"/><text x="158" y="178">Ø3 hole, local X −9.25, Y ±16 (tray pilot unchanged)</text>
+<rect x="30" y="430" width="18" height="12" fill="#fbe6c8" stroke="#b07a2a" stroke-dasharray="4 2"/><text x="56" y="441">Pump foot (reference only): 10 mm wide, from the case edge (Y 13.5) to 3 mm past the hole centre (Y 19).</text>
+<rect x="30" y="454" width="18" height="12" fill="#7fb3b5" stroke="#2f6f72"/><text x="56" y="465">Printed C locator: 2 mm wall, 0.3 mm clearance per side, 2.5 mm tall. Open towards the pump case. Inside opening 10.6 × 5.8 mm.</text>
+<text x="30" y="494">Mirrored on the other foot (Y −16). All dimensions in mm. Wall, clearance and height use the pump's holder settings and stay editable.</text>
+<text x="30" y="516">Replaces the current estimated 12 × 8 mm foot rectangle. Note: with a Ø3 hole, 3 mm to the foot edge leaves 1.5 mm of foot material beyond the hole.</text>
+</svg>
