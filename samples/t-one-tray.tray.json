@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "e868aa88-cb20-4e85-a903-8856842e0b95",
+  "id": "5ae78ac1-329a-4a04-9d71-59b1236d0960",
   "name": "T-One Final-withall",
-  "updatedAt": "2026-11-22T21:04:52.596Z",
+  "updatedAt": "2026-11-22T21:24:31.266Z",
   "tray": {
     "extensions": {
       "front": {
         "enabled": false,
-        "width": 60,
-        "depth": 20,
+        "width": 50,
+        "depth": 12,
         "radius": 5
       },
       "rear": {
         "enabled": true,
-        "width": 60,
-        "depth": 15,
+        "width": 50,
+        "depth": 12,
         "radius": 5
       }
     },
     "rim": {
       "enabled": true,
       "height": 4,
-      "wall": 3,
+      "wall": 2,
       "sideHeights": {
         "north": 15,
         "east": 4,
@@ -31,7 +31,7 @@
       "transitionLength": 20
     },
     "shape": "trapezoid",
-    "length": 313,
+    "length": 308,
     "wide": 175,
     "narrow": 165,
     "thickness": 3.5,
@@ -67,14 +67,14 @@
     "mode": "components",
     "pilotDiameter": 1.5
   },
-  "grid": 1,
+  "grid": 0.5,
   "items": [
     {
-      "id": "dd523642-80e1-457f-86aa-3dcc7c52788c",
+      "id": "ac0987c1-e73a-458a-a906-d00e2f8973a2",
       "kind": "component",
       "label": "UAT mount",
-      "x": 290.5,
-      "y": 87.5,
+      "x": 282.3,
+      "y": 87.41702000000001,
       "rotation": 180,
       "component": {
         "id": "uat",
@@ -171,10 +171,10 @@
       }
     },
     {
-      "id": "6177f952-ff28-42df-b9a3-dca418bd5eb8",
+      "id": "3d223250-2df1-47b3-a4a0-c65ce6f15603",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
-      "x": 27,
+      "x": 30.374999999999986,
       "y": 144,
       "rotation": 180,
       "component": {
@@ -274,12 +274,12 @@
       }
     },
     {
-      "id": "15dfe430-ec60-428d-9709-449533eabfa7",
+      "id": "6865e77e-1557-469d-b25f-64a221d7aca3",
       "kind": "component",
       "label": "Custom telemetry converter",
-      "x": 230,
-      "y": 87.5,
-      "rotation": 0,
+      "x": 159.60000000000002,
+      "y": 27.000000000000018,
+      "rotation": 180,
       "component": {
         "id": "telemetry",
         "name": "Custom telemetry converter",
@@ -350,11 +350,11 @@
       }
     },
     {
-      "id": "8b852c70-8b3c-47b6-bd87-180fa298ba70",
+      "id": "8c520cae-0719-4b28-81fe-bb84e5c7dd4d",
       "kind": "component",
       "label": "KingTech G4 DRM",
-      "x": 42.12499999999999,
-      "y": 87.5,
+      "x": 24.32499999999997,
+      "y": 87.41702000000001,
       "rotation": 450,
       "component": {
         "id": "drm",
@@ -451,11 +451,11 @@
       }
     },
     {
-      "id": "86e39908-8a9c-4442-985d-d0a74ea132be",
+      "id": "a1594b0c-0baf-4082-ac89-687d95fe9a7f",
       "kind": "component",
       "label": "FrSky PGC",
-      "x": 250,
-      "y": 38.30000000000001,
+      "x": 240.5,
+      "y": 36.5,
       "rotation": 180,
       "component": {
         "id": "pgc",
@@ -573,11 +573,11 @@
       }
     },
     {
-      "id": "9d9f21ce-8541-4309-b881-e6fe348a998f",
+      "id": "8cf332f2-d869-4988-ab38-fa639f5a5b60",
       "kind": "component",
       "label": "T-One lighting controller",
-      "x": 256.5,
-      "y": 137.39999999999998,
+      "x": 233,
+      "y": 138.5,
       "rotation": 180,
       "component": {
         "id": "tone",
@@ -681,12 +681,12 @@
       }
     },
     {
-      "id": "d82fe516-c07f-4895-8cc1-e9f3597561e2",
+      "id": "73c80c3b-4ae2-411f-ae7d-b5e84755f8fe",
       "kind": "component",
       "label": "FrSky GPS ADV",
-      "x": 169,
-      "y": 26.30000000000002,
-      "rotation": 0,
+      "x": 223.8,
+      "y": 81.5,
+      "rotation": -360,
       "component": {
         "id": "gps",
         "name": "FrSky GPS ADV",
@@ -756,11 +756,11 @@
       }
     },
     {
-      "id": "5659800a-b4cc-40de-9e0e-6e80dc55025d",
+      "id": "2c919dd6-455e-4e16-a359-d530bff49a96",
       "kind": "component",
       "label": "FrSky ASS-70",
-      "x": 169,
-      "y": 146.2,
+      "x": 156.5,
+      "y": 148.7,
       "rotation": 0,
       "component": {
         "id": "airspeed",
@@ -831,11 +831,11 @@
       }
     },
     {
-      "id": "bd662b79-0333-4ac3-8753-21900f6b5c9a",
+      "id": "e2fc9be0-f42e-408f-96e1-1f96a546e237",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 114,
-      "y": 135.5,
+      "x": 105.89,
+      "y": 136.5,
       "rotation": 0,
       "grommet": {
         "enabled": true,
@@ -848,7 +848,7 @@
       },
       "component": null,
       "l": 50,
-      "w": 7,
+      "w": 8,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -890,11 +890,11 @@
       }
     },
     {
-      "id": "66d2b8e5-742a-46c4-b417-f19ac2d91969",
+      "id": "92516540-9d16-412c-84d5-d181947c0840",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 114,
-      "y": 39.5,
+      "x": 105.89,
+      "y": 38.5,
       "rotation": 0,
       "grommet": {
         "enabled": true,
@@ -907,7 +907,7 @@
       },
       "component": null,
       "l": 50,
-      "w": 7,
+      "w": 8,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -949,11 +949,11 @@
       }
     },
     {
-      "id": "6dfaaf43-51b0-4471-ace6-0c1abc8f2084",
+      "id": "88f46859-532c-43fa-b27d-f5603d600727",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 70,
-      "y": 67.5,
+      "x": 61.425,
+      "y": 87.50000000000001,
       "rotation": -90,
       "grommet": {
         "enabled": true,
@@ -965,8 +965,8 @@
         "axialClearance": 0.2
       },
       "component": null,
-      "l": 110,
-      "w": 7,
+      "l": 70,
+      "w": 8,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -1008,11 +1008,11 @@
       }
     },
     {
-      "id": "a7a6a179-cde4-4ae0-a019-58b87d96731b",
+      "id": "cc768dfd-a8aa-4f42-a829-20938eb258bd",
       "kind": "component",
       "label": "FrSky RB-35S",
-      "x": 134,
-      "y": 87.5,
+      "x": 127.40000000000003,
+      "y": 87.50000000000001,
       "rotation": 0,
       "component": {
         "id": "rb35s",
@@ -1130,11 +1130,11 @@
       }
     },
     {
-      "id": "93f61f42-af47-4c1e-afdb-99e3a32d11c2",
+      "id": "c673c54e-4c93-4c92-b1c7-997e6906bd99",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 198,
-      "y": 87.5,
+      "x": 192.5,
+      "y": 87.41702000000001,
       "rotation": 90,
       "grommet": {
         "enabled": true,
@@ -1147,7 +1147,7 @@
       },
       "component": null,
       "l": 150,
-      "w": 7,
+      "w": 8,
       "diameter": 3.2,
       "holder": {
         "enabled": false,
@@ -1189,10 +1189,10 @@
       }
     },
     {
-      "id": "e82e5947-50bc-4968-af61-1c08c2ae21ae",
+      "id": "3851aa7e-e1ae-4278-be9d-889a12986c4d",
       "kind": "component",
       "label": "3-pin servo header",
-      "x": 114,
+      "x": 113.99999999999997,
       "y": 154.43,
       "rotation": 0,
       "component": {
@@ -1281,12 +1281,12 @@
       }
     },
     {
-      "id": "6fa5b30e-f7d1-44f9-9333-79d0a5481bad",
+      "id": "4762d6a2-6cdf-45b7-93a9-5bafedf5b36d",
       "kind": "component",
       "label": "FrSky Remote NFC Panel",
-      "x": 107.5,
-      "y": 19.2,
-      "rotation": 0,
+      "x": 110.70000000000005,
+      "y": 18.5,
+      "rotation": 180,
       "component": {
         "id": "nfc",
         "name": "FrSky Remote NFC Panel",
@@ -1381,11 +1381,11 @@
       }
     },
     {
-      "id": "babe8925-25ec-4554-a7a1-d37b93d820ba",
+      "id": "0a68e8fc-2b4c-4f05-bf08-7ccc85d5778a",
       "kind": "component",
       "label": "KingTech KP-600 fuel pump",
-      "x": 28.825,
-      "y": 31,
+      "x": 33.75,
+      "y": 27.000000000000018,
       "rotation": 0,
       "component": {
         "id": "kp600",
@@ -1488,11 +1488,11 @@
       }
     },
     {
-      "id": "1a786313-008c-4287-88d3-c7c39d5f6d5d",
+      "id": "30577e03-5aba-4912-bb09-71a7fbaf8c3a",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 300,
-      "y": 38.2,
+      "x": 289,
+      "y": 38,
       "rotation": 270,
       "rim": {
         "enabled": true,
@@ -1500,7 +1500,7 @@
         "wall": 1.5
       },
       "component": null,
-      "l": 35,
+      "l": 45,
       "w": 7,
       "diameter": 3.2,
       "holder": {
@@ -1543,19 +1543,19 @@
       }
     },
     {
-      "id": "ac6d914c-def0-4c3d-bc78-a68e4757964f",
+      "id": "deebcf99-b8d9-4562-8cf5-634085b28986",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 300,
-      "y": 138.72499999999997,
-      "rotation": 90,
+      "x": 276,
+      "y": 138.5,
+      "rotation": -90,
       "rim": {
         "enabled": true,
         "height": 1.5,
         "wall": 1.5
       },
       "component": null,
-      "l": 35,
+      "l": 45,
       "w": 7,
       "diameter": 3.2,
       "holder": {
@@ -1598,12 +1598,18 @@
       }
     },
     {
-      "id": "e8b6bfa5-9ef9-426b-a6c2-ceb84ac092ea",
+      "id": "02209f7d-46fe-438e-b5a3-afb624ff33f9",
       "kind": "hole",
       "label": "Aircraft mounting hole front upper",
       "x": 4.3,
       "y": 36.5,
       "rotation": 0,
+      "boss": {
+        "enabled": true,
+        "diameter": 15,
+        "height": 0,
+        "fillet": 2
+      },
       "component": null,
       "l": 35,
       "w": 8,
@@ -1648,12 +1654,18 @@
       }
     },
     {
-      "id": "78ddc793-1078-42ea-800b-3fe9789557a5",
+      "id": "a4253402-5af0-4a5f-ac78-22f008babf85",
       "kind": "hole",
       "label": "Aircraft mounting hole front lower",
       "x": 4.3,
       "y": 138.5,
       "rotation": 0,
+      "boss": {
+        "enabled": true,
+        "diameter": 15,
+        "height": 0,
+        "fillet": 2
+      },
       "component": null,
       "l": 35,
       "w": 8,
@@ -1698,12 +1710,18 @@
       }
     },
     {
-      "id": "0bd3e8db-d827-45ec-82b8-5d2a5b58daad",
+      "id": "cab5f657-2ad8-4a55-bf3d-d57b6e1100dc",
       "kind": "hole",
       "label": "Aircraft mounting hole rear upper",
       "x": 307.3,
       "y": 36.5,
       "rotation": 0,
+      "boss": {
+        "enabled": true,
+        "diameter": 15,
+        "height": 0,
+        "fillet": 2
+      },
       "component": null,
       "l": 35,
       "w": 8,
@@ -1748,16 +1766,189 @@
       }
     },
     {
-      "id": "3cd6045c-2b07-485d-b19e-351f4af3e5f5",
+      "id": "fff67654-5a44-4e2f-afa0-6d644348a76f",
       "kind": "hole",
       "label": "Aircraft mounting hole rear lower",
       "x": 307.3,
       "y": 138.5,
       "rotation": 0,
+      "boss": {
+        "enabled": true,
+        "diameter": 15,
+        "height": 0,
+        "fillet": 2
+      },
       "component": null,
       "l": 35,
       "w": 8,
       "diameter": 3,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "9c7beb96-c94b-4447-953f-3ed59d9f26f7",
+      "kind": "slot",
+      "label": "Circular wire pass-through",
+      "x": 75.925,
+      "y": 23.000000000000004,
+      "rotation": 0,
+      "openingShape": "circle",
+      "rim": {
+        "enabled": true,
+        "height": 1.5,
+        "wall": 1.5
+      },
+      "component": null,
+      "l": 15,
+      "w": 15,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "f8ee1c81-127b-4e6b-b2a3-81ef6165bd93",
+      "kind": "slot",
+      "label": "Circular wire pass-through",
+      "x": 75.925,
+      "y": 153.5,
+      "rotation": 0,
+      "openingShape": "circle",
+      "rim": {
+        "enabled": true,
+        "height": 1.5,
+        "wall": 1.5
+      },
+      "component": null,
+      "l": 15,
+      "w": 15,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "5b7668c5-adc9-4fc6-8f60-e7a6fe8805ca",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 225.5,
+      "y": 103.5,
+      "rotation": 0,
+      "rim": {
+        "enabled": true,
+        "height": 1.5,
+        "wall": 1.5
+      },
+      "component": null,
+      "l": 40,
+      "w": 7,
+      "diameter": 3.2,
       "holder": {
         "enabled": false,
         "height": 2.5,

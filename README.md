@@ -248,7 +248,7 @@ The current default is **T-One Final-withall**, based on the supplied file of th
 
 In Export TPU grommets, select openings and enable **Add cut flaps to selected TPU parts**. Each grommet can also enable its own **Add internal cut flap** under Object properties → TPU wire grommet. This adds a bed-facing flexible membrane inside the bore, with a central slit and repeated transverse cuts on long slots, or crossed slits on circular openings. Hinges remain around the perimeter. The membrane prints on the bed, avoiding an unsupported bridge across the opening. Defaults are 0.6 mm membrane, 0.4 mm cut width and 10 mm finger spacing, all editable per opening. Membrane thickness must not exceed retaining-lip thickness; invalid cuts are rejected before export. It is optional and off by default, saved in the design, and never changes the main tray STL.
 
-Try `samples/grommet-flap-fit-test.stl` first; `samples/t-one-tpu-grommets-flaps.stl` contains all six grommets for the current default with cut flaps. Existing open-grommet samples remain unchanged.
+Try `samples/grommet-flap-fit-test.stl` first; `samples/t-one-tpu-grommets-flaps.stl` contains all four grommets for the current default with cut flaps. Existing open-grommet samples remain unchanged.
 
 
 ### Detailed TPU gasket dimensions
@@ -279,3 +279,8 @@ The default diameter leaves about 3 mm around the hole inside the rim for a scre
 Confirmed 2026-11-22 (see `drawings/kp600-c-locator.png`): each KP-600 foot is **10 mm wide**, running from the case side to **3 mm past its mounting-hole centre**. A printed C-shaped locator wraps the two sides and outer end of each foot, open towards the pump case. By default it has a 2 mm wall, 0.3 mm clearance per side and is 2.5 mm tall: 14.6 mm outside, with 7.8 mm arms. The Ø3 holes and 1.5 mm tray pilots are unchanged. No ribs surround the pump case itself.
 
 Adjust them in Object properties → **Foot locators (C-shaped)**: on/off, foot width, hole centre to foot edge, and locator wall, clearance and height. The wall, clearance and height are shared with the part's cradle settings. Existing designs with a KP-600 and the T-One default receive the locators once; later edits persist. The foot reference rectangles are now 10 × 5.5 mm. `samples/kp600-fit-test.stl` and `samples/t-one-tray.stl` include the locators.
+
+
+### Current default: T-One Final-withall (2026-11-22)
+
+The built-in default is the user's uploaded `T-One Final-withall copy` design, renamed **T-One Final-withall**; geometry and settings are otherwise unchanged. It is 308 mm long with a centred 50 × 12 mm rear extension (320 mm overall), tapers from 175 to 165 mm, and is 3.5 mm thick. The perimeter rim is 2 mm thick: 15 mm tall on the long sides and 4 mm at the ends. It has 12 components, including the KP-600 with C-shaped foot locators, and 9 openings: 4 slots with TPU grommets, 3 rimmed slots and 2 circular wire holes. The four Ø3 aircraft holes stay at X 4.3 / 307.3 and Y 36.5 / 138.5 mm, each with a Ø15 mm flush boss and 2 mm fillet. Component pilots remain Ø1.5 mm; raise them under Printed screw holes for larger nozzles. Existing saved designs are unaffected. `samples/t-one-tray.stl` and both T-One TPU grommet samples were regenerated from it.
