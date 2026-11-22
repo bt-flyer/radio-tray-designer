@@ -15,12 +15,12 @@ test('KP-600 confirmed dimensions supersede the original reference STL and photo
  assert.ok(Math.abs(bounds[0][1]-bounds[0][0]-103.70879)<.001);assert.ok(Math.abs(bounds[1][1]-bounds[1][0]-32)<.001);assert.ok(Math.abs(bounds[2][0]-4)<.001);assert.ok(Math.abs(bounds[2][1]-36)<.001);
  assert.deepEqual(c.body,{l:48.5,w:27,h:31});assert.equal(c.holesStatus,'measured');assert.deepEqual(c.holes,[{x:-9.25,y:-16,d:3},{x:-9.25,y:16,d:3}]);
 });
-test('KP-600 hole-only mounting and 1.5 mm pilots rotate and survive JSON saving without exporting electronics',()=>{
+test('KP-600 hole mounting with foot locators and 1.5 mm pilots rotate and survive JSON saving without exporting electronics',()=>{
  for(const rotation of [0,37,180]){
  const d=newDesign(),i=makeItem('component',[150,90],c);i.rotation=rotation;d.items=[i];assert.equal(i.holder.height,2.5);
  assert.equal(printedHoleDiameter(d,3,true),1.5);assert.equal(i.holder.enabled,false);
  const holes=c.holes.map(h=>transform([h.x,h.y],i));assert.ok(Math.abs(Math.hypot(holes[0][0]-holes[1][0],holes[0][1]-holes[1][1])-32)<1e-8);
- assert.equal(validateDesign(d).filter(e=>e.level==='error').length,0);const mesh=generateGeometry(api,d);assert.equal(mesh.pieces,1);assert.equal(mesh.bounds.max[2],4.5);binarySTL(mesh);
+ assert.equal(validateDesign(d).filter(e=>e.level==='error').length,0);const mesh=generateGeometry(api,d);assert.equal(mesh.pieces,1);assert.equal(mesh.bounds.max[2],5.5,'2.5 mm foot locators on a 3 mm tray');binarySTL(mesh);
  const restored=designSchema.parse(JSON.parse(JSON.stringify(d)));assert.deepEqual(generateGeometry(api,restored),mesh);
  }
  const model=componentModel(c);assert.equal(model.userData.referenceOnly,true);assert.ok(model.getObjectByName('kp600-dummy-body'));

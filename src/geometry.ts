@@ -1,7 +1,7 @@
 import {rimProfile} from './rimProfile';
 import {labelOutline} from './labels';
 import type { Manifold, ManifoldToplevel } from 'manifold-3d';
-import { type Design,type Item,type Point,roundedOutline,rawOutline,selfIntersect,signedArea,bodyOffset,bodySize,holderBodySize,holderOffset,wallSpans,printedHoleDiameter,slotRim,trayRim,maxRimHeight,holeBoss,circle,transform } from './model';
+import { type Design,type Item,type Point,roundedOutline,rawOutline,selfIntersect,signedArea,bodyOffset,bodySize,holderBodySize,holderOffset,wallSpans,printedHoleDiameter,slotRim,trayRim,maxRimHeight,holeBoss,circle,transform,footLocators } from './model';
 export type MeshResult={positions:Float32Array;indices:Uint32Array;volume:number;triangles:number;pieces:number;bounds:{min:number[];max:number[]}};
 export function roundedRect(l:number,w:number,r:number):Point[]{r=Math.min(r,l/2,w/2);if(r<=0)return [[-l/2,-w/2],[l/2,-w/2],[l/2,w/2],[-l/2,w/2]];const p:Point[]=[];const centers=[[l/2-r,w/2-r],[-l/2+r,w/2-r],[-l/2+r,-w/2+r],[l/2-r,-w/2+r]];for(let k=0;k<4;k++)for(let j=0;j<=12;j++){const a=(k*Math.PI/2)+j/12*Math.PI/2;p.push([centers[k][0]+r*Math.cos(a),centers[k][1]+r*Math.sin(a)]);}return p;}
 export function strapCuts(i:Item):{l:number;w:number;x:number;y:number}[]{const [l,w]=bodySize(i),h=i.holder;if(!h.strap.enabled)return [];const [bx,by]=bodyOffset(i),gap=h.clearance+h.wall+1+h.strap.width/2;return h.strap.axis==='x'?[-1,1].map(sign=>({l:h.strap.width,w:Math.max(6,w*.65),x:bx+sign*(l/2+gap),y:by})):[-1,1].map(sign=>({l:Math.max(6,l*.65),w:h.strap.width,x:bx,y:by+sign*(w/2+gap)}));}
@@ -33,6 +33,7 @@ export function generateGeometry(api:ManifoldToplevel,d:Design):MeshResult{
     }
    }
   }
+  for(const f of footLocators(i))solids.push(place(own(extrude(f.outline,i.holder.height+.05).translate([0,0,t-.05])),i));
   for(const s of strapCuts(i))cuts.push(place(slot(s.l,s.w,Math.min(s.l,s.w)/2,s.x,s.y),i));
  }
  let result=own(M.union(solids));if(cuts.length)result=own(result.subtract(own(M.union(cuts))));
