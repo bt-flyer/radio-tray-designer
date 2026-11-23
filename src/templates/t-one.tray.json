@@ -1,4 +1,15 @@
 {
+  "grommetSettings": {
+    "enabled": false,
+    "wall": 1.2,
+    "clearance": 0.2,
+    "flange": 2.3,
+    "retention": 0.8,
+    "lipHeight": 1,
+    "topLipHeight": 1,
+    "bottomLipHeight": 0,
+    "axialClearance": 0.2
+  },
   "schemaVersion": 1,
   "id": "t-one-default",
   "name": "T-One Final-withall",
@@ -846,7 +857,8 @@
         "lipHeight": 1,
         "axialClearance": 0.2,
         "topLipHeight": 1,
-        "bottomLipHeight": 0
+        "bottomLipHeight": 0,
+        "useGlobal": true
       },
       "component": null,
       "l": 50,
@@ -907,7 +919,8 @@
         "lipHeight": 1,
         "axialClearance": 0.2,
         "topLipHeight": 1,
-        "bottomLipHeight": 0
+        "bottomLipHeight": 0,
+        "useGlobal": true
       },
       "component": null,
       "l": 50,
@@ -968,7 +981,8 @@
         "lipHeight": 1,
         "axialClearance": 0.2,
         "topLipHeight": 1,
-        "bottomLipHeight": 0
+        "bottomLipHeight": 0,
+        "useGlobal": true
       },
       "component": null,
       "l": 70,
@@ -1151,7 +1165,8 @@
         "lipHeight": 1,
         "axialClearance": 0.2,
         "topLipHeight": 1,
-        "bottomLipHeight": 0
+        "bottomLipHeight": 0,
+        "useGlobal": true
       },
       "component": null,
       "l": 150,
