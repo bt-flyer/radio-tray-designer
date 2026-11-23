@@ -6,20 +6,33 @@
     "flange": 2.3,
     "retention": 0.8,
     "lipHeight": 1,
-    "topLipHeight": 1,
     "bottomLipHeight": 0,
-    "axialClearance": 0.2
+    "axialClearance": 0.2,
+    "flap": {
+      "enabled": true,
+      "thickness": 0.6,
+      "slit": 0.4,
+      "pitch": 5
+    }
+  },
+  "screwFeet": {
+    "enabled": true,
+    "diameter": 8,
+    "height": 4,
+    "cap": 1,
+    "grip": 0.6,
+    "chamfer": 0.6
   },
   "schemaVersion": 1,
   "id": "t-one-default",
   "name": "T-One Final-withall",
-  "updatedAt": "2026-11-22T21:23:18.504Z",
+  "updatedAt": "2026-11-23T18:05:41.346Z",
   "tray": {
     "extensions": {
       "front": {
-        "enabled": false,
-        "width": 50,
-        "depth": 12,
+        "enabled": true,
+        "width": 75,
+        "depth": 8,
         "radius": 5
       },
       "rear": {
@@ -186,7 +199,7 @@
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
       "x": 30.374999999999986,
-      "y": 144,
+      "y": 141.25,
       "rotation": 180,
       "component": {
         "id": "sp1",
@@ -364,8 +377,8 @@
       "id": "df41ba8f-5345-4b02-8d4a-fc4a7cce1bf6",
       "kind": "component",
       "label": "KingTech G4 DRM",
-      "x": 24.32499999999997,
-      "y": 87.41702000000001,
+      "x": 17.374999999999982,
+      "y": 87.50000000000001,
       "rotation": 450,
       "component": {
         "id": "drm",
@@ -855,9 +868,8 @@
         "flange": 2.3,
         "retention": 0.8,
         "lipHeight": 1,
-        "axialClearance": 0.2,
-        "topLipHeight": 1,
         "bottomLipHeight": 0,
+        "axialClearance": 0.2,
         "useGlobal": true
       },
       "component": null,
@@ -917,9 +929,8 @@
         "flange": 2.3,
         "retention": 0.8,
         "lipHeight": 1,
-        "axialClearance": 0.2,
-        "topLipHeight": 1,
         "bottomLipHeight": 0,
+        "axialClearance": 0.2,
         "useGlobal": true
       },
       "component": null,
@@ -979,9 +990,8 @@
         "flange": 2.3,
         "retention": 0.8,
         "lipHeight": 1,
-        "axialClearance": 0.2,
-        "topLipHeight": 1,
         "bottomLipHeight": 0,
+        "axialClearance": 0.2,
         "useGlobal": true
       },
       "component": null,
@@ -1163,9 +1173,8 @@
         "flange": 2.3,
         "retention": 0.8,
         "lipHeight": 1,
-        "axialClearance": 0.2,
-        "topLipHeight": 1,
         "bottomLipHeight": 0,
+        "axialClearance": 0.2,
         "useGlobal": true
       },
       "component": null,
@@ -1215,8 +1224,8 @@
       "id": "c08b269f-8065-457e-9d9f-6edf808feaa4",
       "kind": "component",
       "label": "3-pin servo header",
-      "x": 113.99999999999997,
-      "y": 154.43,
+      "x": 116.49999999999997,
+      "y": 160.57,
       "rotation": 0,
       "component": {
         "id": "servo3",
@@ -1307,7 +1316,7 @@
       "id": "92a858e6-e422-4152-ae64-6652173959c5",
       "kind": "component",
       "label": "FrSky Remote NFC Panel",
-      "x": 110.70000000000005,
+      "x": 81.88999999999997,
       "y": 18.5,
       "rotation": 180,
       "component": {
@@ -1407,8 +1416,8 @@
       "id": "bb4a3fb6-f581-4b50-9611-a095431ca4f8",
       "kind": "component",
       "label": "KingTech KP-600 fuel pump",
-      "x": 33.75,
-      "y": 27.000000000000018,
+      "x": 32.19999999999999,
+      "y": 31.699999999999992,
       "rotation": 0,
       "component": {
         "id": "kp600",
@@ -1517,6 +1526,17 @@
       "x": 289,
       "y": 38,
       "rotation": 270,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
       "rim": {
         "enabled": true,
         "height": 1.5,
@@ -1569,9 +1589,20 @@
       "id": "ef04f536-7678-4061-895b-bc351f1f43a1",
       "kind": "slot",
       "label": "Cable pass-through",
-      "x": 276,
+      "x": 279,
       "y": 138.5,
       "rotation": -90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
       "rim": {
         "enabled": true,
         "height": 1.5,
@@ -1624,7 +1655,7 @@
       "id": "1e9b7eb5-a029-44bb-abed-2798cea7879b",
       "kind": "hole",
       "label": "Aircraft mounting hole front upper",
-      "x": 4.3,
+      "x": 3.3,
       "y": 36.5,
       "rotation": 0,
       "boss": {
@@ -1680,7 +1711,7 @@
       "id": "19ee7a0a-8e89-4989-bce2-eb0ecaad0d90",
       "kind": "hole",
       "label": "Aircraft mounting hole front lower",
-      "x": 4.3,
+      "x": 3.3,
       "y": 138.5,
       "rotation": 0,
       "boss": {
@@ -1736,7 +1767,7 @@
       "id": "440e4b7f-0d90-4407-b2a2-bc28f0ca47bc",
       "kind": "hole",
       "label": "Aircraft mounting hole rear upper",
-      "x": 307.3,
+      "x": 306.3,
       "y": 36.5,
       "rotation": 0,
       "boss": {
@@ -1792,7 +1823,7 @@
       "id": "73a0f20b-a369-4fec-bf96-25c8b23d22a1",
       "kind": "hole",
       "label": "Aircraft mounting hole rear lower",
-      "x": 307.3,
+      "x": 306.3,
       "y": 138.5,
       "rotation": 0,
       "boss": {
@@ -1848,10 +1879,21 @@
       "id": "731cfd40-6190-4cc2-8c5b-21024d9bb48a",
       "kind": "slot",
       "label": "Circular wire pass-through",
-      "x": 75.925,
-      "y": 23.000000000000004,
+      "x": 118.40000000000003,
+      "y": 19.917020000000008,
       "rotation": 0,
       "openingShape": "circle",
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
       "rim": {
         "enabled": true,
         "height": 1.5,
@@ -1904,10 +1946,21 @@
       "id": "e4aa4ed2-a72d-40b8-9f4e-cb477c038093",
       "kind": "slot",
       "label": "Circular wire pass-through",
-      "x": 75.925,
-      "y": 153.5,
+      "x": 88.20000000000005,
+      "y": 155,
       "rotation": 0,
       "openingShape": "circle",
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
       "rim": {
         "enabled": true,
         "height": 1.5,
@@ -1963,6 +2016,17 @@
       "x": 225.5,
       "y": 103.5,
       "rotation": 0,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
       "rim": {
         "enabled": true,
         "height": 1.5,
