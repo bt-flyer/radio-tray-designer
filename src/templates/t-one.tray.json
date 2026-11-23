@@ -1405,7 +1405,7 @@
         "sources": {
           "body": "User sketch, 2026-11-08: 48.5 mm case length × Ø27 mm; 31 mm overall height assumes the original reference’s 4 mm bottom elevation. Fittings and clamp appearance remain estimates.",
           "holes": "User confirmed: 32 mm transverse hole centres, mounting line 15 mm from nipple-end (−X) body edge. Local centres (−9.25,−16), (−9.25,+16) mm. Original hardware diameter remains estimated Ø3 mm; printed pilots follow project settings.",
-          "clearance": "User confirmed 2026-11-22: feet 10 mm wide, outer edge 3 mm beyond the hole centre. C-shaped locators (holder wall, clearance and height) wrap each foot, open towards the case."
+          "clearance": "User fit check 2026-11-23: 40 mm inside gap between the C locator end walls across the pump (was 38.6 mm, too tight). Feet 10 mm wide, outer edge 3.7 mm beyond each hole centre; 0.3 mm clearance."
         },
         "holes": [
           {
@@ -1422,26 +1422,26 @@
         "tabs": [
           {
             "x": -9.25,
-            "y": -16.25,
+            "y": -16.6,
             "l": 10,
-            "w": 5.5
+            "w": 6.2
           },
           {
             "x": -9.25,
-            "y": 16.25,
+            "y": 16.6,
             "l": 10,
-            "w": 5.5
+            "w": 6.2
           }
         ],
         "measurementRevision": 1,
         "footLocator": {
           "enabled": true,
           "width": 10,
-          "reach": 3
+          "reach": 3.7
         },
-        "footLocatorRevision": 1,
+        "footLocatorRevision": 2,
         "cutout": null,
-        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm. C-shaped foot locators: 10 mm feet ending 3 mm past each hole centre; 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default."
+        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm. C-shaped foot locators: 10 mm feet ending 3.7 mm past each hole centre (40 mm between end walls); 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default."
       },
       "l": 35,
       "w": 8,

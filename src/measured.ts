@@ -124,11 +124,16 @@ export function applyUATOutline(i:Item){
  i.holder.uatOutlineRevision=1;
 }
 
-/** User-confirmed 2026-11-22: 10 mm wide feet ending 3 mm past each hole centre, held by C-shaped locators. One-time, later edits persist. */
-export function applyKP600FootLocators(c:ComponentDef):ComponentDef{if(c.id!=='kp600'||c.footLocatorRevision===1)return c;const next=structuredClone(c);next.footLocatorRevision=1;next.footLocator={enabled:true,width:10,reach:3};const edge=(next.body.w??27)/2;
- next.tabs=next.holes.map(h=>{const s=h.y>=0?1:-1,tip=h.y+s*3;return {x:h.x,y:s*(edge+Math.abs(tip))/2,l:10,w:Math.abs(tip)-edge};});
- next.sources.clearance='User confirmed 2026-11-22: feet 10 mm wide, outer edge 3 mm beyond the hole centre. C-shaped locators (holder wall, clearance and height) wrap each foot, open towards the case.';
- next.note+=' C-shaped foot locators: 10 mm feet ending 3 mm past each hole centre; 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default.';return next;}
+/** C-shaped foot locators. 2026-11-22: 10 mm feet held by C locators. 2026-11-23: user fit check found the
+ * 38.6 mm gap between the end walls tight; feet now end 3.7 mm past each hole centre, giving a 40 mm inside gap.
+ * One-time per revision; later manual edits persist. */
+const kp600Reach=3.7;
+export function applyKP600FootLocators(c:ComponentDef):ComponentDef{if(c.id!=='kp600'||c.footLocatorRevision===2)return c;
+ if(c.footLocatorRevision===1&&(c.footLocator?.reach!==3||c.footLocator.width!==10))return {...c,footLocatorRevision:2};
+ const next=structuredClone(c);next.footLocatorRevision=2;next.footLocator={enabled:c.footLocator?.enabled??true,width:10,reach:kp600Reach};const edge=(next.body.w??27)/2;
+ next.tabs=next.holes.map(h=>{const s=h.y>=0?1:-1,tip=Math.abs(h.y)+kp600Reach;const r=(v:number)=>Math.round(v*1000)/1000;return {x:h.x,y:s*r((edge+tip)/2),l:10,w:r(tip-edge)};});
+ next.sources.clearance='User fit check 2026-11-23: 40 mm inside gap between the C locator end walls across the pump (was 38.6 mm, too tight). Feet 10 mm wide, outer edge 3.7 mm beyond each hole centre; 0.3 mm clearance.';
+ next.note=next.note.replace(/ C-shaped foot locators:.*$/,'')+' C-shaped foot locators: 10 mm feet ending 3.7 mm past each hole centre (40 mm between end walls); 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default.';return next;}
 
 /** User-confirmed November 8 sketch; one-time upgrade preserves later manual edits. */
 export function applyDrmPumpMeasurements(c:ComponentDef):ComponentDef{

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "5ae78ac1-329a-4a04-9d71-59b1236d0960",
+  "id": "8f07262a-d016-4b4f-ab97-afb77ce71a40",
   "name": "T-One Final-withall",
-  "updatedAt": "2026-11-22T21:24:31.266Z",
+  "updatedAt": "2026-11-23T13:41:59.704Z",
   "tray": {
     "extensions": {
       "front": {
@@ -70,7 +70,7 @@
   "grid": 0.5,
   "items": [
     {
-      "id": "ac0987c1-e73a-458a-a906-d00e2f8973a2",
+      "id": "8f459973-99df-425d-a799-be35ee8936a9",
       "kind": "component",
       "label": "UAT mount",
       "x": 282.3,
@@ -171,7 +171,7 @@
       }
     },
     {
-      "id": "3d223250-2df1-47b3-a4a0-c65ce6f15603",
+      "id": "ed2bfba0-348a-426c-b414-ac03a6d2c670",
       "kind": "component",
       "label": "FrSky SP-1 smoke pump",
       "x": 30.374999999999986,
@@ -274,7 +274,7 @@
       }
     },
     {
-      "id": "6865e77e-1557-469d-b25f-64a221d7aca3",
+      "id": "3d14deaf-6566-48df-bb24-bedfd9d49f67",
       "kind": "component",
       "label": "Custom telemetry converter",
       "x": 159.60000000000002,
@@ -350,7 +350,7 @@
       }
     },
     {
-      "id": "8c520cae-0719-4b28-81fe-bb84e5c7dd4d",
+      "id": "39876eaf-ed94-40db-aee9-517d37ba5331",
       "kind": "component",
       "label": "KingTech G4 DRM",
       "x": 24.32499999999997,
@@ -451,7 +451,7 @@
       }
     },
     {
-      "id": "a1594b0c-0baf-4082-ac89-687d95fe9a7f",
+      "id": "83b4b27d-cd31-4179-9a21-02b1f29f0f26",
       "kind": "component",
       "label": "FrSky PGC",
       "x": 240.5,
@@ -573,7 +573,7 @@
       }
     },
     {
-      "id": "8cf332f2-d869-4988-ab38-fa639f5a5b60",
+      "id": "72f91021-8143-48bb-9f81-7766ad5f3c14",
       "kind": "component",
       "label": "T-One lighting controller",
       "x": 233,
@@ -681,7 +681,7 @@
       }
     },
     {
-      "id": "73c80c3b-4ae2-411f-ae7d-b5e84755f8fe",
+      "id": "93257dc8-8aa1-446a-91d6-5dc544b5ecb8",
       "kind": "component",
       "label": "FrSky GPS ADV",
       "x": 223.8,
@@ -756,7 +756,7 @@
       }
     },
     {
-      "id": "2c919dd6-455e-4e16-a359-d530bff49a96",
+      "id": "da167bab-fe63-4272-b46d-73def9c191f1",
       "kind": "component",
       "label": "FrSky ASS-70",
       "x": 156.5,
@@ -831,7 +831,7 @@
       }
     },
     {
-      "id": "e2fc9be0-f42e-408f-96e1-1f96a546e237",
+      "id": "1c0fb368-9ad0-4402-b51d-4860da380ce0",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 105.89,
@@ -890,7 +890,7 @@
       }
     },
     {
-      "id": "92516540-9d16-412c-84d5-d181947c0840",
+      "id": "9e5a56c9-99b3-4e3c-8e21-eff4289db03d",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 105.89,
@@ -949,7 +949,7 @@
       }
     },
     {
-      "id": "88f46859-532c-43fa-b27d-f5603d600727",
+      "id": "049b95e5-d230-42a0-906d-bd25ab3dc36f",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 61.425,
@@ -1008,7 +1008,7 @@
       }
     },
     {
-      "id": "cc768dfd-a8aa-4f42-a829-20938eb258bd",
+      "id": "59f71c72-4ab9-4263-85d6-214d45687033",
       "kind": "component",
       "label": "FrSky RB-35S",
       "x": 127.40000000000003,
@@ -1130,7 +1130,7 @@
       }
     },
     {
-      "id": "c673c54e-4c93-4c92-b1c7-997e6906bd99",
+      "id": "3435e240-aec2-485f-b455-5d41a217a44b",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 192.5,
@@ -1189,7 +1189,7 @@
       }
     },
     {
-      "id": "3851aa7e-e1ae-4278-be9d-889a12986c4d",
+      "id": "4d45f21c-72c7-4027-88db-2376f144aab0",
       "kind": "component",
       "label": "3-pin servo header",
       "x": 113.99999999999997,
@@ -1281,7 +1281,7 @@
       }
     },
     {
-      "id": "4762d6a2-6cdf-45b7-93a9-5bafedf5b36d",
+      "id": "a4281d5a-3074-40e5-8649-8151a430e1e2",
       "kind": "component",
       "label": "FrSky Remote NFC Panel",
       "x": 110.70000000000005,
@@ -1381,7 +1381,7 @@
       }
     },
     {
-      "id": "0a68e8fc-2b4c-4f05-bf08-7ccc85d5778a",
+      "id": "f1815eb2-f581-45af-b84a-ce62083d1165",
       "kind": "component",
       "label": "KingTech KP-600 fuel pump",
       "x": 33.75,
@@ -1405,7 +1405,7 @@
         "sources": {
           "body": "User sketch, 2026-11-08: 48.5 mm case length × Ø27 mm; 31 mm overall height assumes the original reference’s 4 mm bottom elevation. Fittings and clamp appearance remain estimates.",
           "holes": "User confirmed: 32 mm transverse hole centres, mounting line 15 mm from nipple-end (−X) body edge. Local centres (−9.25,−16), (−9.25,+16) mm. Original hardware diameter remains estimated Ø3 mm; printed pilots follow project settings.",
-          "clearance": "User confirmed 2026-11-22: feet 10 mm wide, outer edge 3 mm beyond the hole centre. C-shaped locators (holder wall, clearance and height) wrap each foot, open towards the case."
+          "clearance": "User fit check 2026-11-23: 40 mm inside gap between the C locator end walls across the pump (was 38.6 mm, too tight). Feet 10 mm wide, outer edge 3.7 mm beyond each hole centre; 0.3 mm clearance."
         },
         "holes": [
           {
@@ -1422,26 +1422,26 @@
         "tabs": [
           {
             "x": -9.25,
-            "y": -16.25,
+            "y": -16.6,
             "l": 10,
-            "w": 5.5
+            "w": 6.2
           },
           {
             "x": -9.25,
-            "y": 16.25,
+            "y": 16.6,
             "l": 10,
-            "w": 5.5
+            "w": 6.2
           }
         ],
         "measurementRevision": 1,
         "footLocator": {
           "enabled": true,
           "width": 10,
-          "reach": 3
+          "reach": 3.7
         },
-        "footLocatorRevision": 1,
+        "footLocatorRevision": 2,
         "cutout": null,
-        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm. C-shaped foot locators: 10 mm feet ending 3 mm past each hole centre; 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default."
+        "note": "Measured 48.5 × Ø27 mm case; holes 32 mm apart at 15 mm from nipple-end body edge (33.5 mm from rear edge). No printed outline ribs by default. Supplied dummy STL is resized for reference only; clamp, feet, fitting details and 4 mm bottom elevation are estimates. Original hardware hole diameter not remeasured; default printed pilots are 1.5 mm. C-shaped foot locators: 10 mm feet ending 3.7 mm past each hole centre (40 mm between end walls); 2 mm walls, 0.3 mm clearance, 2.5 mm tall by default."
       },
       "l": 35,
       "w": 8,
@@ -1488,7 +1488,7 @@
       }
     },
     {
-      "id": "30577e03-5aba-4912-bb09-71a7fbaf8c3a",
+      "id": "6dca7359-42fb-4b37-b225-8d474b9b72ff",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 289,
@@ -1543,7 +1543,7 @@
       }
     },
     {
-      "id": "deebcf99-b8d9-4562-8cf5-634085b28986",
+      "id": "2f2eec3d-7929-4903-a587-e838cf455a30",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 276,
@@ -1598,7 +1598,7 @@
       }
     },
     {
-      "id": "02209f7d-46fe-438e-b5a3-afb624ff33f9",
+      "id": "7c06b593-a283-424e-af66-25616a1d73c7",
       "kind": "hole",
       "label": "Aircraft mounting hole front upper",
       "x": 4.3,
@@ -1654,7 +1654,7 @@
       }
     },
     {
-      "id": "a4253402-5af0-4a5f-ac78-22f008babf85",
+      "id": "67693f5d-1897-48f1-9c66-7784ad902269",
       "kind": "hole",
       "label": "Aircraft mounting hole front lower",
       "x": 4.3,
@@ -1710,7 +1710,7 @@
       }
     },
     {
-      "id": "cab5f657-2ad8-4a55-bf3d-d57b6e1100dc",
+      "id": "56fb4f3e-e82c-4486-8230-fa1363a187a9",
       "kind": "hole",
       "label": "Aircraft mounting hole rear upper",
       "x": 307.3,
@@ -1766,7 +1766,7 @@
       }
     },
     {
-      "id": "fff67654-5a44-4e2f-afa0-6d644348a76f",
+      "id": "e923ca1f-851f-4a17-8780-89065e7793a3",
       "kind": "hole",
       "label": "Aircraft mounting hole rear lower",
       "x": 307.3,
@@ -1822,7 +1822,7 @@
       }
     },
     {
-      "id": "9c7beb96-c94b-4447-953f-3ed59d9f26f7",
+      "id": "9afc7cb2-b606-4082-bace-3f9e04d9187b",
       "kind": "slot",
       "label": "Circular wire pass-through",
       "x": 75.925,
@@ -1878,7 +1878,7 @@
       }
     },
     {
-      "id": "f8ee1c81-127b-4e6b-b2a3-81ef6165bd93",
+      "id": "d091f19a-e9dc-43b6-951b-2de2104a23e3",
       "kind": "slot",
       "label": "Circular wire pass-through",
       "x": 75.925,
@@ -1934,7 +1934,7 @@
       }
     },
     {
-      "id": "5b7668c5-adc9-4fc6-8f60-e7a6fe8805ca",
+      "id": "fad28b99-1857-4510-ac19-ca90beee5a37",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 225.5,

@@ -284,3 +284,8 @@ Adjust them in Object properties → **Foot locators (C-shaped)**: on/off, foot 
 ### Current default: T-One Final-withall (2026-11-22)
 
 The built-in default is the user's uploaded `T-One Final-withall copy` design, renamed **T-One Final-withall**; geometry and settings are otherwise unchanged. It is 308 mm long with a centred 50 × 12 mm rear extension (320 mm overall), tapers from 175 to 165 mm, and is 3.5 mm thick. The perimeter rim is 2 mm thick: 15 mm tall on the long sides and 4 mm at the ends. It has 12 components, including the KP-600 with C-shaped foot locators, and 9 openings: 4 slots with TPU grommets, 3 rimmed slots and 2 circular wire holes. The four Ø3 aircraft holes stay at X 4.3 / 307.3 and Y 36.5 / 138.5 mm, each with a Ø15 mm flush boss and 2 mm fillet. Component pilots remain Ø1.5 mm; raise them under Printed screw holes for larger nozzles. Existing saved designs are unaffected. `samples/t-one-tray.stl` and both T-One TPU grommet samples were regenerated from it.
+
+
+### KP-600 locator gap widened to 40 mm (2026-11-23)
+
+A fit check found the C locators tight across the pump: the inside gap between the two end walls was 38.6 mm. Each foot now ends **3.7 mm past its hole centre** (was 3 mm). This gives exactly **40 mm** between the end walls: 2 × (16 + 3.7 + 0.3 clearance). Foot width (10 mm), wall thickness, clearance, height, hole centres and placement are unchanged. Saved designs still on the original 3 mm setting update once; custom values are kept. The default design, `samples/kp600-fit-test.stl` and `samples/t-one-tray.stl` use the new gap. `drawings/kp600-c-locator.png` shows the original 3 mm proposal.
