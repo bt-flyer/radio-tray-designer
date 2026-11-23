@@ -1,14 +1,16 @@
 import type {Design,Item} from './model';
-export interface GrommetSettings{enabled:boolean;useGlobal?:boolean;wall:number;clearance:number;flange:number;retention:number;lipHeight:number;topLipHeight?:number;bottomLipHeight?:number;gripHeight?:number;axialClearance:number;flap?:{enabled:boolean;thickness:number;slit:number;pitch:number}}
+export interface GrommetSettings{enabled:boolean;useGlobal?:boolean;wall:number;clearance:number;flange:number;retention:number;lipHeight:number;topLipHeight?:number;bottomLipHeight?:number;gripHeight?:number;axialClearance:number;proud?:number;flap?:{enabled:boolean;thickness:number;slit:number;pitch:number}}
 export function grommetDefaults():GrommetSettings{return {enabled:false,wall:1.2,clearance:.2,flange:2.3,retention:.8,lipHeight:1,axialClearance:.2};}
 
+/** Height a lipless sleeve top stands above the tray or opening-rim surface, giving a glue land. */
+export const proudDefault=.5;
 export function flapDefaults(){return {enabled:false,thickness:.6,slit:.4,pitch:10};}
 
 export function effectiveGrommetSettings(d:Design,i:Item):GrommetSettings{
  const inherited=d.grommetSettings&&i.grommet?.useGlobal!==false;
  return {...grommetDefaults(),...(inherited?d.grommetSettings:i.grommet),enabled:i.grommet?.enabled??false};
 }
-function comparable(s:GrommetSettings){return JSON.stringify({wall:s.wall,clearance:s.clearance,flange:s.flange,retention:s.retention,top:s.topLipHeight??s.lipHeight,bottom:s.bottomLipHeight??s.lipHeight,grip:s.gripHeight??null,allowance:s.axialClearance,flap:{...flapDefaults(),...s.flap}});}
+function comparable(s:GrommetSettings){return JSON.stringify({wall:s.wall,clearance:s.clearance,flange:s.flange,retention:s.retention,top:s.topLipHeight??s.lipHeight,bottom:s.bottomLipHeight??s.lipHeight,grip:s.gripHeight??null,allowance:s.axialClearance,proud:s.proud??proudDefault,flap:{...flapDefaults(),...s.flap}});}
 /** Adopt global settings once, preserving any distinct existing custom gasket as an override. */
 export function initializeGrommetSettings(d:Design):Design{
  if(d.grommetSettings)return d;

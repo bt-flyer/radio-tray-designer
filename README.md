@@ -289,3 +289,12 @@ The built-in default is the user's uploaded `T-One Final-withall copy` design, r
 ### KP-600 locator gap widened to 40 mm (2026-11-23)
 
 A fit check found the C locators tight across the pump: the inside gap between the two end walls was 38.6 mm. Each foot now ends **3.7 mm past its hole centre** (was 3 mm). This gives exactly **40 mm** between the end walls: 2 × (16 + 3.7 + 0.3 clearance). Foot width (10 mm), wall thickness, clearance, height, hole centres and placement are unchanged. Saved designs still on the original 3 mm setting update once; custom values are kept. The default design, `samples/kp600-fit-test.stl` and `samples/t-one-tray.stl` use the new gap. `drawings/kp600-c-locator.png` shows the original 3 mm proposal.
+
+
+### TPU screw feet
+
+In **Export TPU grommets**, open **Screw feet under the tray** and enable **Add a TPU foot for every component screw**. This adds one round TPU cap per component screw hole; aircraft mounting holes are excluded. Each cap threads onto a screw tip poking through the bottom of the tray, then is glued to the tray. Defaults: Ø8 × 4 mm, 1 mm closed end (3 mm bore depth), 0.6 mm outer chamfer. Each bore is the part's hardware hole diameter minus a 0.6 mm thread grip (for example Ø3 screw → Ø2.4 bore), never below 0.8 mm. Set foot height to tip length plus closed end. Feet print closed end down, so nothing bridges, packed 3 mm apart after any grommets; a feet-only export is allowed. Settings are saved with the design. `samples/t-one-tpu-screw-feet.stl` has the 26 feet for the T-One default.
+
+### Lipless gaskets stand proud
+
+With no top lip (top lip thickness or overhang 0), a gasket's sleeve now stands **0.5 mm proud** of the tray or opening-rim surface, giving a glue land. Adjust **Stand proud of surface** in the gasket settings. Gaskets with a top lip keep their snug grip allowance, and a manual sleeve grip height overrides both. The T-One default's four gaskets are now lipless on top (bottom lip kept), so their sleeves are tray 3.5 + rim 1.5 + 0.5 mm. The T-One TPU samples were regenerated.

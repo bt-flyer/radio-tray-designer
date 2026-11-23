@@ -1,11 +1,11 @@
 import type {ManifoldToplevel,Manifold} from 'manifold-3d';
 import {type Design,type Item,slotRim,transform} from './model';
-import {effectiveGrommetSettings,flapDefaults} from './grommetSettings';
+import {effectiveGrommetSettings,flapDefaults,proudDefault} from './grommetSettings';
 import {roundedRect,auditMesh,removeCollapsedTriangles,type MeshResult} from './geometry';
 export function grommetDimensions(d:Design,i:Item){
  const s=effectiveGrommetSettings(d,i),rim=slotRim(i),l=Math.max(i.l,i.w)-2*s.clearance,w=Math.min(i.l,i.w)-2*s.clearance;
- const autoGrip=d.tray.thickness+(rim.enabled?rim.height:0)+s.axialClearance,grip=s.gripHeight??autoGrip,hasTopLip=s.flange>0&&(s.topLipHeight??s.lipHeight)>0,hasBottomLip=s.retention>0&&(s.bottomLipHeight??s.lipHeight)>0,topLipHeight=hasTopLip?(s.topLipHeight??s.lipHeight):0,bottomLipHeight=hasBottomLip?(s.bottomLipHeight??s.lipHeight):0,topOverhang=hasTopLip?s.flange:0,bottomOverhang=hasBottomLip?s.retention:0;
- return {settings:s,flap:{...flapDefaults(),...s.flap},l,w,boreL:l-2*s.wall,boreW:w-2*s.wall,hasTopLip,hasBottomLip,outerL:l+2*topOverhang,outerW:w+2*topOverhang,bottomOuterL:l+2*bottomOverhang,bottomOuterW:w+2*bottomOverhang,packingL:l+2*Math.max(topOverhang,bottomOverhang),packingW:w+2*Math.max(topOverhang,bottomOverhang),autoGrip,grip,topLipHeight,bottomLipHeight,height:grip+topLipHeight+bottomLipHeight};
+ const hasTopLip=s.flange>0&&(s.topLipHeight??s.lipHeight)>0,proud=s.proud??proudDefault,autoGrip=d.tray.thickness+(rim.enabled?rim.height:0)+(hasTopLip?s.axialClearance:proud),grip=s.gripHeight??autoGrip,hasBottomLip=s.retention>0&&(s.bottomLipHeight??s.lipHeight)>0,topLipHeight=hasTopLip?(s.topLipHeight??s.lipHeight):0,bottomLipHeight=hasBottomLip?(s.bottomLipHeight??s.lipHeight):0,topOverhang=hasTopLip?s.flange:0,bottomOverhang=hasBottomLip?s.retention:0;
+ return {settings:s,proud,flap:{...flapDefaults(),...s.flap},l,w,boreL:l-2*s.wall,boreW:w-2*s.wall,hasTopLip,hasBottomLip,outerL:l+2*topOverhang,outerW:w+2*topOverhang,bottomOuterL:l+2*bottomOverhang,bottomOuterW:w+2*bottomOverhang,packingL:l+2*Math.max(topOverhang,bottomOverhang),packingW:w+2*Math.max(topOverhang,bottomOverhang),autoGrip,grip,topLipHeight,bottomLipHeight,height:grip+topLipHeight+bottomLipHeight};
 }
 /** TPU caps that screw onto component screw tips protruding below the tray, then get glued on. */
 export function screwFeetDefaults():NonNullable<Design['screwFeet']>{return {enabled:false,diameter:8,height:4,cap:1,grip:.6,chamfer:.6};}
