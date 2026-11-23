@@ -307,3 +307,15 @@ A gasket with a top lip but no bottom lip (bottom lip thickness or overhang 0) n
 The T-One default's four gaskets now have the top lip (1 mm thick, 2.3 mm overhang) and **no bottom lip**. This replaces the brief lipless-top setting; sleeves are tray 3.5 + rim 1.5 + 0.2 mm grip allowance. The **stand proud** setting still applies to any gasket without a top lip. Both T-One TPU gasket samples were regenerated.
 
 **Update:** top-lip-only is now the **default for all gaskets**. A gasket without an explicit bottom-lip thickness, including legacy gaskets in saved designs, has no bottom lip and prints top lip down. Gaskets with an explicit bottom-lip thickness keep it. Global gasket settings are now seeded only from openings that have a gasket enabled, so empty openings no longer outvote them. The T-One default stores these as its global settings. The gasket diagram is drawn as installed (tray top up) and states which face prints on the bed.
+
+
+### Current default: T-One Final-withall (2026-11-23)
+
+The built-in default is now the user's uploaded `T-One Final-withall copy copy` design, renamed **T-One Final-withall**; its settings are otherwise unchanged. Compared with the previous default:
+- A centred **75 × 8 mm front extension** is added; the 50 × 12 mm rear extension stays (328 mm overall, X −8 to 320).
+- The aircraft holes are at X **3.3 / 306.3** mm, still at Y 36.5 / 138.5 mm with Ø15 mm bosses.
+- Several parts and openings have moved.
+- **All 9 openings have TPU gaskets**: top lip only, printed lip-down, with cut flaps at 5 mm finger spacing.
+- **Screw feet are enabled** (26 feet).
+
+It validates with no errors and exports one watertight tray of 207.7 cm³. The TPU export gives 35 parts (9 gaskets, 26 feet). Samples regenerated: `t-one-tray.stl`; `t-one-tpu-grommets.stl` (9 gaskets, no flaps); `t-one-tpu-grommets-flaps.stl` (9 gaskets with flaps); `t-one-tpu-screw-feet.stl` (26 feet). Existing saved designs are unaffected.
