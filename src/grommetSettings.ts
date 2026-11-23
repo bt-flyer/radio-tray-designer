@@ -1,6 +1,7 @@
 import type {Design,Item} from './model';
 export interface GrommetSettings{enabled:boolean;useGlobal?:boolean;wall:number;clearance:number;flange:number;retention:number;lipHeight:number;topLipHeight?:number;bottomLipHeight?:number;gripHeight?:number;axialClearance:number;proud?:number;flap?:{enabled:boolean;thickness:number;slit:number;pitch:number}}
-export function grommetDefaults():GrommetSettings{return {enabled:false,wall:1.2,clearance:.2,flange:2.3,retention:.8,lipHeight:1,axialClearance:.2};}
+/** Default gasket: 1 mm top lip, no bottom lip (prints top lip down). Gaskets that set bottomLipHeight explicitly keep it. */
+export function grommetDefaults():GrommetSettings{return {enabled:false,wall:1.2,clearance:.2,flange:2.3,retention:.8,lipHeight:1,bottomLipHeight:0,axialClearance:.2};}
 
 /** Height a lipless sleeve top stands above the tray or opening-rim surface, giving a glue land. */
 export const proudDefault=.5;
@@ -14,7 +15,7 @@ function comparable(s:GrommetSettings){return JSON.stringify({wall:s.wall,cleara
 /** Adopt global settings once, preserving any distinct existing custom gasket as an override. */
 export function initializeGrommetSettings(d:Design):Design{
  if(d.grommetSettings)return d;
- const slots=d.items.filter(i=>i.kind==='slot'),groups=new Map<string,{count:number;settings:GrommetSettings}>();
+ const all=d.items.filter(i=>i.kind==='slot'),enabled=all.filter(i=>i.grommet?.enabled),slots=enabled.length?enabled:all,groups=new Map<string,{count:number;settings:GrommetSettings}>();
  for(const i of slots){const settings={...grommetDefaults(),...i.grommet},key=comparable(settings),group=groups.get(key);if(group)group.count++;else groups.set(key,{count:1,settings});}
  const seed=[...groups.values()].sort((a,b)=>b.count-a.count)[0]?.settings??grommetDefaults();
  return {...d,grommetSettings:{...seed,enabled:false,useGlobal:undefined},items:d.items.map(i=>i.kind==='slot'?{...i,grommet:{...grommetDefaults(),...i.grommet,useGlobal:comparable({...grommetDefaults(),...i.grommet})===comparable(seed)}}:i)};

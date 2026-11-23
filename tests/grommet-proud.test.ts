@@ -6,7 +6,7 @@ import {newDesign,makeItem,designSchema} from '../src/model';
 import {grommetDefaults} from '../src/grommetSettings';
 import {tOneTemplate} from '../src/templates';
 const api=await Module();api.setup();
-function design(top:boolean){const d=newDesign();d.tray.thickness=3.5;const i=makeItem('slot',[100,80]);i.grommet={...grommetDefaults(),enabled:true,...(top?{}:{topLipHeight:0})};d.items=[i];return {d,i};}
+function design(top:boolean){const d=newDesign();d.tray.thickness=3.5;const i=makeItem('slot',[100,80]);i.grommet={...grommetDefaults(),enabled:true,bottomLipHeight:1,...(top?{}:{topLipHeight:0})};d.items=[i];return {d,i};}
 
 test('a lipless sleeve stands 0.5 mm proud of the opening rim; lipped gaskets keep their snug grip',()=>{const lipless=design(false),q=grommetDimensions(lipless.d,lipless.i);assert.equal(q.hasTopLip,false);assert.ok(Math.abs(q.grip-(3.5+1.5+.5))<1e-9);const m=generateGrommets(api,lipless.d);auditMesh(m);assert.ok(Math.abs(m.bounds.max[2]-(1+3.5+1.5+.5))<1e-6,'bottom lip + tray + rim + 0.5 proud');
  const lipped=design(true);assert.ok(Math.abs(grommetDimensions(lipped.d,lipped.i).grip-5.2)<1e-9);});
