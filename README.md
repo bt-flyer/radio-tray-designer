@@ -298,3 +298,10 @@ In **Export TPU grommets**, open **Screw feet under the tray** and enable **Add 
 ### Lipless gaskets stand proud
 
 With no top lip (top lip thickness or overhang 0), a gasket's sleeve now stands **0.5 mm proud** of the tray or opening-rim surface, giving a glue land. Adjust **Stand proud of surface** in the gasket settings. Gaskets with a top lip keep their snug grip allowance, and a manual sleeve grip height overrides both. The T-One default's four gaskets are now lipless on top (bottom lip kept), so their sleeves are tray 3.5 + rim 1.5 + 0.5 mm. The T-One TPU samples were regenerated.
+
+
+### Top-lip-only gaskets print lip-down
+
+A gasket with a top lip but no bottom lip (bottom lip thickness or overhang 0) now prints **upside down, with the top lip on the bed**. It pushes into the opening from above, and the lip seats on the tray or opening-rim surface. Any cut flap still forms on the bed, inside that lip, so the flap thickness must not exceed the top lip thickness. Other gaskets print as before: bottom lip down, or sleeve end down when both lips are removed. The gasket settings now say which face prints on the bed.
+
+The T-One default's four gaskets now have the top lip (1 mm thick, 2.3 mm overhang) and **no bottom lip**. This replaces the brief lipless-top setting; sleeves are tray 3.5 + rim 1.5 + 0.2 mm grip allowance. The **stand proud** setting still applies to any gasket without a top lip. Both T-One TPU gasket samples were regenerated.
