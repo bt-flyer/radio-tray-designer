@@ -845,7 +845,8 @@
         "retention": 0.8,
         "lipHeight": 1,
         "axialClearance": 0.2,
-        "topLipHeight": 0
+        "topLipHeight": 1,
+        "bottomLipHeight": 0
       },
       "component": null,
       "l": 50,
@@ -905,7 +906,8 @@
         "retention": 0.8,
         "lipHeight": 1,
         "axialClearance": 0.2,
-        "topLipHeight": 0
+        "topLipHeight": 1,
+        "bottomLipHeight": 0
       },
       "component": null,
       "l": 50,
@@ -965,7 +967,8 @@
         "retention": 0.8,
         "lipHeight": 1,
         "axialClearance": 0.2,
-        "topLipHeight": 0
+        "topLipHeight": 1,
+        "bottomLipHeight": 0
       },
       "component": null,
       "l": 70,
@@ -1147,7 +1150,8 @@
         "retention": 0.8,
         "lipHeight": 1,
         "axialClearance": 0.2,
-        "topLipHeight": 0
+        "topLipHeight": 1,
+        "bottomLipHeight": 0
       },
       "component": null,
       "l": 150,
