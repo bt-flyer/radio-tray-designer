@@ -334,3 +334,5 @@ With the default 1.5 mm rim, the lip reaches 2.9 mm beyond the sleeve; the chann
 Settings are under Global gasket design or per opening: **C-channel over the opening rim** (on/off), skirt wall, rim clearance and skirt depth. Openings without a rim, or gaskets without a top lip, keep a plain lip. The channel is on by default for new and saved gaskets that don't set it, including the T-One default.
 
 Test the fit first: print `samples/rim-channel-fit-test.stl`, a 70 × 30 mm tray coupon with one 45 × 7 mm rimmed opening, in PETG. Then print `samples/tpu-grommet-fit-test.stl`, its gasket, in TPU. The T-One gasket samples were regenerated with the channel.
+
+**Flap position:** cut flaps form on the face that prints on the bed. For the default top-lip-only gaskets, that is the lip end, so the fingers sit at the **top** of the opening once installed. The diagram previously drew them at the bottom; it now draws them where they are printed.
