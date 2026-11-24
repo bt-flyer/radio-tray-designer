@@ -165,7 +165,7 @@ In a cable opening's **TPU wire grommet** properties, adjust sleeve wall, fit cl
 
 Defaults: 1.2 mm sleeve, 0.2 mm clearance per side, 2.3 mm top overhang, 0.8 mm retaining overhang, 1 mm lip thickness and 0.2 mm grip allowance. Empty/too-small bores, insufficient top-lip reach and parts or batches exceeding the printer volume block TPU export. Grommet settings save in editable JSON and browser/local saves. Aircraft screw holes are not lined.
 
-Ready-to-print starting samples: `samples/t-one-tpu-grommets.stl` contains the four inserts for the built-in T-One layout; `samples/tpu-grommet-fit-test.stl` contains just its first 50 × 6 mm opening's insert. Both use the defaults above and a 3 mm tray with a 1.5 mm cable rim.
+Ready-to-print starting samples: `samples/t-one-tpu-grommets.stl` contains the four inserts for the built-in T-One layout; `samples/tpu-grommet-fit-test.stl` contains one gasket for the 45 × 7 mm opening on `samples/rim-channel-fit-test.stl`. Both use the defaults above and a 3 mm tray with a 1.5 mm cable rim.
 
 ### Latest physical fit corrections
 
@@ -319,3 +319,18 @@ The built-in default is now the user's uploaded `T-One Final-withall copy copy` 
 - **Screw feet are enabled** (26 feet).
 
 It validates with no errors and exports one watertight tray of 207.7 cm³. The TPU export gives 35 parts (9 gaskets, 26 feet). Samples regenerated: `t-one-tray.stl`; `t-one-tpu-grommets.stl` (9 gaskets, no flaps); `t-one-tpu-grommets-flaps.stl` (9 gaskets with flaps); `t-one-tpu-screw-feet.stl` (26 feet). Existing saved designs are unaffected.
+
+
+### Rim-channel gaskets
+
+The top lip of each TPU gasket is now a **C-channel** that fits over the raised rim around its tray opening. As installed, the sleeve sits inside the opening, the lip rests on the rim, and a skirt drops outside the rim to the tray surface. The rim locks into the channel, holding the gasket in shape and position for gluing.
+
+Defaults:
+- 1 mm skirt wall and 0.2 mm clearance to the rim.
+- Skirt depth equal to the opening's rim height (1.5 mm).
+
+With the default 1.5 mm rim, the lip reaches 2.9 mm beyond the sleeve; the channel sets this instead of the top lip overhang. Gaskets still print lip-down, so the channel opens upward with no overhangs. Cut flaps are unaffected.
+
+Settings are under Global gasket design or per opening: **C-channel over the opening rim** (on/off), skirt wall, rim clearance and skirt depth. Openings without a rim, or gaskets without a top lip, keep a plain lip. The channel is on by default for new and saved gaskets that don't set it, including the T-One default.
+
+Test the fit first: print `samples/rim-channel-fit-test.stl`, a 70 × 30 mm tray coupon with one 45 × 7 mm rimmed opening, in PETG. Then print `samples/tpu-grommet-fit-test.stl`, its gasket, in TPU. The T-One gasket samples were regenerated with the channel.
