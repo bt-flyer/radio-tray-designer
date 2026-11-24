@@ -336,3 +336,17 @@ Settings are under Global gasket design or per opening: **C-channel over the ope
 Test the fit first: print `samples/rim-channel-fit-test.stl`, a 70 × 30 mm tray coupon with one 45 × 7 mm rimmed opening, in PETG. Then print `samples/tpu-grommet-fit-test.stl`, its gasket, in TPU. The T-One gasket samples were regenerated with the channel.
 
 **Flap position:** cut flaps form on the face that prints on the bed. For the default top-lip-only gaskets, that is the lip end, so the fingers sit at the **top** of the opening once installed. The diagram previously drew them at the bottom; it now draws them where they are printed.
+
+
+### TPU wire clip strips
+
+In **Export TPU grommets**, open **Wire clip strips** and enable **Add snap-in wire clip strips**. Each strip has a flat base to glue to the underside of the tray, with a row of C clips that grip one wire each. The snap opening faces away from the base, so the wire presses in. A V-groove between each position leaves a 0.4 mm web, so you can cut off as many positions as you need with a knife. See `drawings/tpu-wire-clip-profiles.png`.
+
+Defaults:
+- Six strips of 12 positions, for Ø2, 3, 4, 5, 6 and 8 mm wire.
+- Bore equal to the wire diameter (a snug grip), snap opening 0.7 × wire diameter, 1.2 mm clip wall and base, 6 mm clip length along the wire.
+- Pitch is wire diameter + 2 × wall + 1.6 mm (Ø4: 8 mm).
+
+Sizes, position counts, wall, base, length, opening ratio and web are all editable, and strips can be added or removed. Strips print lying on their side, so each clip is a true circle with no overhangs and the glue face is a flat side wall. They're packed after the gaskets and screw feet, one strip per row. Settings are saved with the design; clip-only exports are allowed. `samples/tpu-wire-clips.stl` contains the default six strips.
+
+Glue them with the same flexible CA (scuffed and cleaned faces). For bundles, use the next size up, or set a strip's diameter to the bundle width.
