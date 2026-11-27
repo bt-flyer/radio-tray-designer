@@ -44,13 +44,13 @@
     },
     "rim": {
       "enabled": true,
-      "height": 4,
+      "height": 8,
       "wall": 2,
       "sideHeights": {
         "north": 15,
-        "east": 4,
+        "east": 8,
         "south": 15,
-        "west": 4
+        "west": 8
       },
       "transitionLength": 20
     },
@@ -58,7 +58,7 @@
     "length": 308,
     "wide": 175,
     "narrow": 165,
-    "thickness": 3.5,
+    "thickness": 5,
     "radius": 5,
     "points": [
       [
@@ -1160,11 +1160,11 @@
       }
     },
     {
-      "id": "a4c15b71-93c5-4b6c-97c9-2e28145faf1a",
+      "id": "3c3d7326-2875-45c9-9cfd-1ba00b1b9632",
       "kind": "slot",
       "label": "Cable pass-through",
       "x": 192.5,
-      "y": 87.41702000000001,
+      "y": 45.41702000000001,
       "rotation": 90,
       "grommet": {
         "enabled": true,
@@ -1178,7 +1178,68 @@
         "useGlobal": true
       },
       "component": null,
-      "l": 150,
+      "l": 66,
+      "w": 8,
+      "diameter": 3.2,
+      "holder": {
+        "enabled": false,
+        "height": 2.5,
+        "wall": 2,
+        "clearance": 0.3,
+        "sides": {
+          "north": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "south": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "east": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          },
+          "west": {
+            "enabled": true,
+            "opening": 0,
+            "offset": 0,
+            "keepout": 0
+          }
+        },
+        "strap": {
+          "enabled": false,
+          "width": 4,
+          "axis": "x"
+        },
+        "holeAllowance": 0
+      }
+    },
+    {
+      "id": "808d99a2-fcc8-4e6e-9882-cc1174ffbb6b",
+      "kind": "slot",
+      "label": "Cable pass-through",
+      "x": 192.5,
+      "y": 129.41702,
+      "rotation": 90,
+      "grommet": {
+        "enabled": true,
+        "wall": 1.2,
+        "clearance": 0.2,
+        "flange": 2.3,
+        "retention": 0.8,
+        "lipHeight": 1,
+        "bottomLipHeight": 0,
+        "axialClearance": 0.2,
+        "useGlobal": true
+      },
+      "component": null,
+      "l": 66,
       "w": 8,
       "diameter": 3.2,
       "holder": {

@@ -350,3 +350,13 @@ Defaults:
 Sizes, position counts, wall, base, length, opening ratio and web are all editable, and strips can be added or removed. Strips print lying on their side, so each clip is a true circle with no overhangs and the glue face is a flat side wall. They're packed after the gaskets and screw feet, one strip per row. Settings are saved with the design; clip-only exports are allowed. `samples/tpu-wire-clips.stl` contains the default six strips.
 
 Glue them with the same flexible CA (scuffed and cleaned faces). For bundles, use the next size up, or set a strip's diameter to the bundle width.
+
+
+### Stiffer T-One default (2026-11-27)
+
+Three stiffness changes to the built-in default; everything else is unchanged:
+1. **The 150 × 8 mm cross-tray slot at X 192.5 is split** into two 66 mm slots with an **18 mm solid bridge** between them, so the tray no longer nearly breaks in two along that line. Both slots keep rim-channel gaskets with flaps; there are now 10 gaskets.
+2. **The front and rear rims, and the extension rims, are raised from 4 to 8 mm.** The 15 mm side rims are unchanged; the rim still wraps the mounting-hole bosses.
+3. **The base is 5 mm thick instead of 3.5 mm.** With 2 top and 2 bottom layers, the skins are about 50% further apart, so bending stiffness is roughly **2.3×**.
+
+The solid volume reported in the app rises from 207.7 to 286.2 cm³, because that figure assumes a 100% solid base. With 15% infill, the printed weight rises by only about **15–20 g**. Component screws need to be about 1.5 mm longer. Gasket sleeves follow the new thickness automatically: 5 + 1.5 + 0.2 = 6.7 mm grip, 7.7 mm overall. The design validates with no errors or new warnings. Tray, gasket and screw-feet samples were regenerated.
